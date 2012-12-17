@@ -20,10 +20,10 @@
 	<li><a href="#">Contacto</a></li>
 	<li class="divider"></li>
 	<li class="nav-header">Importante</li>
-	<li><a href="#">Conferencias</a></li>
+	<li><a href="${pageContext.request.contextPath}/resolver/pages/conferencias">Conferencias</a></li>
 	<li><a href="#">Talleres</a></li>
 	<li><a href="#">Concursos</a></li>
-	<li><a href="#">Ponencias</a></li>
+	<li><a href="${pageContext.request.contextPath}/resolver/pages/ponencias">Ponencias</a></li>
 	<li><a href="#">Carteles</a></li>
 	<li><a href="#">Actividades culturales</a></li>
 	<li class="nav-header">Redes Sociales</li>
