@@ -27,7 +27,7 @@
 	<li><a href="#">Concursos</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/ponencias">Ponencias</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/carteles">Carteles</a></li>
-	<li><a href="#">Actividades culturales</a></li>
+	<li><a href="${pageContext.request.contextPath}/resolver/pages/actividades_culturales">Actividades culturales</a></li>
 	<li class="nav-header">Redes Sociales</li>
 	<li><a href="#">Facebook</a></li>
 	<li><a href="#">Twitter</a></li>

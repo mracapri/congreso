@@ -35,7 +35,7 @@ public class PagesInfoController {
       
         Map<String, Object> modelo = new HashMap<String, Object>();
         
-    	return new ModelAndView("content/conferencias", "modelo", modelo);
+    	return new ModelAndView("content/ponencias", "modelo", modelo);
     }
 
 	@RequestMapping(value = "/carteles")
@@ -45,5 +45,14 @@ public class PagesInfoController {
 		Map<String, Object> modelo = new HashMap<String, Object>();
 
 		return new ModelAndView("content/carteles", "modelo", modelo);
+	}
+	
+	@RequestMapping(value = "/actividades_culturales")
+	public ModelAndView handleActividadesCulturales(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+
+		Map<String, Object> modelo = new HashMap<String, Object>();
+
+		return new ModelAndView("content/actividades_culturales", "modelo", modelo);
 	}
 }
