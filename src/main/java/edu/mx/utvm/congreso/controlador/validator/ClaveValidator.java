@@ -6,6 +6,8 @@ import org.springframework.validation.Validator;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
 import edu.mx.utvm.congreso.controlador.formbeans.FormPreRegister;
+import edu.mx.utvm.congreso.controlador.formbeans.FormRegisterAccount;
+import edu.mx.utvm.congreso.controlador.formbeans.FormRegisterParticipation;
 
 @Component
 public class ClaveValidator extends LocalValidatorFactoryBean implements Validator{
@@ -13,7 +15,7 @@ public class ClaveValidator extends LocalValidatorFactoryBean implements Validat
 	@Override
 	public void validate(Object object, Errors error) {
 		super.validate(object, error);
-		FormPreRegister register = (FormPreRegister) object;
+		FormRegisterAccount register = (FormRegisterAccount) object;
 		if(!register.getClave().equals(register.getConfirmacionClave())){
 			error.rejectValue("claveValidator", "clave.validation");
 		}
@@ -21,7 +23,9 @@ public class ClaveValidator extends LocalValidatorFactoryBean implements Validat
 
 	@Override
 	public boolean supports(Class<?> clazz) {
-		return clazz.isAssignableFrom(FormPreRegister.class);
+		return clazz.isAssignableFrom(FormRegisterAccount.class)
+				|| clazz.isAssignableFrom(FormPreRegister.class)
+				|| clazz.isAssignableFrom(FormRegisterParticipation.class);
 	}
 
 }

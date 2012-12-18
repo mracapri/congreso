@@ -3,28 +3,43 @@ package edu.mx.utvm.congreso.controlador.formbeans;
 import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotEmpty;
 
-public class FormPreRegister extends FormRegisterAccount{
-	
+public class FormRegisterParticipation extends FormRegisterAccount {
+
+	@NotEmpty
+	private String idInstitucionProcedencia;
+
 	@NotEmpty
 	@Size(min = 1, max = 30)
 	private String nombre;
-	
+
 	@NotEmpty
 	@Size(min = 1, max = 30)
 	private String apellidoPaterno;
-	
+
 	@NotEmpty
 	@Size(min = 1, max = 30)
 	private String apellidoMaterno;
-	
+
 	@NotEmpty
-	private String idInstitucionProcedencia;	
-	
+	private String telefono;
+
 	@NotEmpty
 	private String idOcupacion;
-	
+
 	@NotEmpty
-	private String telefono;	
+	@Size(min = 1, max = 50)
+	private String nombreDeLaParticipacion;
+
+	@NotEmpty
+	private String idTipoParticipacion;
+
+	public String getIdInstitucionProcedencia() {
+		return idInstitucionProcedencia;
+	}
+
+	public void setIdInstitucionProcedencia(String idInstitucionProcedencia) {
+		this.idInstitucionProcedencia = idInstitucionProcedencia;
+	}
 
 	public String getNombre() {
 		return nombre;
@@ -50,12 +65,12 @@ public class FormPreRegister extends FormRegisterAccount{
 		this.apellidoMaterno = apellidoMaterno;
 	}
 
-	public String getIdInstitucionProcedencia() {
-		return idInstitucionProcedencia;
+	public String getTelefono() {
+		return telefono;
 	}
 
-	public void setIdInstitucionProcedencia(String idInstitucionProcedencia) {
-		this.idInstitucionProcedencia = idInstitucionProcedencia;
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
 	}
 
 	public String getIdOcupacion() {
@@ -66,12 +81,20 @@ public class FormPreRegister extends FormRegisterAccount{
 		this.idOcupacion = idOcupacion;
 	}
 
-	public String getTelefono() {
-		return telefono;
+	public String getNombreDeLaParticipacion() {
+		return nombreDeLaParticipacion;
 	}
 
-	public void setTelefono(String telefono) {
-		this.telefono = telefono;
+	public void setNombreDeLaParticipacion(String nombreDeLaParticipacion) {
+		this.nombreDeLaParticipacion = nombreDeLaParticipacion;
 	}
-	
+
+	public String getIdTipoParticipacion() {
+		return idTipoParticipacion;
+	}
+
+	public void setIdTipoParticipacion(String idTipoParticipacion) {
+		this.idTipoParticipacion = idTipoParticipacion;
+	}
+
 }
