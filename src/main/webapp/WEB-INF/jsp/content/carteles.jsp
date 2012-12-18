@@ -4,7 +4,7 @@
 	Carteles	
 </h3>
 <p>
-	De aproor.
+	De aproor. Este es otro cambio
 </p>
 
 <%@ include file="/WEB-INF/jsp/contenido_despues.jsp" %>
