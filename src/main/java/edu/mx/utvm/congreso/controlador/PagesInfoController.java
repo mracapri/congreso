@@ -37,4 +37,13 @@ public class PagesInfoController {
         
     	return new ModelAndView("content/conferencias", "modelo", modelo);
     }
+
+	@RequestMapping(value = "/carteles")
+	public ModelAndView handleCarteles(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+
+		Map<String, Object> modelo = new HashMap<String, Object>();
+
+		return new ModelAndView("content/carteles", "modelo", modelo);
+	}
 }
