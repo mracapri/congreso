@@ -1,42 +1,42 @@
 <%@ include file="/WEB-INF/jsp/contenido_antes.jsp"%>
 
 <h3>Ponencias</h3>
-<p>De aproximadamente 20 minutos de duración, donde un especialista
-	en alguno de los temas a tratar brinda a los asistentes a la reunión
-	que consideran a los temas así abordados como parte de su campo de
-	interés. Se abordan los temas de alimentos y productos agroindustriales
-	desde diferentes vertientes dando por resultado un efecto sistémico,
-	atendiéndose desde diferentes puntos de vista de acuerdo al área de
-	conocimiento, de acuerdo a los ejes temáticos siguientes:</p>
+<p>De aproximadamente 20 minutos de duraci&oacute;n, donde un especialista
+	en alguno de los temas a tratar brinda a los asistentes a la reuni&oacute;n
+	que consideran a los temas as&iacute; abordados como parte de su campo de
+	inter&eacute;s. Se abordan los temas de alimentos y productos agroindustriales
+	desde diferentes vertientes dando por resultado un efecto sist&eacute;mico,
+	atendi&eacute;ndose desde diferentes puntos de vista de acuerdo al &aacute;rea de
+	conocimiento, de acuerdo a los ejes tem&aacute;ticos siguientes:</p>
 <ol>
-	<li>Biotecnología Alimentaria (BA)
+	<li>Biotecnolog&iacute;a Alimentaria (BA)
 		<ol type="a">
 			<li>Fermentaciones industriales</li>
-			<li>Biosíntesis</li>
+			<li>Bios&iacute;ntesis</li>
 			<li>Cultivo de Tejidos.</li>
-			<li>Fisiología y Tecnología postcosecha de vegetales.</li>
+			<li>Fisiolog&iacute;a y Tecnolog&iacute;a postcosecha de vegetales.</li>
 		</ol>
 	</li>
 	<li>Inocuidad Alimentaria (IA)
 		<ol type="a">
 			<li>Normatividad</li>
-			<li>Diagnósticos y Sistemas de reducción de Riesgos.</li>
+			<li>Diagn&oacute;sticos y Sistemas de reducci&oacute;n de Riesgos.</li>
 			<li>Certificaciones en inocuidad alimentaria</li>
 		</ol>
 	</li>
 	<li>Productos Agroindustriales como agronegocios (AA)
 		<ol type="a">
-			<li>Comercialización</li>
+			<li>Comercializaci&oacute;n</li>
 			<li>Estudios de mercado</li>
 			<li>Financiamiento</li>
 			<li>Oportunidades de negocio</li>
 			<li>Tendencias alimentarias en los agronegocios</li>
 		</ol>
 	</li>
-	<li>Aplicaciones de la computación en la agroindustria (ACA)
+	<li>Aplicaciones de la computaci&oacute;n en la agroindustria (ACA)
 		<ol type="a">
-			<li>Simulación</li>
-			<li>Sistemas de información</li>
+			<li>Simulaci&oacute;n</li>
+			<li>Sistemas de informaci&oacute;n</li>
 			<li>Desarrollo de software</li>
 		</ol>
 	</li>
@@ -47,56 +47,56 @@
 			<li>Bioprocesos</li>
 		</ol>
 	</li>
-	<li>Aplicaciones de la energía renovable en la conservación y
-		transformación de los alimentos (AER)
+	<li>Aplicaciones de la energ&iacute;a renovable en la conservaci&oacute;n y
+		transformaci&oacute;n de los alimentos (AER)
 		<ol type="a">
-			<li>Energía Solar(cocina, refrigeración, deshidratación,
-				generación de vapor)</li>
-			<li>Energía Eólica.</li>
-			<li>Energía Geotérmica.</li>
+			<li>Energ&iacute;a Solar(cocina, refrigeraci&oacute;n, deshidrataci&oacute;n,
+				generaci&oacute;n de vapor)</li>
+			<li>Energ&iacute;a E&oacute;lica.</li>
+			<li>Energ&iacute;a Geot&eacute;rmica.</li>
 			<li>Biocombustibles.</li>
 		</ol>
 	</li>
 	<li>Ciencia de los alimentos (CA)
 		<ol type="a">
-			<li>Toxicología de los alimentos</li>
-			<li>Microbiología de los alimentos</li>
-			<li>Bioquímica de los alimentos.</li>
-			<li>Metodología de Análisis físico químico de Alimentos (MA)</li>
+			<li>Toxicolog&iacute;a de los alimentos</li>
+			<li>Microbiolog&iacute;a de los alimentos</li>
+			<li>Bioqu&iacute;mica de los alimentos.</li>
+			<li>Metodolog&iacute;a de An&aacute;lisis f&iacute;sico qu&iacute;mico de Alimentos (MA)</li>
 		</ol>
 	</li>
 	<li>Equipo para la agroindustria (EIA)
 		<ol type="a">
 			<li>Diseño de equipo</li>
-			<li>Innovación en los equipos.</li>
+			<li>Innovaci&oacute;n en los equipos.</li>
 		</ol>
 	</li>
-	<li>Tecnologías regionales (TR)
+	<li>Tecnolog&iacute;as regionales (TR)
 		<ol type="a">
-			<li>Tecnologías alimentarias de grupos étnicos.</li>
-			<li>Procesos de mejora de las tecnologías regionales.</li>
+			<li>Tecnolog&iacute;as alimentarias de grupos &eacute;tnicos.</li>
+			<li>Procesos de mejora de las tecnolog&iacute;as regionales.</li>
 		</ol>
 	</li>
 	<li>Turismo Rural (TU)
 		<ol type="a">
 			<li>Proyectos en agroturismo.</li>
-			<li>Los procesos agroindustriales como potencial turístico.</li>
+			<li>Los procesos agroindustriales como potencial tur&iacute;stico.</li>
 			<li>Etnoturismo.</li>
 		</ol>
 	</li>
-	<li>Salud y Nutrición (SN)
+	<li>Salud y Nutrici&oacute;n (SN)
 		<ol type="a">
 			<li>Alimentos Funcionales.</li>
-			<li>Alimentación para grupos vulnerables.</li>
+			<li>Alimentaci&oacute;n para grupos vulnerables.</li>
 			<li>Plantas medicinales.</li>
-			<li>Farmacología.</li>
+			<li>Farmacolog&iacute;a.</li>
 		</ol>
 	</li>
 	<li>Acuicultura (AC)
 		<ol type="a">
-			<li>Sistemas de producción acuícola</li>
+			<li>Sistemas de producci&oacute;n acu&iacute;cola</li>
 			<li>Infraestructura</li>
-			<li>Proyectos de desarrollo acuícola.</li>
+			<li>Proyectos de desarrollo acu&iacute;cola.</li>
 		</ol>
 	</li>
 </ol>

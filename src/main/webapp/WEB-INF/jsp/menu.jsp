@@ -1,7 +1,7 @@
 <blockquote>
 	<p>
 		<strong>
-			<em>"Impulsando el desarrollo tecnológico sustentable"</em>
+			<em>"Impulsando el desarrollo tecnol&oacute;gico sustentable"</em>
 		</strong>
 	</p>
 	<small>Congreso Nacional Nacional Bioalimentario</small>
@@ -11,7 +11,7 @@
 	<li class="nav-header">Congreso Nacional</li>
 	<li><a class="active" href="${pageContext.request.contextPath}">Inicio</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/register/form">Registro</a></li>
-	<li><a href="${pageContext.request.contextPath}/resolver/register_participation/form">Registro de participación</a></li>
+	<li><a href="${pageContext.request.contextPath}/resolver/register_participation/form">Registro de participaci&oacute;n</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/register_academy/form">Registro de cuerpo academico</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/register_fiscal_data/form">Registro de datos fiscales</a></li>	
 	<li><a href="#">Informacion turistica</a></li>
