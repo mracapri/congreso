@@ -45,5 +45,50 @@
 	<li>Establecer redes de colaboración entre los Cuerpos Académicos</li>
 </ol>
 
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		<h3 id="myModalLabel">Congreso Nacional Bioalimentario</h3>
+	</div>
+	<div class="modal-body">
+		<div class="row-fluid">
+			<div class="span12">				
+				<div class="span6">
+					<img src="${pageContext.request.contextPath}/recursos/images/LOGO.png">
+				</div>
+				<div class="span6">
+					<div class="row-fluid">
+						<div class="span12">
+							<p><b>Palabras del Rector</b></p>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+								sed do eiusmod tempor incididunt ut labore et dolore magna 
+								aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+								ullamco laboris nisi ut aliquip ex ea commodo consequat.
+							</p>
+						</div>	
+					</div>
+					<div class="row-fluid">
+						<div class="span12">
+							<p><b>Interes</b></p>
+							<ul>
+								<li>
+									<a href="${pageContext.request.contextPath}">Sala de prensa</a>
+								</li>
+								<li>
+									<a href="${pageContext.request.contextPath}">Galeria de imagenes</a>
+								</li>
+							</ul>
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+	</div>
+</div>
 
 <%@ include file="/WEB-INF/jsp/contenido_despues.jsp" %>
+<script type='text/javascript' src='${pageContext.request.contextPath}/recursos/js/index.js'></script>
