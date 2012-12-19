@@ -6,6 +6,7 @@ import org.springframework.validation.Validator;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
 import edu.mx.utvm.congreso.controlador.formbeans.FormPreRegister;
+import edu.mx.utvm.congreso.controlador.formbeans.FormRegisterAcademy;
 import edu.mx.utvm.congreso.controlador.formbeans.FormRegisterAccount;
 import edu.mx.utvm.congreso.controlador.formbeans.FormRegisterParticipation;
 
@@ -25,7 +26,8 @@ public class ClaveValidator extends LocalValidatorFactoryBean implements Validat
 	public boolean supports(Class<?> clazz) {
 		return clazz.isAssignableFrom(FormRegisterAccount.class)
 				|| clazz.isAssignableFrom(FormPreRegister.class)
-				|| clazz.isAssignableFrom(FormRegisterParticipation.class);
+				|| clazz.isAssignableFrom(FormRegisterParticipation.class)
+				|| clazz.isAssignableFrom(FormRegisterAcademy.class);
 	}
 
 }

@@ -14,8 +14,10 @@ import org.springframework.ui.velocity.VelocityEngineUtils;
 @Service
 public class MailServiceImpl implements MailService{
 	
-	public static final String TEMPLATE_CONFIRMATION = "mail_confirmation.vm";
-	public static final String TEMPLATE_SUCCESS = "mail_success.vm";
+	public static final String TEMPLATE_PREREGISTER_CONFIRMATION = "mail_preregister_confirmation.vm";	
+	public static final String TEMPLATE_PREREGISTER_SUCCESS = "mail_preregister_success.vm";
+	public static final String TEMPLATE_PARTICIPATION_CONFIRMATION = "mail_participation_confirmation.vm";
+	public static final String TEMPLATE_PARTICIPATION_SUCCESS = "mail_participation_success.vm";
 
 	@Autowired
 	private JavaMailSender mailSender;

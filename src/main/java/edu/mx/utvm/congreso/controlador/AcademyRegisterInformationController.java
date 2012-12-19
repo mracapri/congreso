@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import edu.mx.utvm.congreso.controlador.formbeans.FormPreRegister;
+import edu.mx.utvm.congreso.controlador.formbeans.FormRegisterAcademy;
 import edu.mx.utvm.congreso.controlador.validator.ClaveValidator;
 import edu.mx.utvm.congreso.controlador.validator.CorreoElectronicoValidator;
 import edu.mx.utvm.congreso.service.mail.MailService;
@@ -33,14 +33,13 @@ import edu.mx.utvm.congreso.service.mail.MailServiceImpl;
 import edu.mx.utvm.congreso.util.Util;
 
 @Controller
-@RequestMapping("/register")
-public class PreRegisterInformationController {
+@RequestMapping("/register_academy")
+public class AcademyRegisterInformationController {
 	protected final Log log = LogFactory.getLog(getClass());
 	
-	private Map<String,String> ocupaciones;
 	private Map<String,String> universidadesDeProcencia;
 	
-	@Value("${URL_CONFIRM_PREREGISTER}")
+	@Value("${URL_CONFIRM_ACADEMY}")
 	String urlConfirm;
 	
 	@Autowired	
@@ -52,16 +51,10 @@ public class PreRegisterInformationController {
 	@Autowired
 	private MailService mail;
 	
-	public PreRegisterInformationController() {
-		/* Carga ocupaciones */
-    	this.ocupaciones = new LinkedHashMap<String,String>();
-    	this.ocupaciones.put("1", "Estudiante");
-    	this.ocupaciones.put("2", "Participante");
-    	
+	public AcademyRegisterInformationController() {    	
     	this.universidadesDeProcencia = new LinkedHashMap<String,String>();
     	this.universidadesDeProcencia.put("1", "UTVM");
     	this.universidadesDeProcencia.put("2", "UTTT");    
-    	
 	}	
 	
     @RequestMapping(value="/save", method = RequestMethod.GET)
@@ -72,65 +65,62 @@ public class PreRegisterInformationController {
     @RequestMapping(value="/confirm/{token}", method = RequestMethod.GET)
 	public ModelAndView confirmaRegistro(@PathVariable("token") String token)
             throws ServletException, IOException {
-    	ModelAndView modelAndView = new ModelAndView("register/confirm_success");
+    	ModelAndView modelAndView = new ModelAndView("register_academy/confirm_success");
     	log.debug("EL TOKEN ES: " + token);
     	return modelAndView;
     }
 	
 	@RequestMapping(value="/save", method = RequestMethod.POST)
 	public ModelAndView guardar(HttpServletRequest request,
-			@ModelAttribute("formRegister") @Valid FormPreRegister formRegister,
+			@ModelAttribute("formRegisterAcademy") @Valid FormRegisterAcademy formRegisterAcademy,
 			BindingResult result) {
 
 		log.debug("RESULT: " + ToStringBuilder.reflectionToString(result));
 		
-    	ModelAndView modelAndView = new ModelAndView("register/register");
-    	modelAndView.addObject("formRegister", formRegister);
+    	ModelAndView modelAndView = new ModelAndView("register_academy/register");
+    	modelAndView.addObject("formRegisterAcademy", formRegisterAcademy);
     	modelAndView.addObject("result", result);
-    	modelAndView.addObject("ocupaciones", this.ocupaciones);
     	modelAndView.addObject("sectores", this.universidadesDeProcencia);
     	
     	if(!result.hasErrors()){	
 
     		/* Mapa de propiedades */
         	Map<String, String> model = new HashMap<String, String>();        	        	
-			String nombre = formRegister.getNombre() + " "
-					+ formRegister.getApellidoPaterno()
-					+ formRegister.getApellidoMaterno();
+			String nombre = formRegisterAcademy.getNombreDelCuerpoAcademico();
 			
 			String token = Util.generateToken();
 			String urlConfirm = this.urlConfirm + token;
         	model.put("nombre", nombre);
-        	model.put("url", urlConfirm);
+        	model.put("url", urlConfirm);        	
         	
     		/* Envio de correo electronico */
         	
-    		mail.sendMail("mrangeles@utvm.edu.mx", formRegister.getCorreoElectronico(),
-    				"Confirmación de cuenta", model, MailServiceImpl.TEMPLATE_PREREGISTER_CONFIRMATION);
+    		mail.sendMail("mrangeles@utvm.edu.mx", formRegisterAcademy.getCorreoElectronico(),
+    				"Confirmación de cuenta", model, MailServiceImpl.TEMPLATE_PARTICIPATION_SUCCESS);
     		
     		    		
     		log.debug("CODIGO: " + token);
     		log.debug("URL_CONFIRM: " + urlConfirm);
     		
-    		modelAndView.setViewName("register/register_success");
+    		modelAndView.setViewName("register_academy/register_success");
     	}    	    			    	
     	return modelAndView;
 	}    
 
 	@RequestMapping(value="/form")
 	public ModelAndView mostrarFormularioRegistro(
-			@ModelAttribute("formRegister") FormPreRegister formRegister,
+			@ModelAttribute("formRegisterAcademy") FormRegisterAcademy formRegisterAcademy,
 			HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    	ModelAndView modelAndView = new ModelAndView("register/register");
-    	modelAndView.addObject("ocupaciones", this.ocupaciones);
+    	ModelAndView modelAndView = new ModelAndView("register_academy/register");
     	modelAndView.addObject("sectores", this.universidadesDeProcencia);
     	return modelAndView;
     }
     
-	@InitBinder("formRegister")
+	@InitBinder("formRegisterAcademy")
 	protected void initBinder(WebDataBinder webDataBinder) {
 		webDataBinder.setValidator(claveValidator);
 		webDataBinder.setValidator(correoElectronicoValidator);
 	}
+	
 }

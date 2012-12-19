@@ -27,4 +27,7 @@
 	<!-- Email -->
 	<import resource="AppCtx-Mail.xml" />
 
+	<!-- Upoad file -->
+	<import resource="AppCtx-UploadFiles.xml" />
+	
 </beans>

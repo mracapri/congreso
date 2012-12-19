@@ -1,8 +1,6 @@
 package edu.mx.utvm.congreso.controlador;
 
 import java.io.IOException;
-import java.math.BigInteger;
-import java.security.SecureRandom;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -28,10 +26,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.mx.utvm.congreso.controlador.formbeans.FormRegisterParticipation;
+import edu.mx.utvm.congreso.controlador.validator.ArchivoValidator;
 import edu.mx.utvm.congreso.controlador.validator.ClaveValidator;
 import edu.mx.utvm.congreso.controlador.validator.CorreoElectronicoValidator;
 import edu.mx.utvm.congreso.service.mail.MailService;
 import edu.mx.utvm.congreso.service.mail.MailServiceImpl;
+import edu.mx.utvm.congreso.util.Util;
 
 @Controller
 @RequestMapping("/register_participation")
@@ -42,7 +42,7 @@ public class ParticipationRegisterInformationController {
 	private Map<String,String> universidadesDeProcencia;
 	private Map<String,String> tipoParticipacion;
 	
-	@Value("${URL_CONFIRM}")
+	@Value("${URL_CONFIRM_PARTICIPATION}")
 	String urlConfirm;
 	
 	@Autowired	
@@ -50,6 +50,9 @@ public class ParticipationRegisterInformationController {
 	
 	@Autowired
 	private CorreoElectronicoValidator correoElectronicoValidator;
+
+	@Autowired
+	private ArchivoValidator archivoValidator;
 	
 	@Autowired
 	private MailService mail;
@@ -105,15 +108,18 @@ public class ParticipationRegisterInformationController {
 					+ formRegisterParticipation.getApellidoPaterno()
 					+ formRegisterParticipation.getApellidoMaterno();
 			
-			String token = generateToken();
+			String token = Util.generateToken();
 			String urlConfirm = this.urlConfirm + token;
         	model.put("nombre", nombre);
         	model.put("url", urlConfirm);
         	
+        	log.debug("bytes: " +formRegisterParticipation.getArchivo().getBytes());
+        	log.debug("nombre: " +formRegisterParticipation.getArchivo().getOriginalFilename());
+        	
     		/* Envio de correo electronico */
         	
     		mail.sendMail("mrangeles@utvm.edu.mx", formRegisterParticipation.getCorreoElectronico(),
-    				"Confirmación de cuenta", model, MailServiceImpl.TEMPLATE_CONFIRMATION);
+    				"Confirmación de cuenta", model, MailServiceImpl.TEMPLATE_PARTICIPATION_SUCCESS);
     		
     		    		
     		log.debug("CODIGO: " + token);
@@ -140,10 +146,6 @@ public class ParticipationRegisterInformationController {
 	protected void initBinder(WebDataBinder webDataBinder) {
 		webDataBinder.setValidator(claveValidator);
 		webDataBinder.setValidator(correoElectronicoValidator);
-	}
-	
-	private String generateToken(){
-		SecureRandom random = new SecureRandom();
-		return new BigInteger(130, random).toString(32);
+		webDataBinder.setValidator(archivoValidator);
 	}
 }

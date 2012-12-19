@@ -1,7 +1,9 @@
 package edu.mx.utvm.congreso.controlador.formbeans;
 
 import javax.validation.constraints.Size;
+
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 public class FormRegisterParticipation extends FormRegisterAccount {
 
@@ -32,6 +34,8 @@ public class FormRegisterParticipation extends FormRegisterAccount {
 
 	@NotEmpty
 	private String idTipoParticipacion;
+	
+	private CommonsMultipartFile archivo;
 
 	public String getIdInstitucionProcedencia() {
 		return idInstitucionProcedencia;
@@ -95,6 +99,14 @@ public class FormRegisterParticipation extends FormRegisterAccount {
 
 	public void setIdTipoParticipacion(String idTipoParticipacion) {
 		this.idTipoParticipacion = idTipoParticipacion;
+	}
+
+	public CommonsMultipartFile getArchivo() {
+		return archivo;
+	}
+
+	public void setArchivo(CommonsMultipartFile archivo) {
+		this.archivo = archivo;
 	}
 
 }

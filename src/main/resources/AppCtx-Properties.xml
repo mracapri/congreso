@@ -10,7 +10,9 @@
 	<bean id="propertyConfigurer" scope="singleton" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="properties">
 			<props>
-				<prop key="URL_CONFIRM">localhost:8080/congreso/resolver/register/confirm/</prop>
+				<prop key="URL_CONFIRM_PREREGISTER">localhost:8080/congreso/resolver/register/confirm/</prop>
+				<prop key="URL_CONFIRM_PARTICIPATION">localhost:8080/congreso/resolver/register_participation/confirm/</prop>
+				<prop key="URL_CONFIRM_ACADEMY">localhost:8080/congreso/resolver/register_academy/confirm/</prop>
 	       	</props>
 	     </property>
 	</bean>
