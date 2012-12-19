@@ -12,7 +12,8 @@
 	<li><a class="active" href="${pageContext.request.contextPath}">Inicio</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/register/form">Registro</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/register_participation/form">Registro de participación</a></li>
-	<li><a href="${pageContext.request.contextPath}/resolver/register_academy/form">Registro de cuerpo academico</a></li>	
+	<li><a href="${pageContext.request.contextPath}/resolver/register_academy/form">Registro de cuerpo academico</a></li>
+	<li><a href="${pageContext.request.contextPath}/resolver/register_fiscal_data/form">Registro de datos fiscales</a></li>	
 	<li><a href="#">Informacion turistica</a></li>
 	<li><a href="#">SEDES</a></li>
 	<li><a href="#">Como llegar</a></li>
