@@ -28,6 +28,6 @@
 	<import resource="AppCtx-Mail.xml" />
 
 	<!-- Upoad file -->
-	<import resource="AppCtx-UploadFiles.xml" />
+	<import resource="AppCtx-UploadFiles.xml" />	
 	
 </beans>

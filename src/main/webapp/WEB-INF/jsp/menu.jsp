@@ -9,11 +9,9 @@
 <ul class="nav nav-list">  
 	<li class="divider"></li>
 	<li class="nav-header">Congreso Nacional</li>
-	<li><a class="active" href="${pageContext.request.contextPath}">Inicio</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/register/form">Registro</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/register_participation/form">Registro de participaci&oacute;n</a></li>
-	<li><a href="${pageContext.request.contextPath}/resolver/register_academy/form">Registro de cuerpo academico</a></li>
-	<li><a href="${pageContext.request.contextPath}/resolver/register_fiscal_data/form">Registro de datos fiscales</a></li>	
+	<li><a href="${pageContext.request.contextPath}/resolver/register_academy/form">Registro de cuerpo academico</a></li>	
 	<li><a href="#">Informacion turistica</a></li>
 	<li><a href="#">SEDES</a></li>
 	<li><a href="#">Como llegar</a></li>
@@ -24,8 +22,8 @@
 	<li class="divider"></li>
 	<li class="nav-header">Importante</li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/conferencias">Conferencias</a></li>
-	<li><a href="#">Talleres</a></li>
-	<li><a href="#">Concursos</a></li>
+	<li><a href="${pageContext.request.contextPath}">Talleres</a></li>
+	<li><a href="${pageContext.request.contextPath}">Concursos</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/ponencias">Ponencias</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/carteles">Carteles</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/actividades_culturales">Actividades culturales</a></li>

@@ -1,7 +1,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>7&deg; Congreso Nacional Bioalimentario</title>
 <link href="${pageContext.request.contextPath}/recursos/css/main.css" rel="stylesheet" type="text/css" media="screen" />
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">	
+<link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/recursos/images/favicon.ico">	
 <!-- css bootstrap framework -->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/recursos/bootstrap/css/bootstrap.min.css" type="text/css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/recursos/bootstrap/css/bootstrap-responsive.min.css" type="text/css">   

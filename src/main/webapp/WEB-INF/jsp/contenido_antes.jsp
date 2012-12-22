@@ -4,7 +4,7 @@
 <head>
 	<%@ include file="/WEB-INF/jsp/resources.jsp" %>
 </head>
-<body>
+<body>	
 	<!-- wrapper-->
 	<div id="wrapper">
 		<!-- banner-->
@@ -13,6 +13,37 @@
 			<img src="${pageContext.request.contextPath}/recursos/images/FOTOS.png" />
 		</div>
 		<!-- fin banner-->
+		<div class="row-fluid">
+			<div class="navbar">
+				<div class="navbar-inner">
+					<a class="brand" href="${pageContext.request.contextPath}">Inicio</a>
+					<ul class="nav">
+												
+						<li>
+							<a href="${pageContext.request.contextPath}/resolver/login.htm">
+							Iniciar Sesi&oacuten
+							</a>
+						</li>							
+						
+						<sec:authorize access="hasRole('registered')">
+							<li>
+								<a href="${pageContext.request.contextPath}/resolver/register_fiscal_data/form">Registro de datos fiscales</a>
+							</li>
+							<li>
+								<a href="#">
+									Armar mis actividades
+								</a>
+							</li>
+							<li>
+								<a href="${pageContext.request.contextPath}/j_spring_security_logout">
+										Cerrar Sesi&oacuten
+								</a>
+							</li>
+						</sec:authorize>							
+					</ul>
+				</div>
+			</div>
+		</div>
 		<div class="row-fluid">
 			<div class="span3">
 				<%@ include file="/WEB-INF/jsp/menu.jsp" %>
