@@ -28,8 +28,8 @@ import org.springframework.web.servlet.ModelAndView;
 import edu.mx.utvm.congreso.controlador.formbeans.FormRegisterAcademy;
 import edu.mx.utvm.congreso.controlador.validator.ClaveValidator;
 import edu.mx.utvm.congreso.controlador.validator.CorreoElectronicoValidator;
-import edu.mx.utvm.congreso.service.mail.MailService;
-import edu.mx.utvm.congreso.service.mail.MailServiceImpl;
+import edu.mx.utvm.congreso.mail.MailService;
+import edu.mx.utvm.congreso.mail.MailServiceImpl;
 import edu.mx.utvm.congreso.util.Util;
 
 @Controller

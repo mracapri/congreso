@@ -5,7 +5,18 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
                              http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
  
-    <display-name>congresobioalmentario</display-name>
+    <display-name>congresobioalmentario</display-name>	 
+	 
+	 <!-- Security -->
+	<filter>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    </filter>
+
+    <filter-mapping>
+      <filter-name>springSecurityFilterChain</filter-name>
+      <url-pattern>/*</url-pattern>
+    </filter-mapping>
 	 
 	<!-- Creates the Spring Container shared by all Servlets and Filters -->
 	<listener>
@@ -27,17 +38,6 @@
     <filter-mapping>
         <filter-name>encoding-filter</filter-name>
         <url-pattern>/*</url-pattern>
-    </filter-mapping>
-    
-	 <!-- Security -->
-	<filter>
-        <filter-name>springSecurityFilterChain</filter-name>
-        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
-    </filter>
-
-    <filter-mapping>
-      <filter-name>springSecurityFilterChain</filter-name>
-      <url-pattern>/*</url-pattern>
     </filter-mapping>
  
      <!-- Expire filter -->

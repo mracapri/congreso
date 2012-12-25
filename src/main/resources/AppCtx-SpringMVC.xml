@@ -11,6 +11,7 @@
 
 	<mvc:annotation-driven />
 	<context:component-scan base-package="edu.mx.utvm" />
+	<context:annotation-config />
 	
 	<bean id="messageSource" 
 		class="org.springframework.context.support.ResourceBundleMessageSource"
@@ -28,6 +29,10 @@
 	<import resource="AppCtx-Mail.xml" />
 
 	<!-- Upoad file -->
-	<import resource="AppCtx-UploadFiles.xml" />	
+	<import resource="AppCtx-UploadFiles.xml" />
+	
+	<!-- Persistence -->
+	<import resource="AppCtx-Persistence.xml" />
+	<import resource="AppCtx-Transactions.xml" />		
 	
 </beans>

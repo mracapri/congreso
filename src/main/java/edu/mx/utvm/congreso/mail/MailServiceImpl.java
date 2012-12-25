@@ -1,4 +1,4 @@
-package edu.mx.utvm.congreso.service.mail;
+package edu.mx.utvm.congreso.mail;
 
 import java.util.Map;
 

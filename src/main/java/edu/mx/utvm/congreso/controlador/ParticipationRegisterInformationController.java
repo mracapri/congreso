@@ -29,8 +29,8 @@ import edu.mx.utvm.congreso.controlador.formbeans.FormRegisterParticipation;
 import edu.mx.utvm.congreso.controlador.validator.ArchivoValidator;
 import edu.mx.utvm.congreso.controlador.validator.ClaveValidator;
 import edu.mx.utvm.congreso.controlador.validator.CorreoElectronicoValidator;
-import edu.mx.utvm.congreso.service.mail.MailService;
-import edu.mx.utvm.congreso.service.mail.MailServiceImpl;
+import edu.mx.utvm.congreso.mail.MailService;
+import edu.mx.utvm.congreso.mail.MailServiceImpl;
 import edu.mx.utvm.congreso.util.Util;
 
 @Controller

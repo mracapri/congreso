@@ -28,8 +28,10 @@ import org.springframework.web.servlet.ModelAndView;
 import edu.mx.utvm.congreso.controlador.formbeans.FormPreRegister;
 import edu.mx.utvm.congreso.controlador.validator.ClaveValidator;
 import edu.mx.utvm.congreso.controlador.validator.CorreoElectronicoValidator;
-import edu.mx.utvm.congreso.service.mail.MailService;
-import edu.mx.utvm.congreso.service.mail.MailServiceImpl;
+import edu.mx.utvm.congreso.mail.MailService;
+import edu.mx.utvm.congreso.mail.MailServiceImpl;
+import edu.mx.utvm.congreso.service.CatalogServiceImpl;
+import edu.mx.utvm.congreso.service.CatalogService;
 import edu.mx.utvm.congreso.util.Util;
 
 @Controller
@@ -52,6 +54,9 @@ public class PreRegisterInformationController {
 	@Autowired
 	private MailService mail;
 	
+	@Autowired
+	private CatalogService catalogService;
+
 	public PreRegisterInformationController() {
 		/* Carga ocupaciones */
     	this.ocupaciones = new LinkedHashMap<String,String>();
@@ -60,8 +65,7 @@ public class PreRegisterInformationController {
     	
     	this.universidadesDeProcencia = new LinkedHashMap<String,String>();
     	this.universidadesDeProcencia.put("1", "UTVM");
-    	this.universidadesDeProcencia.put("2", "UTTT");    
-    	
+    	this.universidadesDeProcencia.put("2", "UTTT");
 	}	
 	
     @RequestMapping(value="/save", method = RequestMethod.GET)
@@ -122,6 +126,11 @@ public class PreRegisterInformationController {
 			@ModelAttribute("formRegister") FormPreRegister formRegister,
 			HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+		
+		log.debug("ES NULO: " + (catalogService.findAllUniversities()));
+		log.debug("ES NULO MAIL: " + (mail == null));
+		
+		
     	ModelAndView modelAndView = new ModelAndView("register/register");
     	modelAndView.addObject("ocupaciones", this.ocupaciones);
     	modelAndView.addObject("sectores", this.universidadesDeProcencia);
