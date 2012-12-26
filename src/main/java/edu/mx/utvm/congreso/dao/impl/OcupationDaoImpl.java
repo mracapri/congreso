@@ -11,49 +11,49 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import edu.mx.utvm.congreso.dao.IUniversityDao;
-import edu.mx.utvm.congreso.dominio.University;
+import edu.mx.utvm.congreso.dao.IOcupationDao;
+import edu.mx.utvm.congreso.dominio.Ocupation;
 @Repository
-public class UniversityDaoImpl extends JdbcTemplate implements IUniversityDao{
-	
+public class OcupationDaoImpl extends JdbcTemplate implements IOcupationDao{
+
 	@Autowired
 	@Override
 	public void setDataSource(DataSource dataSource) {
 		super.setDataSource(dataSource);
 	}
-
+	
 	@Override
-	public void create(University newInstance) {
+	public void create(Ocupation newInstance) {
 		throw new UnsupportedOperationException();
 		
 	}
 
 	@Override
-	public University read(Integer id) {
+	public Ocupation read(Integer id) {
 		throw new UnsupportedOperationException();
 	}
 
 	@Override
-	public void update(University transientObject) {
+	public void update(Ocupation transientObject) {
 		throw new UnsupportedOperationException();
 		
 	}
 
 	@Override
-	public void delete(University persistentObject) {
+	public void delete(Ocupation persistentObject) {
 		throw new UnsupportedOperationException();
 	}
 
 	@Override
-	public List<University> findAll() {
-		String sql = "SELECT * FROM UNIVERSITY";
-		List<University> result = this.query(sql, new RowMapper<University>() {
+	public List<Ocupation> findAll() {
+		String sql = "SELECT * FROM OCUPATION";
+		List<Ocupation> result = this.query(sql, new RowMapper<Ocupation>() {
 			@Override
-			public University mapRow(ResultSet rs, int rowNum) throws SQLException {
-				University university = new University();
-				university.setId(rs.getInt("ID"));
-				university.setName(rs.getString("NAME"));
-				return university;
+			public Ocupation mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Ocupation ocupation = new Ocupation();
+				ocupation.setId(rs.getInt("ID"));
+				ocupation.setName(rs.getString("NAME"));
+				return ocupation;
 			}
 		});
 		return result;

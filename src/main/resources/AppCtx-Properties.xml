@@ -10,6 +10,7 @@
 	<bean id="propertyConfigurer" scope="singleton" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="properties">
 			<props>
+			    <prop key="MAIL_SENDER">mrangeles@utvm.edu.mx</prop>
 				<prop key="URL_CONFIRM_PREREGISTER">localhost:8080/congreso/resolver/register/confirm/</prop>
 				<prop key="URL_CONFIRM_PARTICIPATION">localhost:8080/congreso/resolver/register_participation/confirm/</prop>
 				<prop key="URL_CONFIRM_ACADEMY">localhost:8080/congreso/resolver/register_academy/confirm/</prop>

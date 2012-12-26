@@ -6,7 +6,8 @@ public class PreRegisterInformation {
 	private String thirdName;
 	private String phone;
 	private Ocupation ocupation;
-	private String email;
+	private University university;
+	private InformationAccount informationAccount;
 	public String getName() {
 		return name;
 	}
@@ -37,10 +38,16 @@ public class PreRegisterInformation {
 	public void setOcupation(Ocupation ocupation) {
 		this.ocupation = ocupation;
 	}
-	public String getEmail() {
-		return email;
+	public University getUniversity() {
+		return university;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUniversity(University university) {
+		this.university = university;
+	}
+	public InformationAccount getInformationAccount() {
+		return informationAccount;
+	}
+	public void setInformationAccount(InformationAccount informationAccount) {
+		this.informationAccount = informationAccount;
 	}	
 }

@@ -1,20 +1,16 @@
 package edu.mx.utvm.congreso.controlador;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
-import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
@@ -28,22 +24,20 @@ import org.springframework.web.servlet.ModelAndView;
 import edu.mx.utvm.congreso.controlador.formbeans.FormPreRegister;
 import edu.mx.utvm.congreso.controlador.validator.ClaveValidator;
 import edu.mx.utvm.congreso.controlador.validator.CorreoElectronicoValidator;
-import edu.mx.utvm.congreso.mail.MailService;
-import edu.mx.utvm.congreso.mail.MailServiceImpl;
-import edu.mx.utvm.congreso.service.CatalogServiceImpl;
+import edu.mx.utvm.congreso.dominio.InformationAccount;
+import edu.mx.utvm.congreso.dominio.Ocupation;
+import edu.mx.utvm.congreso.dominio.PreRegisterInformation;
+import edu.mx.utvm.congreso.dominio.University;
 import edu.mx.utvm.congreso.service.CatalogService;
-import edu.mx.utvm.congreso.util.Util;
+import edu.mx.utvm.congreso.service.PreRegisterInformationService;
 
 @Controller
 @RequestMapping("/register")
 public class PreRegisterInformationController {
 	protected final Log log = LogFactory.getLog(getClass());
 	
-	private Map<String,String> ocupaciones;
-	private Map<String,String> universidadesDeProcencia;
-	
-	@Value("${URL_CONFIRM_PREREGISTER}")
-	String urlConfirm;
+	private List<Ocupation> ocupations;
+	private List<University> universities;	
 	
 	@Autowired	
 	private ClaveValidator claveValidator;
@@ -52,21 +46,17 @@ public class PreRegisterInformationController {
 	private CorreoElectronicoValidator correoElectronicoValidator;
 	
 	@Autowired
-	private MailService mail;
+	private CatalogService catalogService;
 	
 	@Autowired
-	private CatalogService catalogService;
-
-	public PreRegisterInformationController() {
-		/* Carga ocupaciones */
-    	this.ocupaciones = new LinkedHashMap<String,String>();
-    	this.ocupaciones.put("1", "Estudiante");
-    	this.ocupaciones.put("2", "Participante");
-    	
-    	this.universidadesDeProcencia = new LinkedHashMap<String,String>();
-    	this.universidadesDeProcencia.put("1", "UTVM");
-    	this.universidadesDeProcencia.put("2", "UTTT");
-	}	
+	private PreRegisterInformationService preRegisterInformationService; 
+	
+	private void loadCatalogs(ModelAndView model){
+		this.universities = catalogService.findAllUniversities();
+		this.ocupations = catalogService.findAllOcupations();
+		model.addObject("ocupations", this.ocupations);
+		model.addObject("universities", this.universities);
+	}
 	
     @RequestMapping(value="/save", method = RequestMethod.GET)
 	public String regresaFormulario() {
@@ -85,36 +75,36 @@ public class PreRegisterInformationController {
 	public ModelAndView guardar(HttpServletRequest request,
 			@ModelAttribute("formRegister") @Valid FormPreRegister formRegister,
 			BindingResult result) {
-
-		log.debug("RESULT: " + ToStringBuilder.reflectionToString(result));
 		
     	ModelAndView modelAndView = new ModelAndView("register/register");
     	modelAndView.addObject("formRegister", formRegister);
     	modelAndView.addObject("result", result);
-    	modelAndView.addObject("ocupaciones", this.ocupaciones);
-    	modelAndView.addObject("sectores", this.universidadesDeProcencia);
+    	loadCatalogs(modelAndView);
     	
     	if(!result.hasErrors()){	
-
-    		/* Mapa de propiedades */
-        	Map<String, String> model = new HashMap<String, String>();        	        	
-			String nombre = formRegister.getNombre() + " "
-					+ formRegister.getApellidoPaterno()
-					+ formRegister.getApellidoMaterno();
-			
-			String token = Util.generateToken();
-			String urlConfirm = this.urlConfirm + token;
-        	model.put("nombre", nombre);
-        	model.put("url", urlConfirm);
-        	
-    		/* Envio de correo electronico */
-        	
-    		mail.sendMail("mrangeles@utvm.edu.mx", formRegister.getCorreoElectronico(),
-    				"Confirmación de cuenta", model, MailServiceImpl.TEMPLATE_PREREGISTER_CONFIRMATION);
     		
-    		    		
-    		log.debug("CODIGO: " + token);
-    		log.debug("URL_CONFIRM: " + urlConfirm);
+    		// build object     		
+    		InformationAccount informationAccount = new InformationAccount();
+    		informationAccount.setEmail(formRegister.getCorreoElectronico());
+    		informationAccount.setPassword(formRegister.getClave());
+    		
+    		Ocupation ocupation = new Ocupation();
+    		ocupation.setId(Integer.parseInt(formRegister.getIdOcupacion()));
+    		
+    		University university = new University();
+    		university.setId(Integer.parseInt(formRegister.getIdInstitucionProcedencia()));
+    		
+    		PreRegisterInformation preRegisterInformation = new PreRegisterInformation();
+    		preRegisterInformation.setInformationAccount(informationAccount);
+    		preRegisterInformation.setName(formRegister.getNombre());
+    		preRegisterInformation.setPhone(formRegister.getTelefono());
+    		preRegisterInformation.setSecondName(formRegister.getApellidoPaterno());
+    		preRegisterInformation.setThirdName(formRegister.getApellidoMaterno());
+    		preRegisterInformation.setOcupation(ocupation);
+    		preRegisterInformation.setUniversity(university);
+    		
+    		// save object whit service    		
+    		preRegisterInformationService.save(preRegisterInformation);
     		
     		modelAndView.setViewName("register/register_success");
     	}    	    			    	
@@ -127,13 +117,8 @@ public class PreRegisterInformationController {
 			HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 		
-		log.debug("ES NULO: " + (catalogService.findAllUniversities()));
-		log.debug("ES NULO MAIL: " + (mail == null));
-		
-		
     	ModelAndView modelAndView = new ModelAndView("register/register");
-    	modelAndView.addObject("ocupaciones", this.ocupaciones);
-    	modelAndView.addObject("sectores", this.universidadesDeProcencia);
+    	loadCatalogs(modelAndView);	
     	return modelAndView;
     }
     

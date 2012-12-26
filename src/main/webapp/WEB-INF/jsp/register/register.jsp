@@ -56,7 +56,7 @@
 				<span class="obligatorio">*</span>
 				<form:select path="idInstitucionProcedencia">
 					<form:option value="" label="--- Seleccione ---"/>
-					<form:options items="${sectores}" />
+					<form:options items="${universities}" itemValue="id" itemLabel="name" />
 				</form:select>
 				<spring:hasBindErrors name="formRegister">
 					<span class="label label-important">
@@ -104,7 +104,7 @@
 				<span class="obligatorio">*</span>
 				<form:select path="idOcupacion">
 					<form:option value="" label="--- Seleccione ---"/>
-					<form:options items="${ocupaciones}" />
+					<form:options items="${ocupations}" itemValue="id" itemLabel="name" />
 				</form:select>
 				<spring:hasBindErrors name="formRegister">
 					<span class="label label-important">
