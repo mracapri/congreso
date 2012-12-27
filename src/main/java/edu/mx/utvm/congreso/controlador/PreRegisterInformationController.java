@@ -22,8 +22,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.mx.utvm.congreso.controlador.formbeans.FormPreRegister;
-import edu.mx.utvm.congreso.controlador.validator.ClaveValidator;
-import edu.mx.utvm.congreso.controlador.validator.CorreoElectronicoValidator;
+import edu.mx.utvm.congreso.controlador.validator.MainValidator;
 import edu.mx.utvm.congreso.dominio.InformationAccount;
 import edu.mx.utvm.congreso.dominio.Ocupation;
 import edu.mx.utvm.congreso.dominio.PreRegisterInformation;
@@ -39,11 +38,8 @@ public class PreRegisterInformationController {
 	private List<Ocupation> ocupations;
 	private List<University> universities;	
 	
-	@Autowired	
-	private ClaveValidator claveValidator;
-	
 	@Autowired
-	private CorreoElectronicoValidator correoElectronicoValidator;
+	private MainValidator mainValidator;
 	
 	@Autowired
 	private CatalogService catalogService;
@@ -124,7 +120,6 @@ public class PreRegisterInformationController {
     
 	@InitBinder("formRegister")
 	protected void initBinder(WebDataBinder webDataBinder) {
-		webDataBinder.setValidator(claveValidator);
-		webDataBinder.setValidator(correoElectronicoValidator);
+		webDataBinder.setValidator(mainValidator);
 	}
 }

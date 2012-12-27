@@ -14,6 +14,7 @@
 				<prop key="URL_CONFIRM_PREREGISTER">localhost:8080/congreso/resolver/register/confirm/</prop>
 				<prop key="URL_CONFIRM_PARTICIPATION">localhost:8080/congreso/resolver/register_participation/confirm/</prop>
 				<prop key="URL_CONFIRM_ACADEMY">localhost:8080/congreso/resolver/register_academy/confirm/</prop>
+				<prop key="MAIL_SENDER_IS_PRODUCTION">false</prop>
 	       	</props>
 	     </property>
 	</bean>

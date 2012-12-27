@@ -22,9 +22,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.mx.utvm.congreso.controlador.formbeans.FormRegisterParticipation;
-import edu.mx.utvm.congreso.controlador.validator.ArchivoValidator;
-import edu.mx.utvm.congreso.controlador.validator.ClaveValidator;
-import edu.mx.utvm.congreso.controlador.validator.CorreoElectronicoValidator;
+import edu.mx.utvm.congreso.controlador.validator.MainValidator;
 import edu.mx.utvm.congreso.dominio.InformationAccount;
 import edu.mx.utvm.congreso.dominio.Ocupation;
 import edu.mx.utvm.congreso.dominio.Participation;
@@ -42,14 +40,8 @@ public class ParticipationRegisterInformationController {
 	private List<University> universities;
 	private List<Participation> participations;		
 	
-	@Autowired	
-	private ClaveValidator claveValidator;
-	
 	@Autowired
-	private CorreoElectronicoValidator correoElectronicoValidator;
-
-	@Autowired
-	private ArchivoValidator archivoValidator;
+	private MainValidator mainValidator;
 	
 	@Autowired
 	private CatalogService catalogService;
@@ -128,9 +120,7 @@ public class ParticipationRegisterInformationController {
     
 	@InitBinder("formRegisterParticipation")
 	protected void initBinder(WebDataBinder webDataBinder) {
-		webDataBinder.setValidator(claveValidator);
-		webDataBinder.setValidator(correoElectronicoValidator);
-		webDataBinder.setValidator(archivoValidator);
+		webDataBinder.setValidator(mainValidator);
 	}
 
 	private void loadCatalogs(ModelAndView model){

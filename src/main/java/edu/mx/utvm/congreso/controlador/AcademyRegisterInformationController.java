@@ -1,20 +1,16 @@
 package edu.mx.utvm.congreso.controlador;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
-import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
@@ -26,36 +22,34 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.mx.utvm.congreso.controlador.formbeans.FormRegisterAcademy;
-import edu.mx.utvm.congreso.controlador.validator.ClaveValidator;
-import edu.mx.utvm.congreso.controlador.validator.CorreoElectronicoValidator;
-import edu.mx.utvm.congreso.mail.MailService;
-import edu.mx.utvm.congreso.mail.MailService;
-import edu.mx.utvm.congreso.util.Util;
+import edu.mx.utvm.congreso.controlador.validator.MainValidator;
+import edu.mx.utvm.congreso.dominio.AcademyRegisterInformation;
+import edu.mx.utvm.congreso.dominio.InformationAccount;
+import edu.mx.utvm.congreso.dominio.University;
+import edu.mx.utvm.congreso.service.AcademyRegisterInformationService;
+import edu.mx.utvm.congreso.service.CatalogService;
 
 @Controller
 @RequestMapping("/register_academy")
 public class AcademyRegisterInformationController {
 	protected final Log log = LogFactory.getLog(getClass());
 	
-	private Map<String,String> universidadesDeProcencia;
-	
-	@Value("${URL_CONFIRM_ACADEMY}")
-	String urlConfirm;
+	private List<University> universities;
 	
 	@Autowired	
-	private ClaveValidator claveValidator;
+	private MainValidator mainValidator;
 	
 	@Autowired
-	private CorreoElectronicoValidator correoElectronicoValidator;
+	private CatalogService catalogService;
 	
 	@Autowired
-	private MailService mail;
+	private AcademyRegisterInformationService academyRegisterInformationService;
 	
-	public AcademyRegisterInformationController() {    	
-    	this.universidadesDeProcencia = new LinkedHashMap<String,String>();
-    	this.universidadesDeProcencia.put("1", "UTVM");
-    	this.universidadesDeProcencia.put("2", "UTTT");    
-	}	
+	private void loadCatalogs(ModelAndView model){
+		this.universities = catalogService.findAllUniversities();
+		model.addObject("universities", this.universities);
+	}
+	
 	
     @RequestMapping(value="/save", method = RequestMethod.GET)
 	public String regresaFormulario() {
@@ -66,7 +60,6 @@ public class AcademyRegisterInformationController {
 	public ModelAndView confirmaRegistro(@PathVariable("token") String token)
             throws ServletException, IOException {
     	ModelAndView modelAndView = new ModelAndView("register_academy/confirm_success");
-    	log.debug("EL TOKEN ES: " + token);
     	return modelAndView;
     }
 	
@@ -74,33 +67,29 @@ public class AcademyRegisterInformationController {
 	public ModelAndView guardar(HttpServletRequest request,
 			@ModelAttribute("formRegisterAcademy") @Valid FormRegisterAcademy formRegisterAcademy,
 			BindingResult result) {
-
-		log.debug("RESULT: " + ToStringBuilder.reflectionToString(result));
 		
     	ModelAndView modelAndView = new ModelAndView("register_academy/register");
     	modelAndView.addObject("formRegisterAcademy", formRegisterAcademy);
     	modelAndView.addObject("result", result);
-    	modelAndView.addObject("sectores", this.universidadesDeProcencia);
-    	
-    	if(!result.hasErrors()){	
-
-    		/* Mapa de propiedades */
-        	Map<String, String> model = new HashMap<String, String>();        	        	
-			String nombre = formRegisterAcademy.getNombreDelCuerpoAcademico();
-			
-			String token = Util.generateToken("correo");
-			String urlConfirm = this.urlConfirm + token;
-        	model.put("nombre", nombre);
-        	model.put("url", urlConfirm);        	
-        	
-    		/* Envio de correo electronico */
-        	
-    		mail.sendMail("mrangeles@utvm.edu.mx", formRegisterAcademy.getCorreoElectronico(),
-    				"Confirmación de cuenta", model, MailService.TEMPLATE_PARTICIPATION_SUCCESS);
+    	loadCatalogs(modelAndView);
+    	if(!result.hasErrors()){
     		
-    		    		
-    		log.debug("CODIGO: " + token);
-    		log.debug("URL_CONFIRM: " + urlConfirm);
+    		InformationAccount account = new InformationAccount();
+    		account.setEmail(formRegisterAcademy.getCorreoElectronico());
+    		account.setPassword(formRegisterAcademy.getClave());
+    		
+    		University university = new University();
+    		university.setId(Integer.parseInt(formRegisterAcademy.getIdInstitucionProcedencia()));
+    		
+    		AcademyRegisterInformation information = new AcademyRegisterInformation();
+    		information.setContact(formRegisterAcademy.getContacto());
+    		information.setInvestigationLines(formRegisterAcademy.getLineasDeInvestigacion());
+    		information.setName(formRegisterAcademy.getNombreDelCuerpoAcademico());
+    		information.setUniversity(university);
+    		information.setInformationAccount(account);
+    		
+    		// save object whit service
+    		academyRegisterInformationService.save(information);
     		
     		modelAndView.setViewName("register_academy/register_success");
     	}    	    			    	
@@ -113,14 +102,13 @@ public class AcademyRegisterInformationController {
 			HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     	ModelAndView modelAndView = new ModelAndView("register_academy/register");
-    	modelAndView.addObject("sectores", this.universidadesDeProcencia);
+    	loadCatalogs(modelAndView);
     	return modelAndView;
     }
     
 	@InitBinder("formRegisterAcademy")
 	protected void initBinder(WebDataBinder webDataBinder) {
-		webDataBinder.setValidator(claveValidator);
-		webDataBinder.setValidator(correoElectronicoValidator);
+		webDataBinder.setValidator(mainValidator);
 	}
 	
 }

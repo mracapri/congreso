@@ -23,10 +23,7 @@ import edu.mx.utvm.congreso.controlador.formbeans.FormFiscalData;
 @Controller
 @RequestMapping("/register_fiscal_data")
 public class FiscalDataRegisterInformationController {
-	protected final Log log = LogFactory.getLog(getClass());
-	
-	public FiscalDataRegisterInformationController() {    	    
-	}	
+	protected final Log log = LogFactory.getLog(getClass());	
 	
     @RequestMapping(value="/save", method = RequestMethod.GET)
 	public String regresaFormulario() {

@@ -15,7 +15,7 @@ public class InformationAccountServiceImpl implements InformationAccountService{
 	public boolean existEmailAccount(String email) {
 		InformationAccount findAccountWithEmail = accountDao.findAccountWithEmail(email);
 		if(findAccountWithEmail == null){
-			return false;	
+			return false;
 		}else {
 			return true;
 		}

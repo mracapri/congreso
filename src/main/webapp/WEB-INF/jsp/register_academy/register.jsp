@@ -53,8 +53,8 @@
 
 				<label>Institucion de procedencia</label> <span class="obligatorio">*</span>
 				<form:select path="idInstitucionProcedencia">
-					<form:option value="" label="--- Seleccione ---" />
-					<form:options items="${sectores}" />
+					<form:option value="" label="--- Seleccione ---"/>
+					<form:options items="${universities}" itemValue="id" itemLabel="name" />
 				</form:select>
 				<spring:hasBindErrors name="formRegisterAcademy">
 					<span class="label label-important"> <form:errors

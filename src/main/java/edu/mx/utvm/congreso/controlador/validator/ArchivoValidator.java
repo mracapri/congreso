@@ -18,7 +18,6 @@ public class ArchivoValidator extends LocalValidatorFactoryBean implements Valid
 	
 	@Override
 	public void validate(Object object, Errors error) {
-		super.validate(object, error);
 		FormRegisterParticipation register = (FormRegisterParticipation) object;
 		if(register.getArchivo().getSize() == 0){
 			error.rejectValue("archivo", "archivo.empty.validation");

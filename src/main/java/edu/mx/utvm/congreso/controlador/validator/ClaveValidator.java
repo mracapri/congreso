@@ -15,7 +15,6 @@ public class ClaveValidator extends LocalValidatorFactoryBean implements Validat
 
 	@Override
 	public void validate(Object object, Errors error) {
-		super.validate(object, error);
 		FormRegisterAccount register = (FormRegisterAccount) object;
 		if(!register.getClave().equals(register.getConfirmacionClave())){
 			error.rejectValue("claveValidator", "clave.validation");

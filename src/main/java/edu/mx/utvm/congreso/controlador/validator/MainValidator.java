@@ -10,21 +10,33 @@ import edu.mx.utvm.congreso.controlador.formbeans.FormPreRegister;
 import edu.mx.utvm.congreso.controlador.formbeans.FormRegisterAcademy;
 import edu.mx.utvm.congreso.controlador.formbeans.FormRegisterAccount;
 import edu.mx.utvm.congreso.controlador.formbeans.FormRegisterParticipation;
-import edu.mx.utvm.congreso.service.InformationAccountService;
 
 @Component
-public class CorreoElectronicoValidator extends LocalValidatorFactoryBean implements Validator{
+public class MainValidator extends LocalValidatorFactoryBean implements Validator{
 
 	@Autowired
-	private InformationAccountService accountService;
+	private ClaveValidator claveValidator;
+	
+	@Autowired
+	private ArchivoValidator archivoValidator;
+	
+	@Autowired
+	private CorreoElectronicoValidator electronicoValidator;	
 	
 	@Override
 	public void validate(Object object, Errors error) {
-		FormRegisterAccount register = (FormRegisterAccount) object;
-		if(!register.getCorreoElectronico().equals(register.getConfirmarcorreoElectronico())){
-			error.rejectValue("correoElectronico", "correo.confirmacion.validation");
-		}else if(accountService.existEmailAccount(register.getCorreoElectronico())){
-			error.rejectValue("correoElectronico", "correo.unico.validation");
+		super.validate(object, error);
+		
+		if(FormPreRegister.class.isAssignableFrom(object.getClass())){
+			claveValidator.validate(object, error);
+			electronicoValidator.validate(object, error);	
+		}else if(FormRegisterParticipation.class.isAssignableFrom(object.getClass())){
+			claveValidator.validate(object, error);
+			electronicoValidator.validate(object, error);
+			archivoValidator.validate(object, error);
+		}else if(FormRegisterAcademy.class.isAssignableFrom(object.getClass())){
+			claveValidator.validate(object, error);
+			electronicoValidator.validate(object, error);
 		}
 	}
 

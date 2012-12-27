@@ -6,6 +6,7 @@ import javax.mail.internet.MimeMessage;
 
 import org.apache.velocity.app.VelocityEngine;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.mail.javamail.MimeMessagePreparator;
@@ -13,6 +14,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.velocity.VelocityEngineUtils;
 @Service
 public class MailService implements Runnable{
+	
+	@Value("${MAIL_SENDER_IS_PRODUCTION}")
+	private boolean isProductionMode;
 	
 	public static final String TEMPLATE_PREREGISTER_CONFIRMATION = "mail_preregister_confirmation.vm";	
 	public static final String TEMPLATE_PREREGISTER_SUCCESS = "mail_preregister_success.vm";
@@ -49,7 +53,9 @@ public class MailService implements Runnable{
 
 	@Override
 	public void run() {
-		mailSender.send(messagePreparator);		
+		if(isProductionMode){
+			mailSender.send(messagePreparator);	
+		}		
 	}
 	
 	
