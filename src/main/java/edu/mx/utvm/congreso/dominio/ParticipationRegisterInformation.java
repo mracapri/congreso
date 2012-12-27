@@ -1,6 +1,6 @@
 package edu.mx.utvm.congreso.dominio;
 
-public class PreRegisterInformation {
+public class ParticipationRegisterInformation {
 	private String name;
 	private String secondName;
 	private String thirdName;
@@ -8,6 +8,10 @@ public class PreRegisterInformation {
 	private Ocupation ocupation;
 	private University university;
 	private InformationAccount informationAccount;
+	private String participationName;
+	private byte[] participationFile;
+	private String participationFileName;
+	private Participation participation;
 	public String getName() {
 		return name;
 	}
@@ -49,5 +53,29 @@ public class PreRegisterInformation {
 	}
 	public void setInformationAccount(InformationAccount informationAccount) {
 		this.informationAccount = informationAccount;
+	}
+	public String getParticipationName() {
+		return participationName;
+	}
+	public void setParticipationName(String participationName) {
+		this.participationName = participationName;
+	}
+	public byte[] getParticipationFile() {
+		return participationFile;
+	}
+	public void setParticipationFile(byte[] participationFile) {
+		this.participationFile = participationFile;
+	}
+	public String getParticipationFileName() {
+		return participationFileName;
+	}
+	public void setParticipationFileName(String participationFileName) {
+		this.participationFileName = participationFileName;
+	}
+	public Participation getParticipation() {
+		return participation;
+	}
+	public void setParticipation(Participation participation) {
+		this.participation = participation;
 	}
 }

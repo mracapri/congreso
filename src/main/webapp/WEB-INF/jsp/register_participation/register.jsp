@@ -54,8 +54,8 @@
 
 				<label>Institucion de procedencia</label> <span class="obligatorio">*</span>
 				<form:select path="idInstitucionProcedencia">
-					<form:option value="" label="--- Seleccione ---" />
-					<form:options items="${sectores}" />
+					<form:option value="" label="--- Seleccione ---"/>
+					<form:options items="${universities}" itemValue="id" itemLabel="name" />
 				</form:select>
 				<spring:hasBindErrors name="formRegisterParticipation">
 					<span class="label label-important"> <form:errors
@@ -97,8 +97,8 @@
 
 				<label>Ocupaci&oacuten</label> <span class="obligatorio">*</span>
 				<form:select path="idOcupacion">
-					<form:option value="" label="--- Seleccione ---" />
-					<form:options items="${ocupaciones}" />
+					<form:option value="" label="--- Seleccione ---"/>
+					<form:options items="${ocupations}" itemValue="id" itemLabel="name" />
 				</form:select>
 				<spring:hasBindErrors name="formRegisterParticipation">
 					<span class="label label-important"> <form:errors
@@ -118,8 +118,8 @@
 
 				<label>Tipo participaci&oacuten</label> <span class="obligatorio">*</span>
 				<form:select path="idTipoParticipacion">
-					<form:option value="" label="--- Seleccione ---" />
-					<form:options items="${tipoParticipacion}" />
+					<form:option value="" label="--- Seleccione ---"/>
+					<form:options items="${participations}" itemValue="id" itemLabel="name" />
 				</form:select>
 				<spring:hasBindErrors name="formRegisterParticipation">
 					<span class="label label-important"> <form:errors

@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import edu.mx.utvm.congreso.dao.impl.PreRegisterInformationDaoImpl;
 import edu.mx.utvm.congreso.dominio.PreRegisterInformation;
 import edu.mx.utvm.congreso.mail.MailService;
-import edu.mx.utvm.congreso.mail.MailServiceImpl;
 import edu.mx.utvm.congreso.util.Util;
 @Service
 public class PreRegisterInformationServiceImpl implements PreRegisterInformationService{
@@ -17,23 +17,32 @@ public class PreRegisterInformationServiceImpl implements PreRegisterInformation
 	@Autowired
 	private MailService mail;
 	
+	@Autowired
+	private InformationAccountService accountService;
+	
+	@Autowired
+	private PreRegisterInformationDaoImpl informationDao;
+	
 	@Value("${URL_CONFIRM_PREREGISTER}")
 	private String urlConfirm;
 	
 	@Value("${MAIL_SENDER}")
-	private String mailSender;		
+	private String mailSender;
+		
 	
 	@Override
 	public void save(PreRegisterInformation preRegisterInformation) {
 
     	/* Build name */
     	StringBuffer nombre = new StringBuffer();
-    	nombre.append(preRegisterInformation.getName() + " ");
-    	nombre.append(preRegisterInformation.getSecondName() + " ");
-    	nombre.append(preRegisterInformation.getThirdName() + " ");
+    	nombre.append(preRegisterInformation.getName()).append(" ");
+    	nombre.append(preRegisterInformation.getSecondName()).append(" ");
+    	nombre.append(preRegisterInformation.getThirdName()).append(" ");
     	
-		/* Generate token */
-		String token = Util.generateToken();
+		/* Generate token and set to object*/
+		String token = Util.generateToken(preRegisterInformation.getInformationAccount().getEmail());
+		preRegisterInformation.getInformationAccount().setToken(token);
+		preRegisterInformation.getInformationAccount().setReferenceKey(token);
 		
 		/* Generate url confirm */
 		String urlConfirm = this.urlConfirm + token;
@@ -43,8 +52,12 @@ public class PreRegisterInformationServiceImpl implements PreRegisterInformation
     	model.put("nombre", nombre.toString());
     	model.put("url", urlConfirm);
     	
-		mail.sendMail(mailSender, preRegisterInformation.getInformationAccount().getEmail(),
-				"Confirmación de cuenta", model, MailServiceImpl.TEMPLATE_PREREGISTER_CONFIRMATION);
+		mail.sendMail(mailSender, preRegisterInformation
+				.getInformationAccount().getEmail(), "Confirmación de cuenta",
+				model, MailService.TEMPLATE_PREREGISTER_CONFIRMATION);
+		
+		accountService.save(preRegisterInformation.getInformationAccount());
+		informationDao.create(preRegisterInformation);
 	}
 
 }

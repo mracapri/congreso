@@ -29,7 +29,7 @@ import edu.mx.utvm.congreso.controlador.formbeans.FormRegisterAcademy;
 import edu.mx.utvm.congreso.controlador.validator.ClaveValidator;
 import edu.mx.utvm.congreso.controlador.validator.CorreoElectronicoValidator;
 import edu.mx.utvm.congreso.mail.MailService;
-import edu.mx.utvm.congreso.mail.MailServiceImpl;
+import edu.mx.utvm.congreso.mail.MailService;
 import edu.mx.utvm.congreso.util.Util;
 
 @Controller
@@ -88,7 +88,7 @@ public class AcademyRegisterInformationController {
         	Map<String, String> model = new HashMap<String, String>();        	        	
 			String nombre = formRegisterAcademy.getNombreDelCuerpoAcademico();
 			
-			String token = Util.generateToken();
+			String token = Util.generateToken("correo");
 			String urlConfirm = this.urlConfirm + token;
         	model.put("nombre", nombre);
         	model.put("url", urlConfirm);        	
@@ -96,7 +96,7 @@ public class AcademyRegisterInformationController {
     		/* Envio de correo electronico */
         	
     		mail.sendMail("mrangeles@utvm.edu.mx", formRegisterAcademy.getCorreoElectronico(),
-    				"Confirmación de cuenta", model, MailServiceImpl.TEMPLATE_PARTICIPATION_SUCCESS);
+    				"Confirmación de cuenta", model, MailService.TEMPLATE_PARTICIPATION_SUCCESS);
     		
     		    		
     		log.debug("CODIGO: " + token);

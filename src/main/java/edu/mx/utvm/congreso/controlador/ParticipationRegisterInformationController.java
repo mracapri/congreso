@@ -1,20 +1,16 @@
 package edu.mx.utvm.congreso.controlador;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
-import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
@@ -29,21 +25,22 @@ import edu.mx.utvm.congreso.controlador.formbeans.FormRegisterParticipation;
 import edu.mx.utvm.congreso.controlador.validator.ArchivoValidator;
 import edu.mx.utvm.congreso.controlador.validator.ClaveValidator;
 import edu.mx.utvm.congreso.controlador.validator.CorreoElectronicoValidator;
-import edu.mx.utvm.congreso.mail.MailService;
-import edu.mx.utvm.congreso.mail.MailServiceImpl;
-import edu.mx.utvm.congreso.util.Util;
+import edu.mx.utvm.congreso.dominio.InformationAccount;
+import edu.mx.utvm.congreso.dominio.Ocupation;
+import edu.mx.utvm.congreso.dominio.Participation;
+import edu.mx.utvm.congreso.dominio.ParticipationRegisterInformation;
+import edu.mx.utvm.congreso.dominio.University;
+import edu.mx.utvm.congreso.service.CatalogService;
+import edu.mx.utvm.congreso.service.ParticipationRegisterInformationService;
 
 @Controller
 @RequestMapping("/register_participation")
 public class ParticipationRegisterInformationController {
 	protected final Log log = LogFactory.getLog(getClass());
 	
-	private Map<String,String> ocupaciones;
-	private Map<String,String> universidadesDeProcencia;
-	private Map<String,String> tipoParticipacion;
-	
-	@Value("${URL_CONFIRM_PARTICIPATION}")
-	String urlConfirm;
+	private List<Ocupation> ocupations;
+	private List<University> universities;
+	private List<Participation> participations;		
 	
 	@Autowired	
 	private ClaveValidator claveValidator;
@@ -55,23 +52,10 @@ public class ParticipationRegisterInformationController {
 	private ArchivoValidator archivoValidator;
 	
 	@Autowired
-	private MailService mail;
+	private CatalogService catalogService;
 	
-	public ParticipationRegisterInformationController() {
-		/* Carga ocupaciones */
-    	this.ocupaciones = new LinkedHashMap<String,String>();
-    	this.ocupaciones.put("1", "Estudiante");
-    	this.ocupaciones.put("2", "Participante");
-    	
-    	this.universidadesDeProcencia = new LinkedHashMap<String,String>();
-    	this.universidadesDeProcencia.put("1", "UTVM");
-    	this.universidadesDeProcencia.put("2", "UTTT");    
-
-    	this.tipoParticipacion = new LinkedHashMap<String,String>();
-    	this.tipoParticipacion.put("1", "Ponencia");
-    	this.tipoParticipacion.put("2", "Cartel");
-    	this.tipoParticipacion.put("3", "Taller");
-	}	
+	@Autowired
+	private ParticipationRegisterInformationService informationService; 
 	
     @RequestMapping(value="/save", method = RequestMethod.GET)
 	public String regresaFormulario() {
@@ -90,40 +74,42 @@ public class ParticipationRegisterInformationController {
 	public ModelAndView guardar(HttpServletRequest request,
 			@ModelAttribute("formRegisterParticipation") @Valid FormRegisterParticipation formRegisterParticipation,
 			BindingResult result) {
-
-		log.debug("RESULT: " + ToStringBuilder.reflectionToString(result));
 		
     	ModelAndView modelAndView = new ModelAndView("register_participation/register");
     	modelAndView.addObject("formRegisterParticipation", formRegisterParticipation);
-    	modelAndView.addObject("result", result);
-    	modelAndView.addObject("ocupaciones", this.ocupaciones);
-    	modelAndView.addObject("sectores", this.universidadesDeProcencia);
-    	modelAndView.addObject("tipoParticipacion", this.tipoParticipacion);
+    	modelAndView.addObject("result", result);    	
+    	loadCatalogs(modelAndView);    	
     	
     	if(!result.hasErrors()){	
-
-    		/* Mapa de propiedades */
-        	Map<String, String> model = new HashMap<String, String>();        	        	
-			String nombre = formRegisterParticipation.getNombre() + " "
-					+ formRegisterParticipation.getApellidoPaterno()
-					+ formRegisterParticipation.getApellidoMaterno();
-			
-			String token = Util.generateToken();
-			String urlConfirm = this.urlConfirm + token;
-        	model.put("nombre", nombre);
-        	model.put("url", urlConfirm);
-        	
-        	log.debug("bytes: " +formRegisterParticipation.getArchivo().getBytes());
-        	log.debug("nombre: " +formRegisterParticipation.getArchivo().getOriginalFilename());
-        	
-    		/* Envio de correo electronico */
-        	
-    		mail.sendMail("mrangeles@utvm.edu.mx", formRegisterParticipation.getCorreoElectronico(),
-    				"Confirmación de cuenta", model, MailServiceImpl.TEMPLATE_PARTICIPATION_SUCCESS);
     		
-    		    		
-    		log.debug("CODIGO: " + token);
-    		log.debug("URL_CONFIRM: " + urlConfirm);
+    		// build object     		
+    		InformationAccount informationAccount = new InformationAccount();
+    		informationAccount.setEmail(formRegisterParticipation.getCorreoElectronico());
+    		informationAccount.setPassword(formRegisterParticipation.getClave());
+    		
+    		Ocupation ocupation = new Ocupation();
+    		ocupation.setId(Integer.parseInt(formRegisterParticipation.getIdOcupacion()));
+    		
+    		University university = new University();
+    		university.setId(Integer.parseInt(formRegisterParticipation.getIdInstitucionProcedencia()));
+    		
+    		Participation participation = new Participation();
+    		participation.setId(Integer.parseInt(formRegisterParticipation.getIdTipoParticipacion()));
+    		
+    		ParticipationRegisterInformation participationRegisterInformation = new ParticipationRegisterInformation();
+    		participationRegisterInformation.setInformationAccount(informationAccount);
+    		participationRegisterInformation.setName(formRegisterParticipation.getNombre());    		
+    		participationRegisterInformation.setSecondName(formRegisterParticipation.getApellidoPaterno());
+    		participationRegisterInformation.setThirdName(formRegisterParticipation.getApellidoMaterno());
+    		participationRegisterInformation.setPhone(formRegisterParticipation.getTelefono());
+    		participationRegisterInformation.setOcupation(ocupation);
+    		participationRegisterInformation.setUniversity(university);
+    		participationRegisterInformation.setParticipation(participation);
+    		participationRegisterInformation.setParticipationFile(formRegisterParticipation.getArchivo().getBytes());
+    		participationRegisterInformation.setParticipationFileName(formRegisterParticipation.getArchivo().getOriginalFilename());
+    		
+    		// save object whit service    		
+    		informationService.save(participationRegisterInformation);    		
     		
     		modelAndView.setViewName("register_participation/register_success");
     	}    	    			    	
@@ -136,9 +122,7 @@ public class ParticipationRegisterInformationController {
 			HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     	ModelAndView modelAndView = new ModelAndView("register_participation/register");
-    	modelAndView.addObject("ocupaciones", this.ocupaciones);
-    	modelAndView.addObject("sectores", this.universidadesDeProcencia);
-    	modelAndView.addObject("tipoParticipacion", this.tipoParticipacion);
+    	loadCatalogs(modelAndView);
     	return modelAndView;
     }
     
@@ -147,5 +131,14 @@ public class ParticipationRegisterInformationController {
 		webDataBinder.setValidator(claveValidator);
 		webDataBinder.setValidator(correoElectronicoValidator);
 		webDataBinder.setValidator(archivoValidator);
+	}
+
+	private void loadCatalogs(ModelAndView model){
+		this.universities = catalogService.findAllUniversities();
+		this.ocupations = catalogService.findAllOcupations();
+		this.participations = catalogService.findAllParticipations();
+		model.addObject("ocupations", this.ocupations);
+		model.addObject("universities", this.universities);
+		model.addObject("participations", this.participations);
 	}
 }
