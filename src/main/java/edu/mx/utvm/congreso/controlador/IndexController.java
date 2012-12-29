@@ -30,4 +30,10 @@ public class IndexController {
 	public ModelAndView getLoginPage(ModelMap model) throws Exception{		
 		return new ModelAndView("login");
 	}
+
+	@RequestMapping("/user_disabled.htm")
+	public ModelAndView getUserDisabledPage(ModelMap model) throws Exception{		
+		return new ModelAndView("error_page/user_disabled");
+	}		
+	
 }

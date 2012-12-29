@@ -1,6 +1,7 @@
 package edu.mx.utvm.congreso.service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,9 @@ public class PreRegisterInformationServiceImpl implements PreRegisterInformation
 	private InformationAccountService accountService;
 	
 	@Autowired
+	private UserRoleService roleService;
+	
+	@Autowired	
 	private PreRegisterInformationDaoImpl informationDao;
 	
 	@Value("${URL_CONFIRM_PREREGISTER}")
@@ -51,13 +55,21 @@ public class PreRegisterInformationServiceImpl implements PreRegisterInformation
     	Map<String, String> model = new HashMap<String, String>();
     	model.put("nombre", nombre.toString());
     	model.put("url", urlConfirm);
+
+    	System.out.println(urlConfirm);
     	
 		mail.sendMail(mailSender, preRegisterInformation
 				.getInformationAccount().getEmail(), "Confirmación de cuenta",
 				model, MailService.TEMPLATE_PREREGISTER_CONFIRMATION);
 		
 		accountService.save(preRegisterInformation.getInformationAccount());
+		roleService.save(preRegisterInformation.getUserRole());
 		informationDao.create(preRegisterInformation);
 	}
 
+
+	@Override
+	public List<PreRegisterInformation> findAllPreRegisters() {
+		return informationDao.findAll();
+	}
 }

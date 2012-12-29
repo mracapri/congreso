@@ -8,6 +8,8 @@ public class PreRegisterInformation {
 	private Ocupation ocupation;
 	private University university;
 	private InformationAccount informationAccount;
+	private UserRole userRole;
+	private String paymentStatus;
 	public String getName() {
 		return name;
 	}
@@ -49,5 +51,17 @@ public class PreRegisterInformation {
 	}
 	public void setInformationAccount(InformationAccount informationAccount) {
 		this.informationAccount = informationAccount;
+	}
+	public UserRole getUserRole() {
+		return userRole;
+	}
+	public void setUserRole(UserRole userRole) {
+		this.userRole = userRole;
+	}
+	public String getPaymentStatus() {
+		return paymentStatus;
+	}
+	public void setPaymentStatus(String paymentStatus) {
+		this.paymentStatus = paymentStatus;
 	}
 }

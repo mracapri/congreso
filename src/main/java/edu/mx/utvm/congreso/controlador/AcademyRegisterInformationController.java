@@ -28,6 +28,7 @@ import edu.mx.utvm.congreso.dominio.InformationAccount;
 import edu.mx.utvm.congreso.dominio.University;
 import edu.mx.utvm.congreso.service.AcademyRegisterInformationService;
 import edu.mx.utvm.congreso.service.CatalogService;
+import edu.mx.utvm.congreso.service.InformationAccountService;
 
 @Controller
 @RequestMapping("/register_academy")
@@ -41,6 +42,9 @@ public class AcademyRegisterInformationController {
 	
 	@Autowired
 	private CatalogService catalogService;
+	
+	@Autowired
+	private InformationAccountService accountService; 
 	
 	@Autowired
 	private AcademyRegisterInformationService academyRegisterInformationService;
@@ -60,6 +64,7 @@ public class AcademyRegisterInformationController {
 	public ModelAndView confirmaRegistro(@PathVariable("token") String token)
             throws ServletException, IOException {
     	ModelAndView modelAndView = new ModelAndView("register_academy/confirm_success");
+    	accountService.confirmToken(token);
     	return modelAndView;
     }
 	

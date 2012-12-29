@@ -1,6 +1,7 @@
 package edu.mx.utvm.congreso.controlador;
 
 import java.io.IOException;
+import java.security.Principal;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -33,15 +34,16 @@ public class FiscalDataRegisterInformationController {
 	@RequestMapping(value="/save", method = RequestMethod.POST)
 	public ModelAndView guardar(HttpServletRequest request,
 			@ModelAttribute("formFiscalData") @Valid FormFiscalData formFiscalData,
-			BindingResult result) {
+			BindingResult result, Principal principal) {
 
 		
     	ModelAndView modelAndView = new ModelAndView("register_fiscal_data/register");
     	modelAndView.addObject("formFiscalData", formFiscalData);
     	modelAndView.addObject("result", result);
     	
+    	log.debug("PRINCIPAL NAME: " + principal.getName());
+    	
     	if(!result.hasErrors()){	
-    		log.debug("Guardando datos");
     		modelAndView.setViewName("register_fiscal_data/register_success");
     	}    	    			    	
     	return modelAndView;
@@ -58,7 +60,6 @@ public class FiscalDataRegisterInformationController {
     
 	@InitBinder("formFiscalData")
 	protected void initBinder(WebDataBinder webDataBinder) {
-
 	}
 	
 }

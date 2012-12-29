@@ -21,6 +21,9 @@ public class ParticipationRegisterInformationServiceImpl implements Participatio
 	private InformationAccountService accountService;
 	
 	@Autowired
+	private UserRoleService roleService;
+	
+	@Autowired
 	private ParticipationRegisterInformationDaoImpl informationDao;
 	
 	@Value("${URL_CONFIRM_PREREGISTER}")
@@ -57,7 +60,8 @@ public class ParticipationRegisterInformationServiceImpl implements Participatio
 				model, MailService.TEMPLATE_PARTICIPATION_CONFIRMATION);
 		
 		accountService.save(participationRegisterInformation.getInformationAccount());
-		informationDao.create(participationRegisterInformation);
+		roleService.save(participationRegisterInformation.getUserRole());
+		informationDao.create(participationRegisterInformation);		
 	}
 
 }

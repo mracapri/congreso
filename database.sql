@@ -31,9 +31,21 @@ CREATE TABLE IF NOT EXISTS information_account (
   password varchar(20) NOT NULL,
   token varchar(50) NOT NULL,
   reference_key varchar(50) NOT NULL,
+  enabled tinyint(1)  NOT NULL,
   PRIMARY KEY (email)
 );
+insert into information_account(email, password, token, reference_key, enabled) 
+values ('mra_capri@msn.com', 'riam821204', '', '', 1);
 
+CREATE TABLE user_roles (
+  user_role_id INT(10) NOT NULL AUTO_INCREMENT,
+  user_id varchar(50) NOT NULL,
+  authority VARCHAR(45) NOT NULL,
+  PRIMARY KEY (user_role_id),
+  KEY FK_user_roles (user_id),
+  CONSTRAINT FK_user_roles FOREIGN KEY (user_id) REFERENCES information_account (email)
+);
+insert into user_roles (user_id, authority) values ('mra_capri@msn.com', 'ROLE_ADMIN');
 
 CREATE TABLE IF NOT EXISTS preregister_information (
   email varchar(50) NOT NULL,
@@ -42,6 +54,7 @@ CREATE TABLE IF NOT EXISTS preregister_information (
   third_name varchar(100) NOT NULL,
   id_university integer(3) NOT NULL,
   id_ocupation integer(3) NOT NULL,
+  payment_status varchar(50) NULL DEFAULT 'NO_PAGADO',
   FOREIGN KEY (email) REFERENCES information_account(email),
   FOREIGN KEY (id_university) REFERENCES university(id),
   FOREIGN KEY (id_ocupation) REFERENCES ocupation(id)
@@ -83,4 +96,12 @@ CREATE TABLE IF NOT EXISTS academy_information (
   id_university integer(3) NOT NULL,
   FOREIGN KEY (email) REFERENCES information_account(email),
   FOREIGN KEY (id_university) REFERENCES university(id)
+);
+
+CREATE TABLE IF NOT EXISTS fiscal_information (
+  email varchar(50) NOT NULL,
+  fiscal_name varchar(100) NOT NULL,
+  rfc varchar(13) NOT NULL,
+  address varchar(250) NOT NULL,
+  FOREIGN KEY (email) REFERENCES information_account(email)
 );

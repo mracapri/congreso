@@ -26,13 +26,15 @@ public class InformationAccountDaoImpl extends JdbcTemplate implements IInformat
 	@Override
 	public void create(InformationAccount newInstance) {
 		this.update(
-				"INSERT INTO INFORMATION_ACCOUNT(EMAIL, PASSWORD, TOKEN, REFERENCE_KEY) VALUES(?,?,?,?)",
-				new Object[] { 
-						newInstance.getEmail(),
-						newInstance.getPassword(), 
-						newInstance.getToken(),
-						newInstance.getReferenceKey() 
-				});
+			"INSERT INTO INFORMATION_ACCOUNT(EMAIL, PASSWORD, TOKEN, REFERENCE_KEY, ENABLED) VALUES(?,?,?,?,?)",
+			new Object[] { 
+					newInstance.getEmail(),
+					newInstance.getPassword(), 
+					newInstance.getToken(),
+					newInstance.getReferenceKey(),
+					newInstance.getEnabled()
+			}
+		);
 	}
 
 	@Override
@@ -73,6 +75,16 @@ public class InformationAccountDaoImpl extends JdbcTemplate implements IInformat
 			return resultado;
 		} catch (EmptyResultDataAccessException accessException) {
 			return null;
-		}	
+		}
+	}
+
+	@Override
+	public void confirmToken(String token) {
+		this.update(
+			"UPDATE INFORMATION_ACCOUNT SET ENABLED = 1 WHERE TOKEN = ?",
+			new Object[] {
+				token
+			}
+		);
 	}
 }

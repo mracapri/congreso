@@ -22,8 +22,9 @@
         			default-target-url="/resolver/index.htm" 
         			always-use-default-target="true"
         			authentication-success-handler-ref="securityHandler" 
-        			authentication-failure-handler-ref="securityHandler" />
-        			
+        			authentication-failure-handler-ref="securityHandler" 
+        			authentication-failure-url="/resolver/user_disabled.htm"/>
+        
         <logout 
         	invalidate-session="true" 
         	logout-success-url="/index.jsp" 
@@ -35,17 +36,23 @@
 		</session-management>
 	 </http>
 
-    <authentication-manager alias="authenticationManager">
+	 <authentication-manager>
         <authentication-provider>
-            <user-service>
-                <user name="admin" password="admin" authorities="ROLE_ADMIN"/>
-                <user name="admin2" password="admin" authorities="registered"/>
-            </user-service>
+            <jdbc-user-service 
+                authorities-by-username-query="select ia.email, ur.authority from information_account ia, user_roles ur where ur.user_id = ia.email and ia.email = ?"
+                data-source-ref="dataSource"
+                users-by-username-query="select email, password, enabled from information_account where email = ?" />
         </authentication-provider>
     </authentication-manager>
-    
 	 
-	 <beans:bean id="securityHandler" class="edu.mx.utvm.congreso.security.SecurityHandler" />
+	<beans:bean id="securityHandler" class="edu.mx.utvm.congreso.security.SecurityHandler" />
 	 
-	 
+	<beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+	    <beans:property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+	    <beans:property name="url" value="jdbc:mysql://localhost:3307/congreso"/>
+	    <beans:property name="username" value="root"/>
+	    <beans:property name="password" value="root"/>
+	</beans:bean>
+	
+	
 </beans:beans>

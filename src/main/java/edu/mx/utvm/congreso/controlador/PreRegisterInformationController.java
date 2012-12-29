@@ -27,7 +27,9 @@ import edu.mx.utvm.congreso.dominio.InformationAccount;
 import edu.mx.utvm.congreso.dominio.Ocupation;
 import edu.mx.utvm.congreso.dominio.PreRegisterInformation;
 import edu.mx.utvm.congreso.dominio.University;
+import edu.mx.utvm.congreso.dominio.UserRole;
 import edu.mx.utvm.congreso.service.CatalogService;
+import edu.mx.utvm.congreso.service.InformationAccountService;
 import edu.mx.utvm.congreso.service.PreRegisterInformationService;
 
 @Controller
@@ -45,7 +47,10 @@ public class PreRegisterInformationController {
 	private CatalogService catalogService;
 	
 	@Autowired
-	private PreRegisterInformationService preRegisterInformationService; 
+	private PreRegisterInformationService preRegisterInformationService;
+	
+	@Autowired
+	private InformationAccountService accountService; 
 	
 	private void loadCatalogs(ModelAndView model){
 		this.universities = catalogService.findAllUniversities();
@@ -63,7 +68,7 @@ public class PreRegisterInformationController {
 	public ModelAndView confirmaRegistro(@PathVariable("token") String token)
             throws ServletException, IOException {
     	ModelAndView modelAndView = new ModelAndView("register/confirm_success");
-    	log.debug("EL TOKEN ES: " + token);
+    	accountService.confirmToken(token);
     	return modelAndView;
     }
 	
@@ -83,12 +88,17 @@ public class PreRegisterInformationController {
     		InformationAccount informationAccount = new InformationAccount();
     		informationAccount.setEmail(formRegister.getCorreoElectronico());
     		informationAccount.setPassword(formRegister.getClave());
+    		informationAccount.setEnabled(0);
     		
     		Ocupation ocupation = new Ocupation();
     		ocupation.setId(Integer.parseInt(formRegister.getIdOcupacion()));
     		
     		University university = new University();
     		university.setId(Integer.parseInt(formRegister.getIdInstitucionProcedencia()));
+    		
+    		UserRole userRole = new UserRole();
+    		userRole.setAuthority(UserRole.ROLE_PREREGISTER);
+    		userRole.setUserId(formRegister.getCorreoElectronico());
     		
     		PreRegisterInformation preRegisterInformation = new PreRegisterInformation();
     		preRegisterInformation.setInformationAccount(informationAccount);
@@ -98,6 +108,7 @@ public class PreRegisterInformationController {
     		preRegisterInformation.setThirdName(formRegister.getApellidoMaterno());
     		preRegisterInformation.setOcupation(ocupation);
     		preRegisterInformation.setUniversity(university);
+    		preRegisterInformation.setUserRole(userRole);
     		
     		// save object whit service    		
     		preRegisterInformationService.save(preRegisterInformation);
@@ -106,7 +117,7 @@ public class PreRegisterInformationController {
     	}    	    			    	
     	return modelAndView;
 	}    
-
+	
 	@RequestMapping(value="/form")
 	public ModelAndView mostrarFormularioRegistro(
 			@ModelAttribute("formRegister") FormPreRegister formRegister,
@@ -118,6 +129,17 @@ public class PreRegisterInformationController {
     	return modelAndView;
     }
     
+	@RequestMapping(value="/list_user_preregistered")
+	public ModelAndView showListUserPreRegister(
+			@ModelAttribute("formRegister") FormPreRegister formRegister,
+			HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {		
+    	ModelAndView modelAndView = new ModelAndView("register/list_user_preregistered");
+    	List<PreRegisterInformation> findAllPreRegisters = preRegisterInformationService.findAllPreRegisters();
+    	modelAndView.addObject("preRegisters", findAllPreRegisters);
+    	return modelAndView;
+    }	
+	
 	@InitBinder("formRegister")
 	protected void initBinder(WebDataBinder webDataBinder) {
 		webDataBinder.setValidator(mainValidator);

@@ -28,7 +28,9 @@ import edu.mx.utvm.congreso.dominio.Ocupation;
 import edu.mx.utvm.congreso.dominio.Participation;
 import edu.mx.utvm.congreso.dominio.ParticipationRegisterInformation;
 import edu.mx.utvm.congreso.dominio.University;
+import edu.mx.utvm.congreso.dominio.UserRole;
 import edu.mx.utvm.congreso.service.CatalogService;
+import edu.mx.utvm.congreso.service.InformationAccountService;
 import edu.mx.utvm.congreso.service.ParticipationRegisterInformationService;
 
 @Controller
@@ -47,6 +49,9 @@ public class ParticipationRegisterInformationController {
 	private CatalogService catalogService;
 	
 	@Autowired
+	private InformationAccountService accountService; 
+	
+	@Autowired
 	private ParticipationRegisterInformationService informationService; 
 	
     @RequestMapping(value="/save", method = RequestMethod.GET)
@@ -58,7 +63,7 @@ public class ParticipationRegisterInformationController {
 	public ModelAndView confirmaRegistro(@PathVariable("token") String token)
             throws ServletException, IOException {
     	ModelAndView modelAndView = new ModelAndView("register_participation/confirm_success");
-    	log.debug("EL TOKEN ES: " + token);
+    	accountService.confirmToken(token);
     	return modelAndView;
     }
 	
@@ -78,6 +83,7 @@ public class ParticipationRegisterInformationController {
     		InformationAccount informationAccount = new InformationAccount();
     		informationAccount.setEmail(formRegisterParticipation.getCorreoElectronico());
     		informationAccount.setPassword(formRegisterParticipation.getClave());
+    		informationAccount.setEnabled(0);
     		
     		Ocupation ocupation = new Ocupation();
     		ocupation.setId(Integer.parseInt(formRegisterParticipation.getIdOcupacion()));
@@ -87,6 +93,10 @@ public class ParticipationRegisterInformationController {
     		
     		Participation participation = new Participation();
     		participation.setId(Integer.parseInt(formRegisterParticipation.getIdTipoParticipacion()));
+    		
+    		UserRole userRole = new UserRole();
+    		userRole.setAuthority(UserRole.ROLE_REGISTER_PARTICIPATION);
+    		userRole.setUserId(formRegisterParticipation.getCorreoElectronico());
     		
     		ParticipationRegisterInformation participationRegisterInformation = new ParticipationRegisterInformation();
     		participationRegisterInformation.setInformationAccount(informationAccount);
@@ -98,7 +108,8 @@ public class ParticipationRegisterInformationController {
     		participationRegisterInformation.setUniversity(university);
     		participationRegisterInformation.setParticipation(participation);
     		participationRegisterInformation.setParticipationFile(formRegisterParticipation.getArchivo().getBytes());
-    		participationRegisterInformation.setParticipationFileName(formRegisterParticipation.getArchivo().getOriginalFilename());
+    		participationRegisterInformation.setParticipationFileName(formRegisterParticipation.getArchivo().getOriginalFilename());    		    		
+    		participationRegisterInformation.setUserRole(userRole);
     		
     		// save object whit service    		
     		informationService.save(participationRegisterInformation);    		

@@ -5,4 +5,5 @@ import edu.mx.utvm.congreso.dominio.InformationAccount;
 public interface InformationAccountService {
 	boolean existEmailAccount(String email);
 	void save(InformationAccount account);
+	void confirmToken(String token);
 }

@@ -12,6 +12,7 @@ public class ParticipationRegisterInformation {
 	private byte[] participationFile;
 	private String participationFileName;
 	private Participation participation;
+	private UserRole userRole;
 	public String getName() {
 		return name;
 	}
@@ -77,5 +78,11 @@ public class ParticipationRegisterInformation {
 	}
 	public void setParticipation(Participation participation) {
 		this.participation = participation;
+	}
+	public UserRole getUserRole() {
+		return userRole;
+	}
+	public void setUserRole(UserRole userRole) {
+		this.userRole = userRole;
 	}
 }

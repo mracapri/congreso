@@ -26,4 +26,8 @@ public class InformationAccountServiceImpl implements InformationAccountService{
 		accountDao.create(account);
 	}
 
+	@Override
+	public void confirmToken(String token) {
+		accountDao.confirmToken(token);
+	}
 }

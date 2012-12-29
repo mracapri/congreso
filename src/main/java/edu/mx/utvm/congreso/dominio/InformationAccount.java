@@ -5,6 +5,7 @@ public class InformationAccount {
 	private String password;
 	private String token;
 	private String referenceKey;
+	private int enabled;
 	public String getEmail() {
 		return email;
 	}
@@ -28,5 +29,11 @@ public class InformationAccount {
 	}
 	public void setReferenceKey(String referenceKey) {
 		this.referenceKey = referenceKey;
+	}
+	public int getEnabled() {
+		return enabled;
+	}
+	public void setEnabled(int enabled) {
+		this.enabled = enabled;
 	}
 }

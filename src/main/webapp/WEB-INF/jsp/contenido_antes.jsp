@@ -25,7 +25,20 @@
 							</a>
 						</li>							
 						
-						<sec:authorize access="hasRole('registered')">
+						<sec:authorize access="hasRole('ROLE_PREREGISTER')">
+							<li>
+								<a href="${pageContext.request.contextPath}/resolver/register_fiscal_data/form">Registro de datos fiscales</a>
+							</li>
+							<li>
+								<a href="${pageContext.request.contextPath}">Generar ficha de pago</a>
+							</li>
+							<li>
+								<a href="${pageContext.request.contextPath}/j_spring_security_logout">
+										Cerrar Sesi&oacuten
+								</a>
+							</li>
+						</sec:authorize>
+						<sec:authorize access="hasRole('ROLE_PREREGISTERED')">
 							<li>
 								<a href="${pageContext.request.contextPath}/resolver/register_fiscal_data/form">Registro de datos fiscales</a>
 							</li>
@@ -39,7 +52,17 @@
 										Cerrar Sesi&oacuten
 								</a>
 							</li>
-						</sec:authorize>							
+						</sec:authorize>
+						<sec:authorize access="hasRole('ROLE_ADMIN')">
+							<li>
+								<a href="${pageContext.request.contextPath}/resolver/register/list_user_preregistered">Usuarios de PreRegistro</a>
+							</li>
+							<li>
+								<a href="${pageContext.request.contextPath}/j_spring_security_logout">
+										Cerrar Sesi&oacuten
+								</a>
+							</li>
+						</sec:authorize>
 					</ul>
 				</div>
 			</div>
