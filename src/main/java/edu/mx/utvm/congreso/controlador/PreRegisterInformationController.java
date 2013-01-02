@@ -68,10 +68,17 @@ public class PreRegisterInformationController {
 	public ModelAndView confirmaRegistro(@PathVariable("token") String token)
             throws ServletException, IOException {
     	ModelAndView modelAndView = new ModelAndView("register/confirm_success");
-    	accountService.confirmToken(token);
+		PreRegisterInformation findPreRegisterInformationByToken = preRegisterInformationService
+				.findPreRegisterInformationByToken(token);
+		
+    	if(findPreRegisterInformationByToken!=null){    		
+    		accountService.confirmToken(token);	    
+    		modelAndView.addObject("preRegisterInformation", findPreRegisterInformationByToken);
+    	}
+    	
     	return modelAndView;
     }
-	
+
 	@RequestMapping(value="/save", method = RequestMethod.POST)
 	public ModelAndView guardar(HttpServletRequest request,
 			@ModelAttribute("formRegister") @Valid FormPreRegister formRegister,

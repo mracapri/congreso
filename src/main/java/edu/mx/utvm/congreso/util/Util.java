@@ -1,8 +1,8 @@
 package edu.mx.utvm.congreso.util;
 
-
 public class Util {
 
+		
 	public static String generateToken(String md5) {
 		try {
 			java.security.MessageDigest md = java.security.MessageDigest
@@ -17,9 +17,5 @@ public class Util {
 		} catch (java.security.NoSuchAlgorithmException e) {
 		}
 		return null;
-	}
-
-	public static void main(String[] args) {
-		System.out.println(Util.generateToken("mra_capri@msn.com"));
 	}
 }

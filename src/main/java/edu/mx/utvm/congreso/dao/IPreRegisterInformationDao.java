@@ -3,5 +3,7 @@ package edu.mx.utvm.congreso.dao;
 import edu.mx.utvm.congreso.dominio.PreRegisterInformation;
 
 public interface IPreRegisterInformationDao extends Dao<PreRegisterInformation, Integer>{
-
+	boolean getPaymentStatus(String token);
+	void changePaymentStatus(boolean status, String token);
+	PreRegisterInformation findPreRegisterInformationByToken(String token);
 }

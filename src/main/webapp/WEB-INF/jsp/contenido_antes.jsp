@@ -30,7 +30,7 @@
 								<a href="${pageContext.request.contextPath}/resolver/register_fiscal_data/form">Registro de datos fiscales</a>
 							</li>
 							<li>
-								<a href="${pageContext.request.contextPath}">Generar ficha de pago</a>
+								<a href="${pageContext.request.contextPath}/resolver/payment/payment_ticket" target="_blank">Generar ficha de pago</a>
 							</li>
 							<li>
 								<a href="${pageContext.request.contextPath}/j_spring_security_logout">

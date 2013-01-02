@@ -72,4 +72,21 @@ public class PreRegisterInformationServiceImpl implements PreRegisterInformation
 	public List<PreRegisterInformation> findAllPreRegisters() {
 		return informationDao.findAll();
 	}
+
+	@Override
+	public boolean getPaymentStatus(String token) {
+		return informationDao.getPaymentStatus(token);
+	}
+
+
+	@Override
+	public void changePaymentStatus(boolean status, String token) {
+		informationDao.changePaymentStatus(status, token);
+	}
+
+
+	@Override
+	public PreRegisterInformation findPreRegisterInformationByToken(String token) {
+		return informationDao.findPreRegisterInformationByToken(token);
+	}
 }

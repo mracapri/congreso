@@ -18,10 +18,10 @@
 				<td>${preRegister.university.name}</td>								
 				<c:choose>
 				    <c:when test="${preRegister.paymentStatus=='NO_PAGADO'}">
-				       <td><a href="#" class="btn btn-danger btn-block">NO-PAGADO</a></td>
+				       <td><a href="${pageContext.request.contextPath}/resolver/payment/form/${preRegister.informationAccount.token}" class="btn btn-danger btn-block">NO</a></td>
 				    </c:when>
 				    <c:when test="${preRegister.paymentStatus=='PAGADO'}">
-				        <td><a href="#" class="btn btn-success btn-block">PAGADO</a></td>
+				        <td><a href="${pageContext.request.contextPath}/resolver/payment/form/${preRegister.informationAccount.token}" class="btn btn-success btn-block">SI</a></td>
 				    </c:when>
 				</c:choose>
 			</tr>
