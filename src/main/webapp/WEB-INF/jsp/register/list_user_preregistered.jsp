@@ -1,4 +1,8 @@
 <%@ include file="/WEB-INF/jsp/contenido_antes.jsp"%>
+<form class="form-search" action="${pageContext.request.contextPath}/resolver/register/list_user_preregistered">
+	<input name="search-param" type="text" class="input-medium search-query" placeholder="nombre, correo" value="${param['search-param']}"/>
+	<button type="submit" class="btn">Buscar registro</button>
+</form>
 <table class="table">
 	<thead>
 		<tr>

@@ -26,8 +26,21 @@
 						</li>							
 						
 						<sec:authorize access="hasRole('ROLE_PREREGISTER')">
-							<li>
-								<a href="${pageContext.request.contextPath}/resolver/register_fiscal_data/form">Registro de datos fiscales</a>
+							<li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+									Datos fiscales
+									<b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="${pageContext.request.contextPath}/resolver/register_fiscal_data/form">
+											Registrar
+										</a>
+										<a href="${pageContext.request.contextPath}/resolver/register_fiscal_data/form">
+											Consultar
+										</a>
+									</li>
+								</ul>
 							</li>
 							<li>
 								<a href="${pageContext.request.contextPath}/resolver/payment/payment_ticket" target="_blank">Generar ficha de pago</a>

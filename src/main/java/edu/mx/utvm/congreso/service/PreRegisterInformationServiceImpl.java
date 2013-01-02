@@ -34,6 +34,16 @@ public class PreRegisterInformationServiceImpl implements PreRegisterInformation
 	private String mailSender;
 		
 	
+	private String referenceKeyGenerator(String name, String secondName,
+			String thirdName, String token) {
+		StringBuffer referenceKey = new StringBuffer();
+		referenceKey.append(name.toUpperCase());
+		referenceKey.append(secondName.toUpperCase());
+		referenceKey.append(thirdName.toUpperCase());
+		referenceKey.append(token.toUpperCase());
+		return referenceKey.toString();
+	}
+	
 	@Override
 	public void save(PreRegisterInformation preRegisterInformation) {
 
@@ -46,7 +56,17 @@ public class PreRegisterInformationServiceImpl implements PreRegisterInformation
 		/* Generate token and set to object*/
 		String token = Util.generateToken(preRegisterInformation.getInformationAccount().getEmail());
 		preRegisterInformation.getInformationAccount().setToken(token);
-		preRegisterInformation.getInformationAccount().setReferenceKey(token);
+		
+		/* Generate reference key and set to object*/
+		String referenceKey = referenceKeyGenerator(preRegisterInformation
+				.getName().replaceAll(" ", ""), preRegisterInformation
+				.getSecondName().trim(), preRegisterInformation.getThirdName()
+				.trim(), preRegisterInformation.getInformationAccount()
+				.getToken());
+		
+		referenceKey.replaceAll(" ", referenceKey);
+		
+		preRegisterInformation.getInformationAccount().setReferenceKey(referenceKey);
 		
 		/* Generate url confirm */
 		String urlConfirm = this.urlConfirm + token;
@@ -88,5 +108,11 @@ public class PreRegisterInformationServiceImpl implements PreRegisterInformation
 	@Override
 	public PreRegisterInformation findPreRegisterInformationByToken(String token) {
 		return informationDao.findPreRegisterInformationByToken(token);
+	}
+
+	@Override
+	public List<PreRegisterInformation> findAllPreRegistersByParamSearch(
+			String searchParameter) {
+		return informationDao.findAllPreRegistersByParamSearch(searchParameter);
 	}
 }

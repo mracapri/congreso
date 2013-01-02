@@ -140,9 +140,19 @@ public class PreRegisterInformationController {
 	public ModelAndView showListUserPreRegister(
 			@ModelAttribute("formRegister") FormPreRegister formRegister,
 			HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {		
+            throws ServletException, IOException {
+		
+		String searchParameter = request.getParameter("search-param");		
+		log.debug("PARAMETRO DE BUSQUEDA: " + searchParameter);
+		
+		List<PreRegisterInformation> findAllPreRegisters;
+		if(searchParameter != null && !searchParameter.equals("")){
+			findAllPreRegisters = preRegisterInformationService.findAllPreRegistersByParamSearch(searchParameter);				
+		}else{
+			findAllPreRegisters = preRegisterInformationService.findAllPreRegisters();			
+		}
+		
     	ModelAndView modelAndView = new ModelAndView("register/list_user_preregistered");
-    	List<PreRegisterInformation> findAllPreRegisters = preRegisterInformationService.findAllPreRegisters();
     	modelAndView.addObject("preRegisters", findAllPreRegisters);
     	return modelAndView;
     }	

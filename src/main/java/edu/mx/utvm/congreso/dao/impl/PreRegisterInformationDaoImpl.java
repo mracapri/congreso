@@ -65,7 +65,7 @@ public class PreRegisterInformationDaoImpl extends JdbcTemplate implements IPreR
 		sql = sql + "from ";
 		sql = sql + 	"preregister_information pi, ocupation o, university u, information_account ia ";
 		sql = sql + "where ";
-		sql = sql + 	"o.id = pi.id_ocupation and u.id = pi.id_university and ia.email = pi.email order by pi.name";
+		sql = sql + 	"ia.enabled = 1 and o.id = pi.id_ocupation and u.id = pi.id_university and ia.email = pi.email order by pi.name";
 		List<PreRegisterInformation> resultados = this.query(sql, new RowMapper<PreRegisterInformation>() {
 			@Override
 			public PreRegisterInformation mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -131,7 +131,7 @@ public class PreRegisterInformationDaoImpl extends JdbcTemplate implements IPreR
 	    sql = sql + "from ";
 	    sql = sql + 	"preregister_information pi, ocupation o, university u, information_account ia ";
 	    sql = sql + "where ";
-	    sql = sql + 	"o.id = pi.id_ocupation and u.id = pi.id_university and ia.email = pi.email and ia.token = ?;";
+	    sql = sql + 	"o.id = pi.id_ocupation and u.id = pi.id_university and ia.email = pi.email and ia.token = ?";
 		try {
 			PreRegisterInformation resultado = this.queryForObject(sql,
 					new Object[] { token },
@@ -165,5 +165,50 @@ public class PreRegisterInformationDaoImpl extends JdbcTemplate implements IPreR
 		} catch (EmptyResultDataAccessException accessException) {
 			return null;
 		}
+	}
+
+	@Override
+	public List<PreRegisterInformation> findAllPreRegistersByParamSearch(String searchParameter) {
+		searchParameter = "%" + searchParameter + "%";
+		
+		String sql = "select ";		
+		sql = sql + 	"ia.token, pi.email,pi.name, pi.second_name, pi.third_name, o.name, u.name, pi.payment_status ";
+		sql = sql + "from ";
+		sql = sql + 	"preregister_information pi, ocupation o, university u, information_account ia ";
+		sql = sql + "where ";
+		sql = sql + 	"ia.enabled = 1 and o.id = pi.id_ocupation and u.id = pi.id_university and ia.email = pi.email and (ia.email like ? or ";
+		sql = sql + 	"pi.name like ? or pi.second_name like ? or pi.third_name like ?)  order by pi.name";
+		
+		
+		List<PreRegisterInformation> resultados = this.query(
+				sql, 
+				new Object[]{searchParameter, searchParameter, searchParameter, searchParameter}, 
+				new RowMapper<PreRegisterInformation>() {
+			@Override
+			public PreRegisterInformation mapRow(ResultSet rs, int rowNum) throws SQLException {
+				
+				Ocupation ocupation = new Ocupation();
+				ocupation.setName(rs.getString("o.name"));
+				
+				University university = new University();
+				university.setName(rs.getString("u.name"));
+				
+				InformationAccount account = new InformationAccount();
+				account.setEmail(rs.getString("pi.email"));
+				account.setToken(rs.getString("ia.token"));
+				
+				PreRegisterInformation preRegisterInformation = new PreRegisterInformation();
+				preRegisterInformation.setName(rs.getString("pi.name"));
+				preRegisterInformation.setSecondName(rs.getString("pi.second_name"));
+				preRegisterInformation.setThirdName(rs.getString("pi.third_name"));
+				preRegisterInformation.setPaymentStatus(rs.getString("pi.payment_status"));								
+				preRegisterInformation.setInformationAccount(account);
+				preRegisterInformation.setOcupation(ocupation);
+				preRegisterInformation.setUniversity(university);
+				
+				return preRegisterInformation;
+			}
+		});
+		return resultados;
 	}
 }

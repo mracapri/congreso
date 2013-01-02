@@ -1,8 +1,34 @@
 <%@ include file="/WEB-INF/jsp/contenido_antes.jsp" %>
-
 <form:form action="save" method="post" modelAttribute="formRegister" id="formRegister" name="formRegister">
+
+	<div class="row">
+		<div class="span12">
+		    <div class="alert alert-success">
+		    	<strong>Pago</strong>
+		    	<ul>
+			    	<li>$400.00 M.N hasta el 31 de Enero del 2013</li>
+			    	<li>$450.00 M.N a partir del 1 de Febrero del 2013</li>
+		    	</ul>
+		    </div>
+		    
+		    <div class="alert alert-success">
+		    	<strong>Instrucciones</strong>
+		    	<ol>
+			    	<li>Realice su pregregistro en el siguiente formulario de captura</li>
+			    	<li>Confirme su cuenta de usuario, a travez del correo electronico</li>
+			    	<li>Inicie sesion en el sitio para generar su ficha de deposito</li>
+			    	<li>
+			    		Envie su ficha de deposito, escaneada al siguiente correo 
+			    		<a href="mailto:#">finanzas@utvm.edu.mx</a> 
+			    		para confirmar su pago en el sistema
+			    	</li>
+		    	</ol>
+		    </div>
+		</div>
+	</div>
+    
 	<fieldset>
-		<legend>Informaci&oacuten de cuenta</legend>
+		<legend>Informaci&oacuten de cuenta</legend>		
 		<div class="row">
 			<div class="span9">
 				<label>Correo electronico</label>

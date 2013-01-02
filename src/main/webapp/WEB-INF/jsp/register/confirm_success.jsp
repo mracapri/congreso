@@ -3,11 +3,11 @@
 	Estimado <b>${preRegisterInformation.name} ${preRegisterInformation.secondName} ${preRegisterInformation.thirdName}</b>, 
 	de la <b>${preRegisterInformation.university.name}</b> su cuenta ha sido confirmada con esta direccion de correo 
 	electronico <b>${preRegisterInformation.informationAccount.email}</b>
-	<br/>
-	<br/>		    
+	<br/><br/> 	 
+	Puede iniciar la sesion <a href="${pageContext.request.contextPath}/resolver/login.htm">aqui</a>
+	<br/><br/>
 	<b>Muchas gracias!</b>
-	<br/>
-	<br/>			    
-	<a class="btn btn-info" href="${pageContext.request.contextPath}">Aceptar</a>			    
+	<br/><br/>	    
+	<a class="btn btn-info" href="${pageContext.request.contextPath}">Aceptar</a>
 </div>
 <%@ include file="/WEB-INF/jsp/contenido_despues.jsp" %>

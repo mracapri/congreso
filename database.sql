@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS information_account (
   email varchar(50) NOT NULL,
   password varchar(20) NOT NULL,
   token varchar(50) NOT NULL,
-  reference_key varchar(50) NOT NULL,
+  reference_key varchar(80) NOT NULL,
   enabled tinyint(1)  NOT NULL,
   PRIMARY KEY (email)
 );
