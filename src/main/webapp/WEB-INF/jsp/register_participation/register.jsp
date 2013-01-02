@@ -1,11 +1,20 @@
 <%@ include file="/WEB-INF/jsp/contenido_antes.jsp" %>
-
+<div class="row">
+	<div class="span12">
+	    <div class="alert alert-info">
+	    	<strong>Registro de participaci&oacuten en el Congreso</strong><br/><br/>
+			<p>
+				El siguiente formulario, permitir&aacute registrar su informaci&oacuten de 
+				participaci&oacuten en el congreso
+			</p>
+	    </div>
+	</div>
+</div>
 <form:form action="save" method="post"
 	modelAttribute="formRegisterParticipation"
 	id="formRegisterParticipation" name="formRegisterParticipation"
 	enctype="multipart/form-data">
 	<fieldset>
-		<legend>Informaci&oacuten de cuenta</legend>
 		<div class="row">
 			<div class="span9">
 				<label>Correo electronico</label> <span class="obligatorio">*</span>
@@ -48,7 +57,7 @@
 				</spring:hasBindErrors>
 			</div>
 		</div>
-		<legend>Informaci&oacuten personal</legend>
+		
 		<div class="row">
 			<div class="span9">
 

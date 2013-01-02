@@ -1,8 +1,17 @@
 <%@ include file="/WEB-INF/jsp/contenido_antes.jsp" %>
-
+<div class="row">
+	<div class="span12">
+	    <div class="alert alert-info">
+	    	<strong>Informaci&oacuten Fiscal</strong><br/><br/>
+			<p>
+				El siguiente formulario, permitir&aacute registrar su informaci&oacuten fiscal en caso de que
+				requiera se le factura 
+			</p>
+	    </div>
+	</div>
+</div>
 <form:form action="save" method="post" modelAttribute="formFiscalData" id="formFiscalData" name="formFiscalData">
 	<fieldset>
-		<legend>Informaci&oacuten fiscal</legend>
 		<div class="row">
 			<div class="span9">			
 			
@@ -35,7 +44,7 @@
 			</div>
 			
 			<div class="span9">
-				<button class="btn btn-info" type="submit">Registrar datos fiscales</button>
+				<button class="btn btn-info" type="submit">Guardar</button>
 			</div>
 		</div>
 	</fieldset>				

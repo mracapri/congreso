@@ -16,4 +16,14 @@ public class FiscalRegisterInformationServiceImpl implements FiscalRegisterInfor
 		informationDao.create(fiscalRegisterInformation);
 	}
 
+	@Override
+	public FiscalRegisterInformation read(String email) {
+		return informationDao.read(email);
+	}
+
+	@Override
+	public void update(FiscalRegisterInformation fiscalRegisterInformation) {
+		informationDao.update(fiscalRegisterInformation);
+	}
+
 }

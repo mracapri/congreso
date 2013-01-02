@@ -1,10 +1,20 @@
 <%@ include file="/WEB-INF/jsp/contenido_antes.jsp" %>
-
+<div class="row">
+	<div class="span12">
+	    <div class="alert alert-info">
+	    	<strong>Registro de Cuerpo Academico</strong><br/><br/>
+			<p>
+				El siguiente formulario, permitir&aacute registrar informaci&oacuten de 
+				los cuerpos academicos
+			</p>
+	    </div>
+	</div>
+</div>
 <form:form action="save" method="post"
 	modelAttribute="formRegisterAcademy"
 	id="formRegisterAcademy" name="formRegisterAcademy">
 	<fieldset>
-		<legend>Informaci&oacuten de cuenta</legend>
+	
 		<div class="row">
 			<div class="span9">
 				<label>Correo electronico</label> <span class="obligatorio">*</span>
@@ -47,7 +57,7 @@
 				</spring:hasBindErrors>
 			</div>
 		</div>
-		<legend>Informaci&oacuten del cuerpo academico</legend>
+
 		<div class="row">
 			<div class="span9">
 

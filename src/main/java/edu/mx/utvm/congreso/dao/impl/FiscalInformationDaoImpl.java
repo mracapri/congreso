@@ -1,11 +1,15 @@
 package edu.mx.utvm.congreso.dao.impl;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import edu.mx.utvm.congreso.dao.IFiscalInformationDao;
@@ -34,15 +38,41 @@ public class FiscalInformationDaoImpl extends JdbcTemplate implements IFiscalInf
 	}
 
 	@Override
-	public FiscalRegisterInformation read(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+	public FiscalRegisterInformation read(String email) {
+	    String sql = "SELECT EMAIL, FISCAL_NAME, RFC, ADDRESS FROM FISCAL_INFORMATION WHERE EMAIL = ?";	    
+		try {
+			FiscalRegisterInformation resultado = this.queryForObject(sql,
+					new Object[] { email },
+					new RowMapper<FiscalRegisterInformation>() {
+						@Override
+						public FiscalRegisterInformation mapRow(ResultSet rs,
+								int rowNum) throws SQLException {
+							FiscalRegisterInformation fiscalRegisterInformation = new FiscalRegisterInformation();
+							fiscalRegisterInformation.setAddress(rs.getString("ADDRESS"));
+							fiscalRegisterInformation.setEmail(rs.getString("EMAIL"));
+							fiscalRegisterInformation.setFiscalName(rs.getString("FISCAL_NAME"));
+							fiscalRegisterInformation.setRfc(rs.getString("RFC"));
+							return fiscalRegisterInformation;
+						}
+					});
+			return resultado;
+		} catch (EmptyResultDataAccessException accessException) {
+			return null;
+		}
 	}
 
 	@Override
 	public void update(FiscalRegisterInformation transientObject) {
-		// TODO Auto-generated method stub
-		
+		this.update(
+			"UPDATE " +
+			"FISCAL_INFORMATION SET FISCAL_NAME = ?, RFC = ?, ADDRESS = ? " +
+			"WHERE EMAIL = ?",
+			new Object[] { 
+				transientObject.getFiscalName(),
+				transientObject.getRfc(),
+				transientObject.getAddress(),
+				transientObject.getEmail()
+			});
 	}
 
 	@Override

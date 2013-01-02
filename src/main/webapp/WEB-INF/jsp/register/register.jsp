@@ -2,16 +2,14 @@
 <form:form action="save" method="post" modelAttribute="formRegister" id="formRegister" name="formRegister">
 
 	<div class="row">
-		<div class="span12">
-		    <div class="alert alert-success">
-		    	<strong>Pago</strong>
+		<div class="span12">		    		    
+		    <div class="alert alert-info">
+		    	<strong>Preregistro</strong>
 		    	<ul>
 			    	<li>$400.00 M.N hasta el 31 de Enero del 2013</li>
 			    	<li>$450.00 M.N a partir del 1 de Febrero del 2013</li>
 		    	</ul>
-		    </div>
 		    
-		    <div class="alert alert-success">
 		    	<strong>Instrucciones</strong>
 		    	<ol>
 			    	<li>Realice su pregregistro en el siguiente formulario de captura</li>
@@ -28,11 +26,10 @@
 	</div>
     
 	<fieldset>
-		<legend>Informaci&oacuten de cuenta</legend>		
 		<div class="row">
 			<div class="span9">
 				<label>Correo electronico</label>
-				<span class="obligatorio">*</span>								
+				<span class="obligatorio">*</span>
 				<form:input path="correoElectronico"/>								
 				<spring:hasBindErrors name="formRegister">
 					<span class="label label-important">
@@ -74,7 +71,7 @@
 				</spring:hasBindErrors>
 			</div>
 		</div>
-		<legend>Informaci&oacuten personal</legend>
+		
 		<div class="row">
 			<div class="span9">			
 			
