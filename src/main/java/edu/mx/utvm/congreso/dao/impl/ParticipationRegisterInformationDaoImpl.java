@@ -24,7 +24,7 @@ public class ParticipationRegisterInformationDaoImpl extends JdbcTemplate
 	public void create(ParticipationRegisterInformation newInstance) {
 		this.update(
 				"INSERT INTO "
-						+ "PARTICIPATION_REGISTER_INFORMATION"
+						+ "participation_register_information"
 						+ "(EMAIL, NAME, SECOND_NAME, THIRD_NAME, PHONE, ID_UNIVERSITY, ID_OCUPATION, ID_PARTICIPATION, PARTICIPATION_PDF_FILE, PARTICIPATION_PDF_FILE_NAME) "
 						+ "VALUES(?,?,?,?,?,?,?,?,?,?)",
 				new Object[] { 

@@ -23,7 +23,7 @@ public class AcademyRegisterInformationDaoImpl extends JdbcTemplate implements I
 	public void create(AcademyRegisterInformation newInstance) {
 		this.update(
 				"INSERT INTO " +
-				"ACADEMY_INFORMATION(EMAIL, NAME, INVESTIGATION_LINE, CONTACT, ID_UNIVERSITY) " +
+				"academy_information(EMAIL, NAME, INVESTIGATION_LINE, CONTACT, ID_UNIVERSITY) " +
 				"VALUES(?,?,?,?,?)",
 				new Object[] { 
 					newInstance.getInformationAccount().getEmail(),

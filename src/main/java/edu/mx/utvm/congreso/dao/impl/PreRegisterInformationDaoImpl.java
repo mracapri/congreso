@@ -30,7 +30,7 @@ public class PreRegisterInformationDaoImpl extends JdbcTemplate implements IPreR
 	public void create(PreRegisterInformation newInstance) {
 		this.update(
 				"INSERT INTO " +
-				"PREREGISTER_INFORMATION(EMAIL, NAME, SECOND_NAME, THIRD_NAME, ID_UNIVERSITY, ID_OCUPATION) " +
+				"preregister_information(EMAIL, NAME, SECOND_NAME, THIRD_NAME, ID_UNIVERSITY, ID_OCUPATION) " +
 				"VALUES(?,?,?,?,?,?)",
 				new Object[] { 
 					newInstance.getInformationAccount().getEmail(),
@@ -99,7 +99,7 @@ public class PreRegisterInformationDaoImpl extends JdbcTemplate implements IPreR
 	public boolean getPaymentStatus(String token) {
 		String queryForObject = this
 				.queryForObject(
-						"SELECT PI.PAYMENT_STATUS FROM PREREGISTER_INFORMATION PI, INFORMATION_ACCOUNT IA WHERE IA.TOKEN = ? AND PI.EMAIL = IA.EMAIL",
+						"SELECT PI.PAYMENT_STATUS FROM preregister_information PI, information_account IA WHERE IA.TOKEN = ? AND PI.EMAIL = IA.EMAIL",
 						String.class, new Object[]{token});
 		if(queryForObject == null){
 			return false;
@@ -115,8 +115,8 @@ public class PreRegisterInformationDaoImpl extends JdbcTemplate implements IPreR
 		String paymenStatus = status?"PAGADO":"NO_PAGADO";		
 		this.update(
 			"UPDATE " +
-			"PREREGISTER_INFORMATION SET" +
-			" PAYMENT_STATUS = ? WHERE EMAIL = (SELECT EMAIL FROM INFORMATION_ACCOUNT WHERE TOKEN = ?)",
+			"preregister_information SET" +
+			" PAYMENT_STATUS = ? WHERE EMAIL = (SELECT EMAIL FROM information_account WHERE TOKEN = ?)",
 			new Object[] { 
 				paymenStatus,
 				token

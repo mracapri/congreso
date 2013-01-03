@@ -23,7 +23,7 @@ public class UserRoleDaoImpl extends JdbcTemplate implements IUserRoleDao{
 	public void create(UserRole newInstance) {
 		this.update(
 				"INSERT INTO "
-						+ "USER_ROLES"
+						+ "user_roles"
 						+ "(USER_ID, AUTHORITY) "
 						+ "VALUES(?,?)",
 				new Object[] {

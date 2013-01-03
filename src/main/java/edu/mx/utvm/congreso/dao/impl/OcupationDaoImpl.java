@@ -46,7 +46,7 @@ public class OcupationDaoImpl extends JdbcTemplate implements IOcupationDao{
 
 	@Override
 	public List<Ocupation> findAll() {
-		String sql = "SELECT * FROM OCUPATION";
+		String sql = "SELECT * FROM ocupation";
 		List<Ocupation> result = this.query(sql, new RowMapper<Ocupation>() {
 			@Override
 			public Ocupation mapRow(ResultSet rs, int rowNum) throws SQLException {

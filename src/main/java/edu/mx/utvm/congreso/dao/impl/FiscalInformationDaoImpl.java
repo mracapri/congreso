@@ -27,7 +27,7 @@ public class FiscalInformationDaoImpl extends JdbcTemplate implements IFiscalInf
 	public void create(FiscalRegisterInformation newInstance) {
 		this.update(
 				"INSERT INTO " +
-				"FISCAL_INFORMATION(EMAIL, FISCAL_NAME, RFC, ADDRESS) " +
+				"fiscal_information(EMAIL, FISCAL_NAME, RFC, ADDRESS) " +
 				"VALUES(?,?,?,?)",
 				new Object[] { 
 					newInstance.getEmail(),
@@ -39,7 +39,7 @@ public class FiscalInformationDaoImpl extends JdbcTemplate implements IFiscalInf
 
 	@Override
 	public FiscalRegisterInformation read(String email) {
-	    String sql = "SELECT EMAIL, FISCAL_NAME, RFC, ADDRESS FROM FISCAL_INFORMATION WHERE EMAIL = ?";	    
+	    String sql = "SELECT EMAIL, FISCAL_NAME, RFC, ADDRESS FROM fiscal_information WHERE EMAIL = ?";	    
 		try {
 			FiscalRegisterInformation resultado = this.queryForObject(sql,
 					new Object[] { email },
@@ -65,7 +65,7 @@ public class FiscalInformationDaoImpl extends JdbcTemplate implements IFiscalInf
 	public void update(FiscalRegisterInformation transientObject) {
 		this.update(
 			"UPDATE " +
-			"FISCAL_INFORMATION SET FISCAL_NAME = ?, RFC = ?, ADDRESS = ? " +
+			"fiscal_information SET FISCAL_NAME = ?, RFC = ?, ADDRESS = ? " +
 			"WHERE EMAIL = ?",
 			new Object[] { 
 				transientObject.getFiscalName(),

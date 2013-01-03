@@ -46,7 +46,7 @@ public class ParticipationDaoImpl extends JdbcTemplate implements IParticipation
 
 	@Override
 	public List<Participation> findAll() {
-		String sql = "SELECT * FROM PARTICIPATION";
+		String sql = "SELECT * FROM participation";
 		List<Participation> result = this.query(sql, new RowMapper<Participation>() {
 			@Override
 			public Participation mapRow(ResultSet rs, int rowNum) throws SQLException {

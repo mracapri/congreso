@@ -26,7 +26,7 @@ public class InformationAccountDaoImpl extends JdbcTemplate implements IInformat
 	@Override
 	public void create(InformationAccount newInstance) {
 		this.update(
-			"INSERT INTO INFORMATION_ACCOUNT(EMAIL, PASSWORD, TOKEN, REFERENCE_KEY, ENABLED) VALUES(?,?,?,?,?)",
+			"INSERT INTO information_account(EMAIL, PASSWORD, TOKEN, REFERENCE_KEY, ENABLED) VALUES(?,?,?,?,?)",
 			new Object[] { 
 					newInstance.getEmail(),
 					newInstance.getPassword(), 
@@ -60,7 +60,7 @@ public class InformationAccountDaoImpl extends JdbcTemplate implements IInformat
 
 	@Override
 	public InformationAccount findAccountWithEmail(String email) {
-	    String sql = "SELECT EMAIL FROM INFORMATION_ACCOUNT WHERE EMAIL = ?";	    
+	    String sql = "SELECT EMAIL FROM information_account WHERE EMAIL = ?";	    
 		try {
 			InformationAccount resultado = this.queryForObject(sql,
 					new Object[] { email },
@@ -81,7 +81,7 @@ public class InformationAccountDaoImpl extends JdbcTemplate implements IInformat
 	@Override
 	public void confirmToken(String token) {
 		this.update(
-			"UPDATE INFORMATION_ACCOUNT SET ENABLED = 1 WHERE TOKEN = ?",
+			"UPDATE information_account SET ENABLED = 1 WHERE TOKEN = ?",
 			new Object[] {
 				token
 			}
