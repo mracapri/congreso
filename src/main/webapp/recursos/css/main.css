@@ -37,3 +37,8 @@ body {
 .label-important {
     display: inline-block;
 }
+
+/* captcha */
+.recaptchatable td {
+    background: none !important;
+}
