@@ -8,46 +8,44 @@
 		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.xsd"
 	xmlns:context="http://www.springframework.org/schema/context">
 
-	 <http use-expressions="true">
+	<http use-expressions="true">
 	    
         <http-basic/>
         
-		<intercept-url pattern='/index.htm' filters='none'/>
+		<intercept-url pattern='/index.htm' filters='none' access="IS_AUTHENTICATED_ANONYMOUSLY"/>
     	<intercept-url pattern='/login.htm' filters='none'/>
     	
-    	<intercept-url pattern='/resolver/data/*' access='isAuthenticated()' />
-    	<intercept-url pattern='/js/private/*' access='isAuthenticated()' />
-    	<intercept-url pattern='/css/private/*' access='isAuthenticated()' />
+    	<intercept-url pattern='/resolver/register_fiscal_data/**' access='isAuthenticated()' />
 	    
 	    
-        <form-login login-page="/login.htm" 
-        			default-target-url="/index.htm" 
+        <form-login login-page="/resolver/login.htm" 
+        			default-target-url="/resolver/index.htm" 
         			always-use-default-target="true"
         			authentication-success-handler-ref="securityHandler" 
-        			authentication-failure-handler-ref="securityHandler" />
-        			
+        			authentication-failure-handler-ref="securityHandler" 
+        			authentication-failure-url="/resolver/user_disabled.htm"/>
+        
         <logout 
         	invalidate-session="true" 
         	logout-success-url="/index.jsp" 
         	logout-url="/j_spring_security_logout"/>
         
-        <remember-me key="s3ss1onTest" />
-        <session-management session-fixation-protection="newSession" >
-            <concurrency-control max-sessions="1" error-if-maximum-exceeded="true"/>
-        </session-management>
+		<remember-me key="congreso.utmv.edu.mx" />
+		<session-management session-fixation-protection="newSession" >
+			<concurrency-control max-sessions="1" error-if-maximum-exceeded="false"/>
+		</session-management>
 	 </http>
 
-    <authentication-manager alias="authenticationManager">
+	 <authentication-manager>
         <authentication-provider>
-            <user-service>
-                <user name="admin" password="admin" authorities="ROLE_ADMIN"/>
-                <user name="admin2" password="admin" authorities="ROLE_ADMIN"/>
-            </user-service>
+            <jdbc-user-service 
+                authorities-by-username-query="select ia.email, ur.authority from information_account ia, user_roles ur where ur.user_id = ia.email and ia.email = ?"
+                data-source-ref="dataSource"
+                users-by-username-query="select email, password, enabled from information_account where email = ?" />
         </authentication-provider>
     </authentication-manager>
-    
 	 
-	 <beans:bean id="securityHandler" class="edu.mx.utvm.congreso.security.SecurityHandler" />
+	<beans:bean id="securityHandler" class="edu.mx.utvm.congreso.security.SecurityHandler"/>
 	 
 	 
 </beans:beans>
