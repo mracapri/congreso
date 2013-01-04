@@ -41,6 +41,7 @@ public class IndexController {
     public ModelAndView handleIndexRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {      
     	
+    	/*
         // Setting cookie			
 		boolean existCookie = false;
 		Cookie[] cookies = request.getCookies();
@@ -56,7 +57,7 @@ public class IndexController {
 	        cookie.setMaxAge(43200); // define seconds expire
 			response.addCookie(cookie);	
 		}
-    	
+    	*/
         Map<String, Object> modelo = new HashMap<String, Object>();        
     	return new ModelAndView("index", "modelo", modelo);
     }
