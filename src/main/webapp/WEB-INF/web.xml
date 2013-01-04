@@ -49,7 +49,7 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
  
-     <!-- Expire filter -->
+     <!-- Expire filter 
     <filter>
         <filter-name>expires</filter-name>
         <filter-class>
@@ -64,8 +64,10 @@
         <filter-name>expires</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+     -->
     
-    <!-- Compression filter -->
+    <!-- Compression filter
+    
     <filter>
         <filter-name>gzip</filter-name>
         <filter-class>
@@ -76,6 +78,8 @@
         <filter-name>gzip</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+    
+    -->
  
     <!-- servlet -->
     <servlet>

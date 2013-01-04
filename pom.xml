@@ -29,6 +29,12 @@
 
 	<dependencies>
 	    
+		<dependency>
+		   <groupId>commons-codec</groupId>
+		   <artifactId>commons-codec</artifactId>
+		   <version>1.4</version>
+		</dependency>
+	    
 		<!-- Conector MySQL -->
 		<dependency>
 		   <groupId>mysql</groupId>
@@ -48,19 +54,21 @@
 			<version>0.0.7</version>
 		</dependency>
 	
-		<!-- Expire Filter -->
+		<!-- Expire Filter 
 		<dependency>
 		   <groupId>com.caucho</groupId>
 		   <artifactId>resin</artifactId>
 		   <version>3.0.9</version>
 		</dependency>
+		-->
 		
-		<!-- Gzip Filter -->
+		<!-- Gzip Filter 
 		<dependency>
 		   <groupId>net.sf.click</groupId>
 		   <artifactId>click-extras</artifactId>
 		   <version>1.5.3</version>
 		</dependency>
+		-->
 		
 		<dependency>
 		    <groupId>velocity</groupId>
