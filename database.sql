@@ -37,6 +37,9 @@ CREATE TABLE IF NOT EXISTS information_account (
 insert into information_account(email, password, token, reference_key, enabled) 
 values ('mra_capri@msn.com', 'riam821204', '', '', 1);
 
+insert into information_account(email, password, token, reference_key, enabled) 
+values ('yrivera@msn.com', 'riam821204', '', '', 1);
+
 CREATE TABLE user_roles (
   user_role_id INT(10) NOT NULL AUTO_INCREMENT,
   user_id varchar(50) NOT NULL,
@@ -46,6 +49,7 @@ CREATE TABLE user_roles (
   CONSTRAINT FK_user_roles FOREIGN KEY (user_id) REFERENCES information_account (email)
 );
 insert into user_roles (user_id, authority) values ('mra_capri@msn.com', 'ROLE_ADMIN');
+insert into user_roles (user_id, authority) values ('yrivera@msn.com', 'ROLE_ADMIN_PARTICIPATION');
 
 CREATE TABLE IF NOT EXISTS preregister_information (
   email varchar(50) NOT NULL,
@@ -82,6 +86,7 @@ CREATE TABLE IF NOT EXISTS participation_register_information (
   id_participation integer(3) NOT NULL,
   participation_pdf_file longblob NOT NULL,
   participation_pdf_file_name varchar(100) NOT NULL,
+  participation_name varchar(100) NOT NULL,
   FOREIGN KEY (email) REFERENCES information_account(email),
   FOREIGN KEY (id_participation) REFERENCES participation(id),
   FOREIGN KEY (id_university) REFERENCES university(id),

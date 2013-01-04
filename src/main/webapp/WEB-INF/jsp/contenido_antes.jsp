@@ -65,6 +65,19 @@
 								</a>
 							</li>
 						</sec:authorize>
+						<sec:authorize access="hasRole('ROLE_ADMIN_PARTICIPATION')">
+							<li>
+								<a href="${pageContext.request.contextPath}/resolver/register_participation/list_user_participation">Lista de participantes</a>
+							</li>
+							<li>
+								<a href="${pageContext.request.contextPath}">Cuerpos academicos registrados</a>
+							</li>
+							<li>
+								<a href="${pageContext.request.contextPath}/j_spring_security_logout">
+										Cerrar Sesi&oacuten
+								</a>
+							</li>
+						</sec:authorize>
 					</ul>
 				</div>
 			</div>

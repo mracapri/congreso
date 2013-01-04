@@ -61,7 +61,7 @@ public class PreRegisterInformationDaoImpl extends JdbcTemplate implements IPreR
 	@Override
 	public List<PreRegisterInformation> findAll() {
 		String sql = "select ";
-		sql = sql + 	"ia.token, pi.email,pi.name, pi.second_name, pi.third_name, o.name, u.name, pi.payment_status ";
+		sql = sql + 	"ia.token, ia.password, pi.email,pi.name, pi.second_name, pi.third_name, o.name, u.name, pi.payment_status ";
 		sql = sql + "from ";
 		sql = sql + 	"preregister_information pi, ocupation o, university u, information_account ia ";
 		sql = sql + "where ";
@@ -127,7 +127,7 @@ public class PreRegisterInformationDaoImpl extends JdbcTemplate implements IPreR
 	@Override
 	public PreRegisterInformation findPreRegisterInformationByToken(String token) {		
 	    String sql = "select ";
-	    sql = sql + 	"pi.email, pi.name, pi.second_name, pi.third_name, o.name, u.name ";
+	    sql = sql + 	"pi.email, ia.password, pi.name, pi.second_name, pi.third_name, o.name, u.name ";
 	    sql = sql + "from ";
 	    sql = sql + 	"preregister_information pi, ocupation o, university u, information_account ia ";
 	    sql = sql + "where ";
@@ -142,6 +142,7 @@ public class PreRegisterInformationDaoImpl extends JdbcTemplate implements IPreR
 
 							InformationAccount account = new InformationAccount();
 							account.setEmail(rs.getString("pi.email"));
+							account.setPassword(rs.getString("ia.password"));
 							
 							University university = new University();
 							university.setName(rs.getString("u.name"));
@@ -172,7 +173,7 @@ public class PreRegisterInformationDaoImpl extends JdbcTemplate implements IPreR
 		searchParameter = "%" + searchParameter + "%";
 		
 		String sql = "select ";		
-		sql = sql + 	"ia.token, pi.email,pi.name, pi.second_name, pi.third_name, o.name, u.name, pi.payment_status ";
+		sql = sql + 	"ia.token, ia.password, pi.email, pi.name, pi.second_name, pi.third_name, o.name, u.name, pi.payment_status ";
 		sql = sql + "from ";
 		sql = sql + 	"preregister_information pi, ocupation o, university u, information_account ia ";
 		sql = sql + "where ";

@@ -18,21 +18,7 @@
 				<br/>
 				<br/>
 				Para iniciar sesión haga clic a la siguiente liga
-				<a href="${url}">Clic aqui</a>
-			</p>
-
-			<p style="font-size:1em; width: 500px;">
-				Por último, le proporcionaremos su codigo de registro, 
-				el cual entregará en caja el día del cogreso, para 
-				el respectivo pago:
-				<br/>
-				<br/>										
-				Codigo: <b style="font-size:1.5em">${codigo}</b>
-				
-				<br/>
-				<br/>				
-				Tambien puede imprimir su codigo en la siguiente liga 
-				<a href="${url}">Imprimir codigo aqui</a>
+				<a href="${url}">${url}</a>
 			</p>
  
 			<p style="font-size:1em; width: 500px; font-size:0.7em">

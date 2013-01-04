@@ -136,7 +136,7 @@
 					</span>
 				</spring:hasBindErrors>
 				
-				<label>Archivo</label> <span class="obligatorio">*</span>
+				<label>Archivo PDF</label> <span class="obligatorio">*</span>
 				<form:input path="archivo" type="file"/>
 				<spring:hasBindErrors name="formRegisterParticipation">
 					<span class="label label-important"> <form:errors

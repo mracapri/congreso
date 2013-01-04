@@ -10,7 +10,7 @@
 				en el sitio del <b>Congreso Nacional Bioalimentario</b>.
 
 				Por lo tanto agradeceremos confirme su registro haciendo clic a la siguiente liga
-				<a href="${url}">Clic aqui</a>
+				<a href="${url}">${url}</a>
 			</p>
  
 			<p style="font-size:1em; width: 500px; font-size:0.7em">

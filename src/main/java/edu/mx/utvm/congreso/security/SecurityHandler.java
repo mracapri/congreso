@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import net.tanesha.recaptcha.ReCaptchaImpl;
 import net.tanesha.recaptcha.ReCaptchaResponse;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
@@ -16,7 +17,10 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 
 public class SecurityHandler implements AuthenticationSuccessHandler, AuthenticationFailureHandler{	
 	
+	@Value("${CAPTCHA_PRIVATE_KEY}")
 	private String captchaPrivateKey;
+	
+	@Value("${IS_PRODUCTION_LOGIN}")
 	private boolean isProductionMode;
 	
 	@Override
@@ -42,13 +46,11 @@ public class SecurityHandler implements AuthenticationSuccessHandler, Authentica
 	        	authentication.setAuthenticated(false);
 	        }
 		}
-		
+						
 		if (authentication != null && authentication.isAuthenticated()) {
-			System.out.println("La autenticacion es correcta");
 			response.sendRedirect("resolver/index.htm");
 		}else{
-			String message = "El captcha es incorrecto";
-			response.sendRedirect("resolver/login.htm?message=" + message);
+			response.sendRedirect("resolver/login.htm");
 		}
 		
 	}
@@ -63,22 +65,6 @@ public class SecurityHandler implements AuthenticationSuccessHandler, Authentica
 		response.getOutputStream().print(authenticationException.getMessage());
 		response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 		response.sendRedirect("resolver/login.htm");
-	}
-
-	public String getCaptchaPrivateKey() {
-		return captchaPrivateKey;
-	}
-
-	public void setCaptchaPrivateKey(String captchaPrivateKey) {
-		this.captchaPrivateKey = captchaPrivateKey;
-	}
-
-	public boolean getProductionMode() {
-		return isProductionMode;
-	}
-
-	public void setProductionMode(boolean isProductionMode) {
-		this.isProductionMode = isProductionMode;
 	}
 
 }

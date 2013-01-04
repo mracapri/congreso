@@ -1,7 +1,8 @@
 package edu.mx.utvm.congreso.util;
 
-public class Util {
+import org.apache.commons.codec.binary.Base64;
 
+public class Util {	
 		
 	public static String generateToken(String md5) {
 		try {
@@ -17,5 +18,16 @@ public class Util {
 		} catch (java.security.NoSuchAlgorithmException e) {
 		}
 		return null;
+	}
+	
+	public static String encodeNumber(Integer number){
+		number = number * 1234567890; 
+		byte[] encoded = Base64.encodeBase64(String.valueOf(number).getBytes());
+		return new String(encoded);
+	}
+	
+	public static Integer decodeNumber(String str){
+		byte[] decoded = Base64.decodeBase64(str.getBytes());
+		return Integer.parseInt(new String(decoded)) / 1234567890;
 	}
 }

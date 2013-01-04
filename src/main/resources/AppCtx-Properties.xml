@@ -10,11 +10,13 @@
 	<bean id="propertyConfigurer" scope="singleton" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="properties">
 			<props>
-			    <prop key="MAIL_SENDER">mrangeles@utvm.edu.mx</prop>
-				<prop key="URL_CONFIRM_PREREGISTER">localhost:8080/congreso/resolver/register/confirm/</prop>
-				<prop key="URL_CONFIRM_PARTICIPATION">localhost:8080/congreso/resolver/register_participation/confirm/</prop>
-				<prop key="URL_CONFIRM_ACADEMY">localhost:8080/congreso/resolver/register_academy/confirm/</prop>
-				<prop key="IS_PRODUCTION">true</prop>
+			    <prop key="MAIL_SENDER">noreply@utvm.edu.mx</prop>
+				<prop key="URL_CONFIRM_PREREGISTER">http://localhost:8080/congreso/resolver/register/confirm/</prop>
+				<prop key="URL_CONFIRM_PARTICIPATION">http://localhost:8080/congreso/resolver/register_participation/confirm/</prop>
+				<prop key="URL_CONFIRM_ACADEMY">http://localhost:8080/congreso/resolver/register_academy/confirm/</prop>
+				<prop key="URL_LOGIN">http://localhost:8080/congreso/resolver/login.htm</prop>
+				<prop key="IS_PRODUCTION_LOGIN">false</prop>
+				<prop key="IS_PRODUCTION_MAIL">true</prop>
 				<prop key="CAPTCHA_PUBLIC_KEY">6LfzDM4SAAAAAOJdbw4vz68s0lDAqIBQ-RCiH-ap</prop>
 				<prop key="CAPTCHA_PRIVATE_KEY">6LfzDM4SAAAAAD7HAALpgRNZPq22RuFvhilgba-g</prop>
 	       	</props>

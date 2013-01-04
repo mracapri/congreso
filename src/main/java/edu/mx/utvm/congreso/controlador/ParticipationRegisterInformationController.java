@@ -1,7 +1,9 @@
 package edu.mx.utvm.congreso.controlador;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -21,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import edu.mx.utvm.congreso.controlador.formbeans.FormPreRegister;
 import edu.mx.utvm.congreso.controlador.formbeans.FormRegisterParticipation;
 import edu.mx.utvm.congreso.controlador.validator.MainValidator;
 import edu.mx.utvm.congreso.dominio.InformationAccount;
@@ -63,7 +66,24 @@ public class ParticipationRegisterInformationController {
 	public ModelAndView confirmaRegistro(@PathVariable("token") String token)
             throws ServletException, IOException {
     	ModelAndView modelAndView = new ModelAndView("register_participation/confirm_success");
-    	accountService.confirmToken(token);
+    	
+		ParticipationRegisterInformation byToken = informationService
+				.findParticipationRegisterInformationByToken(token);
+    	
+		if(byToken!=null){
+        	StringBuffer name = new StringBuffer();
+        	name.append(byToken.getName()).append(" ");
+        	name.append(byToken.getSecondName()).append(" ");
+        	name.append(byToken.getThirdName()).append(" ");
+    	
+        	Map<String, String> properties = new HashMap<String, String>();
+        	properties.put("nombre", name.toString());
+        	properties.put("usuario", byToken.getInformationAccount().getEmail());
+        	properties.put("clave", byToken.getInformationAccount().getPassword());
+        	
+        	accountService.confirmToken(token, properties);
+        	modelAndView.addObject("participationInformation", byToken);
+		}
     	return modelAndView;
     }
 	
@@ -104,6 +124,7 @@ public class ParticipationRegisterInformationController {
     		participationRegisterInformation.setSecondName(formRegisterParticipation.getApellidoPaterno());
     		participationRegisterInformation.setThirdName(formRegisterParticipation.getApellidoMaterno());
     		participationRegisterInformation.setPhone(formRegisterParticipation.getTelefono());
+    		participationRegisterInformation.setParticipationName(formRegisterParticipation.getNombreDeLaParticipacion());
     		participationRegisterInformation.setOcupation(ocupation);
     		participationRegisterInformation.setUniversity(university);
     		participationRegisterInformation.setParticipation(participation);
@@ -128,7 +149,42 @@ public class ParticipationRegisterInformationController {
     	loadCatalogs(modelAndView);
     	return modelAndView;
     }
-    
+
+	@RequestMapping(value="/list_user_participation")
+	public ModelAndView showListUserPreRegister(
+			@ModelAttribute("formRegister") FormPreRegister formRegister,
+			HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+		
+		String searchParameter = request.getParameter("search-param");		
+		log.debug("PARAMETRO DE BUSQUEDA: " + searchParameter);
+		
+		List<ParticipationRegisterInformation> findAllParticipants;
+		if(searchParameter != null && !searchParameter.equals("")){
+			findAllParticipants = informationService.findAllParticipationRegistersByParamSearch(searchParameter);				
+		}else{
+			findAllParticipants = informationService.findAllParticipationRegisters();
+		}
+		
+    	ModelAndView modelAndView = new ModelAndView("register_participation/list_user_participation");
+    	modelAndView.addObject("participants", findAllParticipants);
+    	return modelAndView;
+    }
+	
+    @RequestMapping(value="/show_pdf_file/{token}", method = RequestMethod.GET)
+	public void showPdfFile(@PathVariable("token") String token,
+			HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {    	
+    	
+		ParticipationRegisterInformation byToken = informationService
+				.findParticipationRegisterInformationByToken(token);
+    	
+		if(byToken!=null){
+	    	response.setContentType("application/pdf");
+	    	response.getOutputStream().write(byToken.getParticipationFile());
+		}
+    }
+	
 	@InitBinder("formRegisterParticipation")
 	protected void initBinder(WebDataBinder webDataBinder) {
 		webDataBinder.setValidator(mainValidator);

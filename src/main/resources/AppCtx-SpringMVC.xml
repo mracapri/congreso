@@ -33,6 +33,6 @@
 	
 	<!-- Persistence -->
 	<import resource="AppCtx-Persistence.xml" />
-	<import resource="AppCtx-Transactions.xml" />		
+	<import resource="AppCtx-Transactions.xml" />
 	
 </beans>

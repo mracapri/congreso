@@ -1,7 +1,9 @@
 package edu.mx.utvm.congreso.controlador;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -50,7 +52,7 @@ public class PreRegisterInformationController {
 	private PreRegisterInformationService preRegisterInformationService;
 	
 	@Autowired
-	private InformationAccountService accountService; 
+	private InformationAccountService accountService;	
 	
 	private void loadCatalogs(ModelAndView model){
 		this.universities = catalogService.findAllUniversities();
@@ -68,12 +70,23 @@ public class PreRegisterInformationController {
 	public ModelAndView confirmaRegistro(@PathVariable("token") String token)
             throws ServletException, IOException {
     	ModelAndView modelAndView = new ModelAndView("register/confirm_success");
-		PreRegisterInformation findPreRegisterInformationByToken = preRegisterInformationService
+		PreRegisterInformation byToken = preRegisterInformationService
 				.findPreRegisterInformationByToken(token);
 		
-    	if(findPreRegisterInformationByToken!=null){    		
-    		accountService.confirmToken(token);	    
-    		modelAndView.addObject("preRegisterInformation", findPreRegisterInformationByToken);
+    	if(byToken!=null){
+    		
+        	StringBuffer name = new StringBuffer();
+        	name.append(byToken.getName()).append(" ");
+        	name.append(byToken.getSecondName()).append(" ");
+        	name.append(byToken.getThirdName()).append(" ");
+    		
+        	Map<String, String> model = new HashMap<String, String>();
+        	model.put("nombre", name.toString());
+        	model.put("usuario", byToken.getInformationAccount().getEmail());
+        	model.put("clave", byToken.getInformationAccount().getPassword());
+    		
+    		accountService.confirmToken(token, model);	    
+    		modelAndView.addObject("preRegisterInformation", byToken);
     	}
     	
     	return modelAndView;

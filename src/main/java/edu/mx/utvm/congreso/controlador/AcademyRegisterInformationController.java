@@ -1,7 +1,9 @@
 package edu.mx.utvm.congreso.controlador;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -64,7 +66,10 @@ public class AcademyRegisterInformationController {
 	public ModelAndView confirmaRegistro(@PathVariable("token") String token)
             throws ServletException, IOException {
     	ModelAndView modelAndView = new ModelAndView("register_academy/confirm_success");
-    	accountService.confirmToken(token);
+    	
+    	Map<String, String> properties = new HashMap<String, String>();
+    	// TODO: implementar funcioalidad
+    	accountService.confirmToken(token, properties);
     	return modelAndView;
     }
 	

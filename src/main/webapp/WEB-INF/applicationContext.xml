@@ -8,7 +8,9 @@
 		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.xsd"
 	xmlns:context="http://www.springframework.org/schema/context">
 
-	 <http use-expressions="true">
+	<beans:import resource="classpath:AppCtx-SpringMVC.xml"/>
+	
+	<http use-expressions="true">
 	    
         <http-basic/>
         
@@ -45,16 +47,6 @@
         </authentication-provider>
     </authentication-manager>
 	 
-	<beans:bean id="securityHandler" class="edu.mx.utvm.congreso.security.SecurityHandler">
-	    <beans:property name="captchaPrivateKey" value="6LfzDM4SAAAAAD7HAALpgRNZPq22RuFvhilgba-g"/>
-	    <beans:property name="productionMode" value="true"/>
-	</beans:bean>
-	 
-	<beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-	    <beans:property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-	    <beans:property name="url" value="jdbc:mysql://localhost:3307/congreso"/>
-	    <beans:property name="username" value="root"/>
-	    <beans:property name="password" value="root"/>
-	</beans:bean>	
+	<beans:bean id="securityHandler" class="edu.mx.utvm.congreso.security.SecurityHandler"/>
 	
 </beans:beans>

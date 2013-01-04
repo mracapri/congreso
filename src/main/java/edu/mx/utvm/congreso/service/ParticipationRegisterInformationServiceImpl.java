@@ -1,6 +1,7 @@
 package edu.mx.utvm.congreso.service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ public class ParticipationRegisterInformationServiceImpl implements Participatio
 	@Autowired
 	private ParticipationRegisterInformationDaoImpl informationDao;
 	
-	@Value("${URL_CONFIRM_PREREGISTER}")
+	@Value("${URL_CONFIRM_PARTICIPATION}")
 	private String urlConfirm;
 	
 	@Value("${MAIL_SENDER}")
@@ -45,7 +46,7 @@ public class ParticipationRegisterInformationServiceImpl implements Participatio
 		/* Generate token and set to object*/
 		String token = Util.generateToken(participationRegisterInformation.getInformationAccount().getEmail());
 		participationRegisterInformation.getInformationAccount().setToken(token);
-		participationRegisterInformation.getInformationAccount().setReferenceKey(token);
+		participationRegisterInformation.getInformationAccount().setReferenceKey("");
 		
 		/* Generate url confirm */
 		String urlConfirm = this.urlConfirm + token;
@@ -62,6 +63,26 @@ public class ParticipationRegisterInformationServiceImpl implements Participatio
 		accountService.save(participationRegisterInformation.getInformationAccount());
 		roleService.save(participationRegisterInformation.getUserRole());
 		informationDao.create(participationRegisterInformation);		
+	}
+
+
+	@Override
+	public List<ParticipationRegisterInformation> findAllParticipationRegisters() {
+		return informationDao.findAll();
+	}
+
+
+	@Override
+	public List<ParticipationRegisterInformation> findAllParticipationRegistersByParamSearch(
+			String searchParameter) {
+		return informationDao.findParticipationRegisterInformationByParamSearch(searchParameter);
+	}
+
+
+	@Override
+	public ParticipationRegisterInformation findParticipationRegisterInformationByToken(
+			String token) {
+		return informationDao.findParticipationRegisterInformationByToken(token);
 	}
 
 }

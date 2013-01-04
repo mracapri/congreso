@@ -15,7 +15,7 @@ import org.springframework.ui.velocity.VelocityEngineUtils;
 @Service
 public class MailService implements Runnable{
 	
-	@Value("${IS_PRODUCTION}")
+	@Value("${IS_PRODUCTION_MAIL}")
 	private boolean isProductionMode;
 	
 	public static final String TEMPLATE_PREREGISTER_CONFIRMATION = "mail_preregister_confirmation.vm";	
