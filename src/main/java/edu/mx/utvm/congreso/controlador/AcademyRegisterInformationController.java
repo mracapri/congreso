@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import edu.mx.utvm.congreso.controlador.formbeans.FormPreRegister;
 import edu.mx.utvm.congreso.controlador.formbeans.FormRegisterAcademy;
 import edu.mx.utvm.congreso.controlador.validator.MainValidator;
 import edu.mx.utvm.congreso.dominio.AcademyRegisterInformation;
@@ -67,9 +68,18 @@ public class AcademyRegisterInformationController {
             throws ServletException, IOException {
     	ModelAndView modelAndView = new ModelAndView("register_academy/confirm_success");
     	
-    	Map<String, String> properties = new HashMap<String, String>();
-    	// TODO: implementar funcioalidad
-    	accountService.confirmToken(token, properties);
+		AcademyRegisterInformation byToken = academyRegisterInformationService
+				.findAcademyRegisterInformationByToken(token);
+		
+		if(byToken != null){
+	    	Map<String, String> properties = new HashMap<String, String>();
+        	properties.put("nombre", byToken.getName());
+        	properties.put("usuario", byToken.getInformationAccount().getEmail());
+        	properties.put("clave", byToken.getInformationAccount().getPassword());
+        	
+	    	accountService.confirmToken(token, properties);
+	    	modelAndView.addObject("academyRegisterInformation", byToken);
+		}    	
     	return modelAndView;
     }
 	
@@ -113,6 +123,20 @@ public class AcademyRegisterInformationController {
             throws ServletException, IOException {
     	ModelAndView modelAndView = new ModelAndView("register_academy/register");
     	loadCatalogs(modelAndView);
+    	return modelAndView;
+    }
+	
+	@RequestMapping(value="/list_academic")
+	public ModelAndView showListAcademic(
+			@ModelAttribute("formRegister") FormPreRegister formRegister,
+			HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+		
+		List<AcademyRegisterInformation> findAllAcademyRegisterInformation = academyRegisterInformationService
+				.findAllAcademyRegisterInformation();
+		
+    	ModelAndView modelAndView = new ModelAndView("register_academy/list_academic");
+    	modelAndView.addObject("academics", findAllAcademyRegisterInformation);
     	return modelAndView;
     }
     

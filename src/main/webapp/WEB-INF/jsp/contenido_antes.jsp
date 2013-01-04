@@ -70,7 +70,7 @@
 								<a href="${pageContext.request.contextPath}/resolver/register_participation/list_user_participation">Lista de participantes</a>
 							</li>
 							<li>
-								<a href="${pageContext.request.contextPath}">Cuerpos academicos registrados</a>
+								<a href="${pageContext.request.contextPath}/resolver/register_academy/list_academic">Cuerpos academicos registrados</a>
 							</li>
 							<li>
 								<a href="${pageContext.request.contextPath}/j_spring_security_logout">

@@ -1,6 +1,7 @@
 package edu.mx.utvm.congreso.service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,7 @@ public class AcademyRegisterInformationServiceImpl implements AcademyRegisterInf
 	@Autowired
 	private AcademyRegisterInformationDaoImpl informationDao;
 	
-	@Value("${URL_CONFIRM_PREREGISTER}")
+	@Value("${URL_CONFIRM_ACADEMY}")
 	private String urlConfirm;
 	
 	@Value("${MAIL_SENDER}")
@@ -56,6 +57,19 @@ public class AcademyRegisterInformationServiceImpl implements AcademyRegisterInf
 		
 		accountService.save(academyRegisterInformation.getInformationAccount());
 		informationDao.create(academyRegisterInformation);
+	}
+
+
+	@Override
+	public AcademyRegisterInformation findAcademyRegisterInformationByToken(
+			String token) {
+		return informationDao.findAcademyRegisterInformationByToken(token);
+	}
+
+
+	@Override
+	public List<AcademyRegisterInformation> findAllAcademyRegisterInformation() {
+		return informationDao.findAll();
 	}
 
 }
