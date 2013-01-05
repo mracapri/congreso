@@ -11,6 +11,6 @@
 	<b>Muchas gracias!</b>
 	<br/>
 	<br/>			    
-	<a class="btn btn-info" href="${pageContext.request.contextPath}">Aceptar</a>			    
+	<a class="btn btn-info" href="${pageContext.request.contextPath}/resolver/index.htm?unshow-message">Aceptar</a>			    
 </div>
 <%@ include file="/WEB-INF/jsp/contenido_despues.jsp" %>

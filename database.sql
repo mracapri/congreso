@@ -96,8 +96,8 @@ CREATE TABLE IF NOT EXISTS participation_register_information (
 CREATE TABLE IF NOT EXISTS academy_information (
   email varchar(50) NOT NULL,
   name varchar(100) NOT NULL,
-  investigation_line varchar(100) NOT NULL,
-  contact varchar(100) NOT NULL,
+  investigation_line text NOT NULL,
+  contact text NOT NULL,
   id_university integer(3) NOT NULL,
   FOREIGN KEY (email) REFERENCES information_account(email),
   FOREIGN KEY (id_university) REFERENCES university(id)

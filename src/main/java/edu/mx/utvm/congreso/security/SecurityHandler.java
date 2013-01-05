@@ -48,7 +48,7 @@ public class SecurityHandler implements AuthenticationSuccessHandler, Authentica
 		}
 						
 		if (authentication != null && authentication.isAuthenticated()) {
-			response.sendRedirect("resolver/index.htm");
+			response.sendRedirect("resolver/index.htm?unshow-message");
 		}else{
 			response.sendRedirect("resolver/login.htm");
 		}

@@ -1,5 +1,13 @@
 <%@ include file="/WEB-INF/jsp/contenido_antes.jsp" %>
-<form id="loginForm" action="${pageContext.request.contextPath}/j_spring_security_check" method="post">		
+<form id="loginForm" action="${pageContext.request.contextPath}/j_spring_security_check" method="post">
+	<div class="row">
+		<div class="span12">		    		    
+		    <div class="alert alert-info">
+		    	<strong>Inicie sesi&oacuten</strong>
+		    </div>
+		    Introduzca sus crendenciales de acceso		    
+		</div>
+	</div>
 	<fieldset>
 		<div class="row">
 			<div class="span9">
