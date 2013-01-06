@@ -12,7 +12,30 @@ CREATE TABLE IF NOT EXISTS university (
 
 insert into university(id, name) values 
 (1, 'Universidad Tecnologica del Valle del Mezquital'), 
-(2, 'Universidad Tecnologica de Tula Tepeji');
+(2, 'Universidad Tecnologica del Suroeste  de Guanajuato'), 
+(3, 'Universidad Tecnologica de Tehuacán'),
+(4, 'Universidad Tecnologica de Izucar de Matamoros'),
+(5, 'Universidad Tecnologica de Usumacinta'),
+(6, 'Universidad Tecnologica de la Corregidora Qro.'),
+(7, 'Universidad Tecnologica de Puebla'),
+(8, 'Universidad Tecnologica de Huejotzingo '),
+(9, 'Universidad Tecnologica de Tabasco'),
+(10, 'Universidad Tecnologica de de San Luis Rio Colorado'),
+(11, 'Universidad Tecnologica Valles Centrales de Oaxaca'),
+(12, 'Universidad Tecnologica de Morelia'),
+(13, 'Universidad Tecnologica de la Costa'),
+(14, 'Universidad Tecnologica del poniente (Maxcano, Yucatan)'),
+(15, 'Universidad Tecnologica de Tecamachalco'),
+(16, 'Universidad Tecnologica del Sur del Estado de México'),
+(17, 'Universidad Tecnologica  de Nayarit'),
+(18, 'Universidad Tecnologica de Tecamac'),
+(19, 'Universidad Tecnologica del centro de Veracruz'),
+(20, 'Universidad Tecnologica de la Huasteca Hidalguense '),
+(21, 'Universidad Tecnologica de la Costa Grande de Guerrero'),
+(22, 'Universidad Tecnologica de de Xicotepec de Juárez'),
+(23, 'Universidad Tecnologica de la Selva '),
+(24, 'Universidad Tecnologica de Tijuana (Unidad académica de ensenada)'),
+(25, 'Universidad Tecnologica de Tula Tepeji');
 
 CREATE TABLE IF NOT EXISTS ocupation (
   id integer(3) NOT NULL,
