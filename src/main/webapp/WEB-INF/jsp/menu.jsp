@@ -14,7 +14,7 @@
 	<li><a href="${pageContext.request.contextPath}/resolver/register_academy/form">Registro de cuerpo academico</a></li>	
 	<li><a href="#">Informacion turistica</a></li>
 	<li><a href="#">SEDES</a></li>
-	<li><a href="#">Como llegar</a></li>
+	<li><a href="${pageContext.request.contextPath}/resolver/pages/como_llegar">Como llegar</a></li>
 	<li><a href="${pageContext.request.contextPath}/recursos/docs/programa_general.pdf" target="_blank">Programa general</a></li>
 	<li style="display:none;"><a href="#">Memoria del congreso</a></li>
 	<li style="display:none;"><a href="#">Evaluadores</a></li>
@@ -22,7 +22,8 @@
 	<li class="divider"></li>
 	<li class="nav-header">Importante</li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/conferencias">Conferencias</a></li>
-	<li><a href="${pageContext.request.contextPath}">Talleres</a></li>
+	<li><a href="${pageContext.request.contextPath}/resolver/pages/reuniones">Reuniones</a></li>
+	<li><a href="${pageContext.request.contextPath}/resolver/pages/talleres">Talleres</a></li>
 	<li><a href="${pageContext.request.contextPath}">Concursos</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/ponencias">Ponencias</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/carteles">Carteles</a></li>

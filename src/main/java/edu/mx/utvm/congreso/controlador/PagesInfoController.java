@@ -28,6 +28,25 @@ public class PagesInfoController {
         
     	return new ModelAndView("content/conferencias", "modelo", modelo);
     }
+
+	@RequestMapping(value="/como_llegar")
+    public ModelAndView handleComoLLegar(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+      
+        Map<String, Object> modelo = new HashMap<String, Object>();
+        
+    	return new ModelAndView("content/como_llegar", "modelo", modelo);
+    }
+
+	
+	@RequestMapping(value="/reuniones")
+    public ModelAndView handleReuniones(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+      
+        Map<String, Object> modelo = new HashMap<String, Object>();
+        
+    	return new ModelAndView("content/reuniones", "modelo", modelo);
+    }
 	
 	@RequestMapping(value="/ponencias")
     public ModelAndView handlePonencias(HttpServletRequest request, HttpServletResponse response)
@@ -54,5 +73,14 @@ public class PagesInfoController {
 		Map<String, Object> modelo = new HashMap<String, Object>();
 
 		return new ModelAndView("content/actividades_culturales", "modelo", modelo);
+	}
+	
+		@RequestMapping(value = "/talleres")
+	public ModelAndView handleTalleres(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+
+		Map<String, Object> modelo = new HashMap<String, Object>();
+
+		return new ModelAndView("content/talleres", "modelo", modelo);
 	}
 }
