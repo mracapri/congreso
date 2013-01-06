@@ -15,11 +15,20 @@
 		<intercept-url pattern='/index.htm' filters='none' access="IS_AUTHENTICATED_ANONYMOUSLY"/>
     	<intercept-url pattern='/login.htm' filters='none'/>
     	
-    	<intercept-url pattern='/resolver/register_fiscal_data/**' access='isAuthenticated()' />
+    	<intercept-url pattern='/resolver/register_fiscal_data/form' access="hasRole('ROLE_PREREGISTER')" />
+    	<intercept-url pattern='/resolver/register_fiscal_data/save' access="hasRole('ROLE_PREREGISTER')" />
+    	
+    	<intercept-url pattern='/resolver/register/list_user_preregistered' access="hasRole('ROLE_ADMIN')" />
+    	<intercept-url pattern='/resolver/payment/form/*' access="hasRole('ROLE_ADMIN')" />
+    	<intercept-url pattern='/resolver/payment/save' access="hasRole('ROLE_ADMIN')" />
+    	
+    	<intercept-url pattern='/resolver/register_participation/list_user_participation' access="hasRole('ROLE_ADMIN_PARTICIPATION')" />
+    	<intercept-url pattern='/resolver/register_academy/list_academic' access="hasRole('ROLE_ADMIN_PARTICIPATION')" />
+    	<intercept-url pattern='/resolver/register_participation/show_pdf_file/*' access="hasRole('ROLE_ADMIN_PARTICIPATION')" />
 	    
 	    
         <form-login login-page="/resolver/login.htm" 
-        			default-target-url="/resolver/index.htm" 
+        			default-target-url="/resolver/index.htm?unshow-message" 
         			always-use-default-target="true"
         			authentication-success-handler-ref="securityHandler" 
         			authentication-failure-handler-ref="securityHandler" 
@@ -27,7 +36,7 @@
         
         <logout 
         	invalidate-session="true" 
-        	logout-success-url="/index.jsp" 
+        	logout-success-url="/resolver/index.htm?unshow-message" 
         	logout-url="/j_spring_security_logout"/>
         
 		<remember-me key="congreso.utmv.edu.mx" />

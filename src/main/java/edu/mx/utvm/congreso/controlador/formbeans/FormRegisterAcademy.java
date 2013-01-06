@@ -14,11 +14,9 @@ public class FormRegisterAcademy extends FormRegisterAccount {
 	private String nombreDelCuerpoAcademico;
 
 	@NotEmpty
-	@Size(min = 1, max = 250)
 	private String lineasDeInvestigacion;
 	
 	@NotEmpty
-	@Size(min = 1, max = 250)
 	private String contacto;
 
 	public String getIdInstitucionProcedencia() {

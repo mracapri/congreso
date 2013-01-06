@@ -16,14 +16,16 @@
 		<div class="row-fluid">
 			<div class="navbar">
 				<div class="navbar-inner">
-					<a class="brand" href="${pageContext.request.contextPath}">Inicio</a>
+					<a class="brand" href="${pageContext.request.contextPath}/resolver/index.htm?unshow-message">Inicio</a>
 					<ul class="nav">
-												
-						<li>
-							<a href="${pageContext.request.contextPath}/resolver/login.htm">
-							Iniciar Sesi&oacuten
-							</a>
-						</li>							
+		
+						<sec:authorize access="!isAuthenticated()">
+							<li>
+								<a href="${pageContext.request.contextPath}/resolver/login.htm">
+								Iniciar Sesi&oacuten
+								</a>
+							</li>
+						</sec:authorize>
 						
 						<sec:authorize access="hasRole('ROLE_PREREGISTER')">
 							<li>

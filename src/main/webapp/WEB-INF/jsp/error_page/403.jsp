@@ -2,10 +2,11 @@
 <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-header">
 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#215;</button>
-		<h3 id="myModalLabel">Acceso restringido</h3>
+		<h3 id="myModalLabel">Acceso no autorizado</h3>
 	</div>
 	<div class="modal-body">
-		¡¡Esta pagina no existe!!
+		Lamentamos informarle que en esta secci&oacuten del portal, no cuenta
+		con la autoridad suficiente para entrar.
 	</div>
 	<div class="modal-footer">
 		<a class="btn btn-danger" href="${pageContext.request.contextPath}/resolver/index.htm?unshow-message">Cerrar</a>
