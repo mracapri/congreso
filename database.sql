@@ -4,11 +4,19 @@ USE congreso;
 
 set GLOBAL max_allowed_packet = 1024*1024*1024*10;
 
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
 CREATE TABLE IF NOT EXISTS university (
   id integer(3) NOT NULL,
   name varchar(100) NOT NULL,
   PRIMARY KEY (id)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 insert into university(id, name) values 
 (1, 'Universidad Tecnologica del Valle del Mezquital'), 
