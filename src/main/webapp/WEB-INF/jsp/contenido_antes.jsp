@@ -3,6 +3,11 @@
 <html>
 <head>
 	<%@ include file="/WEB-INF/jsp/resources.jsp" %>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('a[rel*=tooltip]').tooltip({animation:true, placement:'bottom'});
+		});
+	</script>
 </head>
 <body>	
 	<!-- wrapper-->
@@ -37,6 +42,13 @@
 								<a href="${pageContext.request.contextPath}/resolver/payment/payment_ticket" target="_blank">Generar ficha de pago</a>
 							</li>
 							<li>
+								<a rel="tooltip" 
+									data-original-title="Another tooltip"
+									href="${pageContext.request.contextPath}/resolver/register_participation/list_user_participation">
+									Armar agenda
+								</a>
+							</li>
+							<li>
 								<a href="${pageContext.request.contextPath}/j_spring_security_logout">
 										Cerrar Sesi&oacuten
 								</a>
@@ -44,11 +56,15 @@
 						</sec:authorize>
 						<sec:authorize access="hasRole('ROLE_PREREGISTERED')">
 							<li>
-								<a href="${pageContext.request.contextPath}/resolver/register_fiscal_data/form">Registro de datos fiscales</a>
+								<a href="${pageContext.request.contextPath}/resolver/register_fiscal_data/form">
+									Informaci&oacuten fiscal
+								</a>
 							</li>
 							<li>
-								<a href="#">
-									Armar mis actividades
+								<a rel="tooltip" 
+									data-original-title="Another tooltip"
+									href="${pageContext.request.contextPath}/resolver/register_participation/list_user_participation">
+									Armar agenda
 								</a>
 							</li>
 							<li>
@@ -83,7 +99,7 @@
 					</ul>
 				</div>
 			</div>
-		</div>
+		</div>	
 		<div class="row-fluid">
 			<div class="span3">
 				<%@ include file="/WEB-INF/jsp/menu.jsp" %>
