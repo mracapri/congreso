@@ -1,3 +1,4 @@
+<%@page import="org.springframework.security.core.context.SecurityContextHolder"%>
 <%@ include file="/WEB-INF/jsp/include.jsp" %>
 <!DOCTYPE html>
 <html>
@@ -31,6 +32,14 @@
 								</a>
 							</li>
 						</sec:authorize>
+						
+						<li>
+							<a href="#">
+							 	<span class="label">
+							 		<c:out value="${pageContext.request.userPrincipal.name}"/>
+							 	</span>
+							</a>
+						</li>
 						
 						<sec:authorize access="hasRole('ROLE_PREREGISTERED_SUCCESS')">
 							<li>

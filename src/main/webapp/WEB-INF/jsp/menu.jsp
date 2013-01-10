@@ -4,7 +4,7 @@
 			<em>"Impulsando el desarrollo tecnol&oacute;gico sustentable"</em>
 		</strong>
 	</p>
-	<small>Congreso Nacional Nacional Bioalimentario</small>
+	<small>Congreso Nacional Bioalimentario</small>
 </blockquote>
 <ul class="nav nav-list">  
 	<li class="divider"></li>
