@@ -32,7 +32,7 @@
 							</li>
 						</sec:authorize>
 						
-						<sec:authorize access="hasRole('ROLE_PREREGISTER')">
+						<sec:authorize access="hasRole('ROLE_PREREGISTERED_SUCCESS')">
 							<li>
 								<a href="${pageContext.request.contextPath}/resolver/register_fiscal_data/form">
 									Informaci&oacuten fiscal
@@ -41,20 +41,9 @@
 							<li>
 								<a href="${pageContext.request.contextPath}/resolver/payment/payment_ticket" target="_blank">Generar ficha de pago</a>
 							</li>
-							<li>
-								<a rel="tooltip" 
-									data-original-title="Another tooltip"
-									href="${pageContext.request.contextPath}/resolver/register_participation/list_user_participation">
-									Armar agenda
-								</a>
-							</li>
-							<li>
-								<a href="${pageContext.request.contextPath}/j_spring_security_logout">
-										Cerrar Sesi&oacuten
-								</a>
-							</li>
 						</sec:authorize>
-						<sec:authorize access="hasRole('ROLE_PREREGISTERED')">
+						
+						<sec:authorize access="hasRole('ROLE_PREREGISTERED_SUCCESS_PAYMENT')">
 							<li>
 								<a href="${pageContext.request.contextPath}/resolver/register_fiscal_data/form">
 									Informaci&oacuten fiscal
@@ -62,25 +51,15 @@
 							</li>
 							<li>
 								<a rel="tooltip" 
-									data-original-title="Another tooltip"
-									href="${pageContext.request.contextPath}/resolver/register_participation/list_user_participation">
+									data-original-title="Funcionalidad activada hasta el 1 de Marzo"
+									href="#">
 									Armar agenda
-								</a>
-							</li>
-							<li>
-								<a href="${pageContext.request.contextPath}/j_spring_security_logout">
-										Cerrar Sesi&oacuten
 								</a>
 							</li>
 						</sec:authorize>
 						<sec:authorize access="hasRole('ROLE_ADMIN')">
 							<li>
 								<a href="${pageContext.request.contextPath}/resolver/register/list_user_preregistered">Usuarios de PreRegistro</a>
-							</li>
-							<li>
-								<a href="${pageContext.request.contextPath}/j_spring_security_logout">
-										Cerrar Sesi&oacuten
-								</a>
 							</li>
 						</sec:authorize>
 						<sec:authorize access="hasRole('ROLE_ADMIN_PARTICIPATION')">
@@ -90,6 +69,8 @@
 							<li>
 								<a href="${pageContext.request.contextPath}/resolver/register_academy/list_academic">Cuerpos academicos registrados</a>
 							</li>
+						</sec:authorize>
+						<sec:authorize access="isAuthenticated()">
 							<li>
 								<a href="${pageContext.request.contextPath}/j_spring_security_logout">
 										Cerrar Sesi&oacuten
