@@ -4,6 +4,7 @@ public class UserRole {
 	
 	public static final String ROLE_REGISTER_PARTICIPATION = "ROLE_REGISTER_PARTICIPATION";
 	public static final String ROLE_PREREGISTER = "ROLE_PREREGISTER";
+	public static final String ROLE_PREREGISTERED = "ROLE_PREREGISTERED";
 	
 	private String userId;
 	private String authority;

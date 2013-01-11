@@ -16,4 +16,14 @@ public class UserRoleServiceImpl implements UserRoleService{
 		daoImpl.create(role);
 	}
 
+	@Override
+	public UserRole read(String id) {
+		return daoImpl.read(id);
+	}
+
+	@Override
+	public void update(UserRole userRole) {
+		daoImpl.update(userRole);
+	}
+
 }

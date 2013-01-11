@@ -83,4 +83,12 @@ public class PagesInfoController {
 
 		return new ModelAndView("content/talleres", "modelo", modelo);
 	}
+		@RequestMapping(value = "/concursos")
+	public ModelAndView handleConcursos(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+
+		Map<String, Object> modelo = new HashMap<String, Object>();
+
+		return new ModelAndView("content/concursos", "modelo", modelo);
+	}
 }

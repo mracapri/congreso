@@ -24,7 +24,7 @@
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/conferencias">Conferencias</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/reuniones">Reuniones</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/talleres">Talleres</a></li>
-	<li><a href="${pageContext.request.contextPath}">Concursos</a></li>
+	<li><a href="${pageContext.request.contextPath}/resolver/pages/concursos">Concursos</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/ponencias">Ponencias</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/carteles">Carteles</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/actividades_culturales">Actividades culturales</a></li>
