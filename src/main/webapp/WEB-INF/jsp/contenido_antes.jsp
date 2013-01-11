@@ -50,39 +50,13 @@
 							<li>
 								<a href="${pageContext.request.contextPath}/resolver/payment/payment_ticket" target="_blank">Generar ficha de pago</a>
 							</li>
-<<<<<<< HEAD
-							<li>
-								<a rel="tooltip" 
-									data-original-title="Another tooltip"
-									href="${pageContext.request.contextPath}/resolver/register_participation/list_user_participation">
-									Armar agenda
-								</a>
-							</li>
-							<li>
-								<a href="${pageContext.request.contextPath}/j_spring_security_logout">
-										Cerrar Sesi&oacuten
-								</a>
-							</li>
-						</sec:authorize>
-						<sec:authorize access="hasRole('ROLE_PREREGISTERED')">
-							<li>
-								<a href="${pageContext.request.contextPath}/resolver/register_fiscal_data/form">
-									Informaci&oacuten fiscal
-								</a>
-							</li>
-							<li>
-								<a rel="tooltip" 
-									data-original-title="Another tooltip"
-									href="${pageContext.request.contextPath}/resolver/register_participation/list_user_participation">
-									Armar agenda
-=======
+
 						</sec:authorize>
 						
 						<sec:authorize access="hasRole('ROLE_PREREGISTERED_SUCCESS_PAYMENT')">
 							<li>
 								<a href="${pageContext.request.contextPath}/resolver/register_fiscal_data/form">
 									Informaci&oacuten fiscal
->>>>>>> 718ea5cb8dc29f4915606594439bf512c154fac7
 								</a>
 							</li>
 							<li>

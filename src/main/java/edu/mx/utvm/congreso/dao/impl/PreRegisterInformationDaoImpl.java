@@ -217,4 +217,53 @@ public class PreRegisterInformationDaoImpl extends JdbcTemplate implements IPreR
 		});
 		return resultados;
 	}
+	
+	@Override
+	public PreRegisterInformation findPreRegisterInformationByUserName(String userName) {		
+	    String sql = "select ";
+	    sql = sql + 	"ia.token, pi.email, ia.password, pi.name, pi.second_name, pi.third_name, o.name, u.name ";
+	    sql = sql + "from ";
+	    sql = sql + 	"preregister_information pi, ocupation o, university u, information_account ia ";
+	    sql = sql + "where ";
+	    sql = sql + 	"o.id = pi.id_ocupation and u.id = pi.id_university and ia.email = ?";
+		try {
+			PreRegisterInformation resultado = this.queryForObject(sql,
+					new Object[] { userName },
+					new RowMapper<PreRegisterInformation>() {
+						@Override
+						public PreRegisterInformation mapRow(ResultSet rs,
+								int rowNum) throws SQLException {
+
+							InformationAccount account = new InformationAccount();
+							account.setEmail(rs.getString("pi.email"));
+							account.setPassword(rs.getString("ia.password"));
+							account.setToken(rs.getString("ia.token"));
+							
+							University university = new University();
+							university.setName(rs.getString("u.name"));
+							
+							Ocupation ocupation = new Ocupation();
+							ocupation.setName(rs.getString("o.name"));
+							
+							UserRole userRole = new UserRole();
+							userRole.setUserId(account.getEmail());
+							
+							PreRegisterInformation information = new PreRegisterInformation();
+							information.setName(rs.getString("pi.name"));
+							information.setSecondName(rs.getString("pi.second_name"));
+							information.setThirdName(rs.getString("pi.third_name"));
+
+							information.setInformationAccount(account);
+							information.setUniversity(university);
+							information.setOcupation(ocupation);
+							information.setUserRole(userRole);
+							
+							return information;
+						}
+					});
+			return resultado;
+		} catch (EmptyResultDataAccessException accessException) {
+			return null;
+		}
+	}
 }

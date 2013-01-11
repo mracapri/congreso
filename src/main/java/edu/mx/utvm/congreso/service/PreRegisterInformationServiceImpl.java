@@ -41,6 +41,7 @@ public class PreRegisterInformationServiceImpl implements PreRegisterInformation
 		referenceKey.append(name.toUpperCase());
 		referenceKey.append(secondName.toUpperCase());
 		referenceKey.append(thirdName.toUpperCase());
+		referenceKey.append("|");
 		referenceKey.append(token.toUpperCase());
 		return referenceKey.toString();
 	}
@@ -124,5 +125,11 @@ public class PreRegisterInformationServiceImpl implements PreRegisterInformation
 	public List<PreRegisterInformation> findAllPreRegistersByParamSearch(
 			String searchParameter) {
 		return informationDao.findAllPreRegistersByParamSearch(searchParameter);
+	}
+
+	@Override
+	public PreRegisterInformation findPreRegisterInformationByUserName(
+			String userName) {
+		return informationDao.findPreRegisterInformationByUserName(userName);
 	}
 }
