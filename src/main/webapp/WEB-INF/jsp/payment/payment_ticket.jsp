@@ -64,6 +64,7 @@ td {
 						<td></td>
 						<td>
 							<p class="label-ticket" style="font-size:14px;">
+								<img alt="" src="${pageContext.request.contextPath}/recursos/images/banorte.jpg" />
 								<strong>
 									Banco:
 								</strong>
