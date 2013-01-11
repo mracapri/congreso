@@ -21,46 +21,76 @@
 				});
 			});
 		</script>
+		
+		<style type="text/css">
+table {
+    border: 2px dotted;
+}
+td {
+    padding: 13px;
+}
+.label-ticket strong {
+    text-decoration: underline;
+    display: block;
+}
+		</style>
 	</head>
 	<body>
 		<div class="container">
+		
 			<br/>
 			Recorte la ficha
-			<br/>
-			<div class="row">
-				<div class="span9" style="border:1px dotted; padding:20px;">
-					<div class="row">
-						<div class="span1">
+			<br/><br/>
+			
+			<div class="cut">
+				<table>
+					<tr>
+						<td>
 							<img alt="" src="${pageContext.request.contextPath}/recursos/images/LOGO_ficha.png" />
-						</div>
-						<div class="span4">
+						</td>
+						<td>
 							<p style="font-size:25px;">
 								<strong>
 									Ficha de Deposito
 								</strong>
 							</p>
-							<br/>
 							<p style="font-size:16px;">
 								<strong>
 									7&deg; Congreso Nacional Bioalimentario
 								</strong>
 							</p>
-						</div>
-						
-						<div class="span2">
-							<p style="font-size:14px;">
+						</td>
+						<td></td>
+						<td></td>
+						<td>
+							<p class="label-ticket" style="font-size:14px;">
+								<strong>
+									Banco:
+								</strong>
+								Banorte
+							</p>
+						</td>
+					</tr>
+					
+					<tr>
+						<td colspan="2">
+							<p class="label-ticket" style="font-size:14px;">
 								<strong>
 									Numero empresa: 
 								</strong>
 								126361
 							</p>
-						</div>
-					</div>
-					<br/>
-					<div class="row">
-						<div class="span1"></div>
-						<div class="span4">
-							<p style="font-size:14px;">
+						</td>
+						<td colspan="2">
+							<p class="label-ticket" style="font-size:14px;">
+								<strong>
+									Fecha:
+								</strong>
+								${date}
+							</p>
+						</td>
+						<td>
+							<p class="label-ticket" style="font-size:14px;">
 								<strong>
 									Nombre del participante:
 								</strong>
@@ -68,44 +98,30 @@
 								${preRegisterInformation.secondName} 
 								${preRegisterInformation.thirdName}
 							</p>
-						</div>
-						<div class="span3">
-
-							<p style="font-size:14px;">
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<p class="label-ticket" style="font-size:14px;">
 								<strong>
 									Clave:
 								</strong>
 								${preRegisterInformation.informationAccount.token}
-							</p>				
-						</div>
-					</div>
-					
-					<br/>
-					<div class="row">
-						<div class="span9">
-							<div class="span4">
-								<p style="font-size:14px;">
-									<strong>
-										Fecha:
-									</strong>
-									${date}
-								</p>
-							</div>
-							<div class="span4">
-								<p style="font-size:14px;">
-									<strong>
-										Importe:
-									</strong>
-									450.00 M.N
-								</p>
-							</div>
-						</div>
-					</div>		
-				</div>
+							</p>
+						</td>
+						<td colspan="2">
+							<p class="label-ticket" style="font-size:14px;">
+								<strong>
+									Importe:
+								</strong>
+								450.00 M.N
+							</p>
+						</td>
+						<td></td>
+					</tr>
+				</table>
 			</div>
-			
-			<br/><br/>
-			
+			<br/>
 			<button class="btn btn-info" id="btn-print">
 				<li class="icon-print"></li>
 				Imprimir
