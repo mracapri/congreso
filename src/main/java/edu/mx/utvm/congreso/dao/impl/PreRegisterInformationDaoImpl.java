@@ -17,6 +17,7 @@ import edu.mx.utvm.congreso.dominio.InformationAccount;
 import edu.mx.utvm.congreso.dominio.Ocupation;
 import edu.mx.utvm.congreso.dominio.PreRegisterInformation;
 import edu.mx.utvm.congreso.dominio.University;
+import edu.mx.utvm.congreso.dominio.UserRole;
 @Repository
 public class PreRegisterInformationDaoImpl extends JdbcTemplate implements IPreRegisterInformationDao{
 	
@@ -150,6 +151,9 @@ public class PreRegisterInformationDaoImpl extends JdbcTemplate implements IPreR
 							Ocupation ocupation = new Ocupation();
 							ocupation.setName(rs.getString("o.name"));
 							
+							UserRole userRole = new UserRole();
+							userRole.setUserId(account.getEmail());
+							
 							PreRegisterInformation information = new PreRegisterInformation();
 							information.setName(rs.getString("pi.name"));
 							information.setSecondName(rs.getString("pi.second_name"));
@@ -158,6 +162,7 @@ public class PreRegisterInformationDaoImpl extends JdbcTemplate implements IPreR
 							information.setInformationAccount(account);
 							information.setUniversity(university);
 							information.setOcupation(ocupation);
+							information.setUserRole(userRole);
 							
 							return information;
 						}

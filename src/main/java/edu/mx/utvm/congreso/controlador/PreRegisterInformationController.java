@@ -33,6 +33,7 @@ import edu.mx.utvm.congreso.dominio.UserRole;
 import edu.mx.utvm.congreso.service.CatalogService;
 import edu.mx.utvm.congreso.service.InformationAccountService;
 import edu.mx.utvm.congreso.service.PreRegisterInformationService;
+import edu.mx.utvm.congreso.service.UserRoleService;
 
 @Controller
 @RequestMapping("/register")
@@ -52,7 +53,10 @@ public class PreRegisterInformationController {
 	private PreRegisterInformationService preRegisterInformationService;
 	
 	@Autowired
-	private InformationAccountService accountService;	
+	private InformationAccountService accountService;
+	
+	@Autowired
+	private UserRoleService roleService;
 	
 	private void loadCatalogs(ModelAndView model){
 		this.universities = catalogService.findAllUniversities();
@@ -84,8 +88,13 @@ public class PreRegisterInformationController {
         	model.put("nombre", name.toString());
         	model.put("usuario", byToken.getInformationAccount().getEmail());
         	model.put("clave", byToken.getInformationAccount().getPassword());
+        	
+    		accountService.confirmToken(token, model);
     		
-    		accountService.confirmToken(token, model);	    
+    		/* change role preregistered succes */
+    		byToken.getUserRole().setAuthority(UserRole.ROLE_PREREGISTERED_SUCCESS);
+    		roleService.update(byToken.getUserRole());
+    		
     		modelAndView.addObject("preRegisterInformation", byToken);
     	}
     	
@@ -117,7 +126,7 @@ public class PreRegisterInformationController {
     		university.setId(Integer.parseInt(formRegister.getIdInstitucionProcedencia()));
     		
     		UserRole userRole = new UserRole();
-    		userRole.setAuthority(UserRole.ROLE_PREREGISTER);
+    		userRole.setAuthority(UserRole.ROLE_PREREGISTERED);
     		userRole.setUserId(formRegister.getCorreoElectronico());
     		
     		PreRegisterInformation preRegisterInformation = new PreRegisterInformation();

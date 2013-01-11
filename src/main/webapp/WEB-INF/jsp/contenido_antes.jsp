@@ -1,3 +1,4 @@
+<%@page import="org.springframework.security.core.context.SecurityContextHolder"%>
 <%@ include file="/WEB-INF/jsp/include.jsp" %>
 <!DOCTYPE html>
 <html>
@@ -32,7 +33,15 @@
 							</li>
 						</sec:authorize>
 						
-						<sec:authorize access="hasRole('ROLE_PREREGISTER')">
+						<li>
+							<a href="#">
+							 	<span class="label">
+							 		<c:out value="${pageContext.request.userPrincipal.name}"/>
+							 	</span>
+							</a>
+						</li>
+						
+						<sec:authorize access="hasRole('ROLE_PREREGISTERED_SUCCESS')">
 							<li>
 								<a href="${pageContext.request.contextPath}/resolver/register_fiscal_data/form">
 									Informaci&oacuten fiscal
@@ -41,6 +50,7 @@
 							<li>
 								<a href="${pageContext.request.contextPath}/resolver/payment/payment_ticket" target="_blank">Generar ficha de pago</a>
 							</li>
+<<<<<<< HEAD
 							<li>
 								<a rel="tooltip" 
 									data-original-title="Another tooltip"
@@ -65,22 +75,27 @@
 									data-original-title="Another tooltip"
 									href="${pageContext.request.contextPath}/resolver/register_participation/list_user_participation">
 									Armar agenda
+=======
+						</sec:authorize>
+						
+						<sec:authorize access="hasRole('ROLE_PREREGISTERED_SUCCESS_PAYMENT')">
+							<li>
+								<a href="${pageContext.request.contextPath}/resolver/register_fiscal_data/form">
+									Informaci&oacuten fiscal
+>>>>>>> 718ea5cb8dc29f4915606594439bf512c154fac7
 								</a>
 							</li>
 							<li>
-								<a href="${pageContext.request.contextPath}/j_spring_security_logout">
-										Cerrar Sesi&oacuten
+								<a rel="tooltip" 
+									data-original-title="Funcionalidad activada hasta el 1 de Marzo"
+									href="#">
+									Armar agenda
 								</a>
 							</li>
 						</sec:authorize>
 						<sec:authorize access="hasRole('ROLE_ADMIN')">
 							<li>
 								<a href="${pageContext.request.contextPath}/resolver/register/list_user_preregistered">Usuarios de PreRegistro</a>
-							</li>
-							<li>
-								<a href="${pageContext.request.contextPath}/j_spring_security_logout">
-										Cerrar Sesi&oacuten
-								</a>
 							</li>
 						</sec:authorize>
 						<sec:authorize access="hasRole('ROLE_ADMIN_PARTICIPATION')">
@@ -90,6 +105,8 @@
 							<li>
 								<a href="${pageContext.request.contextPath}/resolver/register_academy/list_academic">Cuerpos academicos registrados</a>
 							</li>
+						</sec:authorize>
+						<sec:authorize access="isAuthenticated()">
 							<li>
 								<a href="${pageContext.request.contextPath}/j_spring_security_logout">
 										Cerrar Sesi&oacuten

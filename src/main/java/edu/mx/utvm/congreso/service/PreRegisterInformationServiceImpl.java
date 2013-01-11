@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import edu.mx.utvm.congreso.dao.impl.PreRegisterInformationDaoImpl;
 import edu.mx.utvm.congreso.dominio.PreRegisterInformation;
+import edu.mx.utvm.congreso.dominio.UserRole;
 import edu.mx.utvm.congreso.mail.MailService;
 import edu.mx.utvm.congreso.util.Util;
 @Service
@@ -102,6 +103,15 @@ public class PreRegisterInformationServiceImpl implements PreRegisterInformation
 	@Override
 	public void changePaymentStatus(boolean status, String token) {
 		informationDao.changePaymentStatus(status, token);
+		PreRegisterInformation byToken = informationDao.findPreRegisterInformationByToken(token);
+		
+		if(status){
+			byToken.getUserRole().setAuthority(UserRole.ROLE_PREREGISTERED_SUCCESS_PAYMENT);
+		}else{
+			byToken.getUserRole().setAuthority(UserRole.ROLE_PREREGISTERED_SUCCESS);
+		}
+		
+		roleService.update(byToken.getUserRole());
 	}
 
 
