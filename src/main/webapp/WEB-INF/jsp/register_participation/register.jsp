@@ -7,6 +7,14 @@
 				El siguiente formulario, permitir&aacute registrar su informaci&oacuten de 
 				participaci&oacuten en el congreso
 			</p>
+			<a target="_blank" href="${pageContext.request.contextPath}/recursos/docs/Instrucciones_presentacion_extensos.pdf">
+				<i class="icon-book"></i>
+				Instrucciones para extensos
+			</a>
+			<a target="_blank" href="${pageContext.request.contextPath}/recursos/docs/Instrucciones_presentacion_resumenes_trabajos.pdf">
+				<i class="icon-book"></i>
+				Instrucciones para resumenes
+			</a>
 	    </div>
 	</div>
 </div>
