@@ -15,8 +15,8 @@
 	<div id="wrapper">
 		<!-- banner-->
 		<div id="banner">
-			<img src="${pageContext.request.contextPath}/recursos/images/encabezado.png" />
-			<img src="${pageContext.request.contextPath}/recursos/images/FOTOS.png" />
+			<img src="${pageContext.request.contextPath}/recursos/images/encabezado.jpg" />
+			<img src="${pageContext.request.contextPath}/recursos/images/FOTOS.jpg" />
 		</div>
 		<!-- fin banner-->
 		<div class="row-fluid">
@@ -34,11 +34,13 @@
 						</sec:authorize>
 						
 						<li>
-							<a href="#">
-							 	<span class="label">
-							 		<c:out value="${pageContext.request.userPrincipal.name}"/>
-							 	</span>
-							</a>
+							<sec:authorize access="isAuthenticated()">
+								<a href="#">
+								 	<span class="label">
+								 		<c:out value="${pageContext.request.userPrincipal.name}"/>
+								 	</span>
+								</a>
+							</sec:authorize>
 						</li>
 						
 						<sec:authorize access="hasRole('ROLE_PREREGISTERED_SUCCESS')">
