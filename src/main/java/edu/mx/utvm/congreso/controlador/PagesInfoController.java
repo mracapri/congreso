@@ -91,4 +91,13 @@ public class PagesInfoController {
 
 		return new ModelAndView("content/concursos", "modelo", modelo);
 	}
+		@RequestMapping(value = "/informacion_turistica")
+	public ModelAndView handleInformacionTuristica(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+
+		Map<String, Object> modelo = new HashMap<String, Object>();
+
+		return new ModelAndView("content/informacion_turistica", "modelo", modelo);
+	}
+		
 }

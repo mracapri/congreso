@@ -11,10 +11,10 @@
 	<li class="nav-header">Congreso Nacional</li>
 	<li><a href="${pageContext.request.contextPath}/resolver/register/form">Preregistro</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/register_participation/form">Registro de participaci&oacute;n</a></li>
-	<li><a href="${pageContext.request.contextPath}/resolver/register_academy/form">Registro de cuerpo academico</a></li>	
-	<li><a href="#">Informacion turistica</a></li>
+	<li><a href="${pageContext.request.contextPath}/resolver/register_academy/form">Registro de cuerpo acad&eacutemico</a></li>	
+	<li><a href="${pageContext.request.contextPath}/resolver/pages/informacion_turistica">Informaci&oacuten tur&iacutestica</a></li>
 	<li><a href="#">SEDES</a></li>
-	<li><a href="${pageContext.request.contextPath}/resolver/pages/como_llegar">Como llegar</a></li>
+	<li><a href="${pageContext.request.contextPath}/resolver/pages/como_llegar">C&oacutemo llegar?</a></li>
 	<li><a href="${pageContext.request.contextPath}/recursos/docs/programa_general.pdf" target="_blank">Programa general</a></li>
 	<li style="display:none;"><a href="#">Memoria del congreso</a></li>
 	<li style="display:none;"><a href="#">Evaluadores</a></li>

@@ -7,15 +7,15 @@
 
 <p>Miercoles 8 de marzo</p>
 <ul>
-	<li>Miércoles 8 de marzo de 2013 10:00 hrs.</li>Ceremonia de
-	Inauguración a cargo del Gobernador del Estado de Hidalgo
+	<li>Mi&eacutercoles 8 de marzo de 2013 10:00 hrs.</li>Ceremonia de
+	Inauguraci&oacuten a cargo del Gobernador del Estado de Hidalgo
 	<li>21:00 hrs. Noche Hidalguense</li>
 </ul>
 
 
-<p>Miércoles 9 de marzo</p>
+<p>Mi&eacutercoles 9 de marzo</p>
 <ul>
-	<li>19:00 hrs. Ballet Folklórico</li>
+	<li>19:00 hrs. Ballet Folkl&oacuterico</li>
 		(Amalia Mendoza, Hidalgu&iacute;a)
 	</li>
 	<li>21:00 hrs. Noche Hidalguense</li>

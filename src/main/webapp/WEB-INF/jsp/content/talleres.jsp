@@ -9,11 +9,11 @@ por el coordinador del taller mismo.
 </p>
 <h4>Lista de Talleres</h4>
 <ul>
-  <li> Lácteos  </li>
-  <li>Cárnicos </li>
-  <li>Confitería</li>
-  <li>Demostraciones de análisis bromatológico</li>
-  <li>Análisis fisicoquímico de agua</li>
+  <li> L&aacutecteos  </li>
+  <li>C&aacuternicos </li>
+  <li>Confiter&iacutea</li>
+  <li>Demostraciones de an&aacutelisis bromatol&oacutegico</li>
+  <li>An&aacutelisis fisicoqu&iacutemico de agua</li>
 </ul>
 
 <%@ include file="/WEB-INF/jsp/contenido_despues.jsp"%>
