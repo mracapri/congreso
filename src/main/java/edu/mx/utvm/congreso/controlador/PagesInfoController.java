@@ -18,7 +18,6 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/pages")
 public class PagesInfoController {
 	protected final Log logger = LogFactory.getLog(getClass());
-	
 
 	@RequestMapping(value="/conferencias")
     public ModelAndView handleConferencias(HttpServletRequest request, HttpServletResponse response)
@@ -75,7 +74,7 @@ public class PagesInfoController {
 		return new ModelAndView("content/actividades_culturales", "modelo", modelo);
 	}
 	
-		@RequestMapping(value = "/talleres")
+	@RequestMapping(value = "/talleres")
 	public ModelAndView handleTalleres(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
@@ -83,7 +82,8 @@ public class PagesInfoController {
 
 		return new ModelAndView("content/talleres", "modelo", modelo);
 	}
-		@RequestMapping(value = "/concursos")
+		
+	@RequestMapping(value = "/concursos")
 	public ModelAndView handleConcursos(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
@@ -91,7 +91,8 @@ public class PagesInfoController {
 
 		return new ModelAndView("content/concursos", "modelo", modelo);
 	}
-		@RequestMapping(value = "/informacion_turistica")
+		
+	@RequestMapping(value = "/informacion_turistica")
 	public ModelAndView handleInformacionTuristica(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
@@ -99,5 +100,12 @@ public class PagesInfoController {
 
 		return new ModelAndView("content/informacion_turistica", "modelo", modelo);
 	}
-		
+	
+	@RequestMapping(value = "/galeria_imagenes")
+	public ModelAndView handleGaleriaImagenes(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+
+		ModelAndView model = new ModelAndView("content/galeria_imagenes");
+		return model;
+	}	
 }
