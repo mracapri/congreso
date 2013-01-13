@@ -32,6 +32,6 @@
 	<li><a href="#">Facebook</a></li>
 	<li><a href="#">Twitter</a></li>
 	<li class="nav-header">Comunicaci&oacuten</li>
-	<li><a href="#">Sala de prensa</a></li>
+	<li><a href="${pageContext.request.contextPath}/resolver/pages/sala_prensa">Sala de prensa</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/galeria_imagenes">Galeria de imagenes</a></li>
 </ul>

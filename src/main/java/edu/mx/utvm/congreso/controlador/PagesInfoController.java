@@ -107,5 +107,13 @@ public class PagesInfoController {
 
 		ModelAndView model = new ModelAndView("content/galeria_imagenes");
 		return model;
-	}	
+	}
+	
+	@RequestMapping(value = "/sala_prensa")
+	public ModelAndView handleSalaDePrensa(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+
+		ModelAndView model = new ModelAndView("content/sala_prensa");
+		return model;
+	}
 }
