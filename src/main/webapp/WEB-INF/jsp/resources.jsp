@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <title>7&deg; Congreso Nacional Bioalimentario</title>
 <link href="${pageContext.request.contextPath}/recursos/css/main.css" rel="stylesheet" type="text/css" media="screen" />
 <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/recursos/images/favicon.ico">	

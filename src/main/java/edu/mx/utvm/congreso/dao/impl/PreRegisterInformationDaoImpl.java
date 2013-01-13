@@ -225,7 +225,7 @@ public class PreRegisterInformationDaoImpl extends JdbcTemplate implements IPreR
 	    sql = sql + "from ";
 	    sql = sql + 	"preregister_information pi, ocupation o, university u, information_account ia ";
 	    sql = sql + "where ";
-	    sql = sql + 	"o.id = pi.id_ocupation and u.id = pi.id_university and ia.email = ?";
+	    sql = sql + 	"o.id = pi.id_ocupation and u.id = pi.id_university and pi.email = ia.email and ia.email = ?";
 		try {
 			PreRegisterInformation resultado = this.queryForObject(sql,
 					new Object[] { userName },
