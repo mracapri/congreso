@@ -73,6 +73,9 @@
 							<li>
 								<a href="${pageContext.request.contextPath}/resolver/register/list_user_preregistered">Usuarios de PreRegistro</a>
 							</li>
+							<li>
+								<a href="${pageContext.request.contextPath}/resolver/chart/chart_preregister_status">Gr&aacutefica de pagos</a>
+							</li>
 						</sec:authorize>
 						<sec:authorize access="hasRole('ROLE_ADMIN_PARTICIPATION')">
 							<li>
@@ -80,6 +83,9 @@
 							</li>
 							<li>
 								<a href="${pageContext.request.contextPath}/resolver/register_academy/list_academic">Cuerpos academicos registrados</a>
+							</li>
+							<li>
+								<a href="${pageContext.request.contextPath}/resolver/chart/chart_participants_academics">Gr&aacutefica de participaci&oacuten</a>
 							</li>
 						</sec:authorize>
 						<sec:authorize access="isAuthenticated()">

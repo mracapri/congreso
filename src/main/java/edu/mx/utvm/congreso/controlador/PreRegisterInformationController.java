@@ -177,7 +177,7 @@ public class PreRegisterInformationController {
     	ModelAndView modelAndView = new ModelAndView("register/list_user_preregistered");
     	modelAndView.addObject("preRegisters", findAllPreRegisters);
     	return modelAndView;
-    }	
+    }
 	
 	@InitBinder("formRegister")
 	protected void initBinder(WebDataBinder webDataBinder) {
