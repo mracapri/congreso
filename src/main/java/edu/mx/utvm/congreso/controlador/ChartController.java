@@ -32,7 +32,7 @@ public class ChartController {
             throws ServletException, IOException {
 		
     	ModelAndView modelAndView = new ModelAndView("chart/chart_preregister_status");
-    	modelAndView.addObject("dataChart", chartService.getDataToChart());
+    	modelAndView.addObject("dataChart", chartService.getDataToChartPreregisterStatus());
     	return modelAndView;
     }	
 
@@ -43,7 +43,7 @@ public class ChartController {
             throws ServletException, IOException {
 		
     	ModelAndView modelAndView = new ModelAndView("chart/chart_participants_academics");
-    	modelAndView.addObject("dataChart", null);
+    	modelAndView.addObject("dataChart", chartService.getDataToChartParticipationRegister());
     	return modelAndView;
     }
 }

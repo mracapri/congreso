@@ -1,5 +1,8 @@
 <%@ include file="/WEB-INF/jsp/contenido_antes.jsp" %>
-		
+<a target="_blank" href="${pageContext.request.contextPath}/recursos/docs/Convocatoria_para_carteles.pdf">
+	<i class="icon-book"></i>
+	Convocatoria para carteles
+</a>
 <h3>
 	Carteles	
 </h3>

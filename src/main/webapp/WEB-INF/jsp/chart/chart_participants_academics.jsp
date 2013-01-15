@@ -8,8 +8,8 @@
       function drawVisualization() {
         var wrapper = new google.visualization.ChartWrapper({
           chartType: 'ColumnChart',
-          dataTable: [['', 'Participantes', 'Cuerpos Academicos'], ['', 700, 300 ]],
-          options: {'title': 'Participación y curpos academicos'},
+          dataTable: [['', 'Participantes', 'Cuerpos Academicos'], ['', ${dataChart.numberOfParticipants}, ${dataChart.numberOfAcademicBodies} ]],
+          options: {'title': 'Participación y cuerpos academicos'},
           containerId: 'visualization'
         });
         wrapper.draw();

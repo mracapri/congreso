@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -15,6 +17,8 @@ import edu.mx.utvm.congreso.util.Util;
 @Service
 public class ParticipationRegisterInformationServiceImpl implements ParticipationRegisterInformationService{
 
+	protected final Log log = LogFactory.getLog(getClass());
+	
 	@Autowired
 	private MailService mail;
 	
@@ -55,6 +59,8 @@ public class ParticipationRegisterInformationServiceImpl implements Participatio
     	Map<String, String> model = new HashMap<String, String>();
     	model.put("nombre", nombre.toString());
     	model.put("url", urlConfirm);
+    	
+    	log.debug("PARTICIPATION URL: " + urlConfirm);
     	
 		mail.sendMail(mailSender, participationRegisterInformation
 				.getInformationAccount().getEmail(), "Confirmación de cuenta",
