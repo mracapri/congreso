@@ -29,6 +29,7 @@
 
 	<dependencies>
 	    
+	    <!-- Encriptacion de datos -->
 		<dependency>
 		   <groupId>commons-codec</groupId>
 		   <artifactId>commons-codec</artifactId>
@@ -48,27 +49,15 @@
 		   <version>1.2.2</version>
 		</dependency>
 		
+		
+		<!-- Google captcha -->
 		<dependency>
 			<groupId>net.tanesha.recaptcha4j</groupId>
 			<artifactId>recaptcha4j</artifactId>
 			<version>0.0.7</version>
 		</dependency>
-	
-		<!-- Expire Filter 
-		<dependency>
-		   <groupId>com.caucho</groupId>
-		   <artifactId>resin</artifactId>
-		   <version>3.0.9</version>
-		</dependency>
-		-->
 		
-		<!-- Gzip Filter 
-		<dependency>
-		   <groupId>net.sf.click</groupId>
-		   <artifactId>click-extras</artifactId>
-		   <version>1.5.3</version>
-		</dependency>
-		-->
+		<!-- Mail template para envio de correos -->
 		
 		<dependency>
 		    <groupId>velocity</groupId>
@@ -82,19 +71,18 @@
 			<version>1.4.3</version>
 		</dependency>
 	    
+	    
+	    <!-- Validaciones en form beans -->
 		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
 			<version>1.0.0.GA</version>
 		</dependency>
-		
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator-annotation-processor</artifactId>
 			<version>4.1.0.Final</version>
 		</dependency>
-		
-
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -161,7 +149,7 @@
             <version>${org.springframework-version}</version>
         </dependency>        			
         
-        
+        <!-- Pruebas unitarias -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

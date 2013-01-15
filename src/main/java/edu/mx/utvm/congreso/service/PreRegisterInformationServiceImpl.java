@@ -82,7 +82,7 @@ public class PreRegisterInformationServiceImpl implements PreRegisterInformation
     	
 		mail.sendMail(mailSender, preRegisterInformation
 				.getInformationAccount().getEmail(), "Confirmación de cuenta",
-				model, MailService.TEMPLATE_PREREGISTER_CONFIRMATION);
+				model, MailService.TEMPLATE_CONFIRMATION_ACCOUNT);
 		
 		accountService.save(preRegisterInformation.getInformationAccount());
 		roleService.save(preRegisterInformation.getUserRole());
@@ -105,14 +105,24 @@ public class PreRegisterInformationServiceImpl implements PreRegisterInformation
 	public void changePaymentStatus(boolean status, String token) {
 		informationDao.changePaymentStatus(status, token);
 		PreRegisterInformation byToken = informationDao.findPreRegisterInformationByToken(token);
-		
+		String paymentStatus = "";
 		if(status){
 			byToken.getUserRole().setAuthority(UserRole.ROLE_PREREGISTERED_SUCCESS_PAYMENT);
+			paymentStatus = "PAGADO";
 		}else{
 			byToken.getUserRole().setAuthority(UserRole.ROLE_PREREGISTERED_SUCCESS);
+			paymentStatus = "NO PAGADO";
 		}
 		
 		roleService.update(byToken.getUserRole());
+		
+		/* Mapa de propiedades */
+    	Map<String, String> model = new HashMap<String, String>();
+    	model.put("paymentStatus", paymentStatus);
+    	
+    	/* Send mail */
+		mail.sendMail(mailSender, byToken.getInformationAccount().getEmail(), "Estado del pago",
+				model, MailService.TEMPLATE_CHANGED_PAYMENT_STATUS);
 	}
 
 

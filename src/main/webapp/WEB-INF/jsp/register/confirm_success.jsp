@@ -1,10 +1,10 @@
 <%@ include file="/WEB-INF/jsp/contenido_antes.jsp" %>		
 <div class="well">
 	Estimado <b>${preRegisterInformation.name} ${preRegisterInformation.secondName} ${preRegisterInformation.thirdName}</b>, 
-	de la <b>${preRegisterInformation.university.name}</b> su cuenta ha sido confirmada con esta direccion de correo 
-	electronico <b>${preRegisterInformation.informationAccount.email}</b>
+	de la <b>${preRegisterInformation.university.name}</b> su cuenta ha sido confirmada con esta direcci&oacuten de correo 
+	electr&oacutenico <b>${preRegisterInformation.informationAccount.email}</b>
 	<br/><br/> 	 
-	Puede iniciar la sesion <a href="${pageContext.request.contextPath}/resolver/login.htm">aqui</a>
+	Puede iniciar la sesi&oacuten <a href="${pageContext.request.contextPath}/resolver/login.htm">aqui</a>
 	<br/><br/>
 	<b>Muchas gracias!</b>
 	<br/><br/>	    

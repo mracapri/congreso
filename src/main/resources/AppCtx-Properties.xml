@@ -16,7 +16,7 @@
 				<prop key="URL_CONFIRM_ACADEMY">http://localhost:8080/congreso/resolver/register_academy/confirm/</prop>
 				<prop key="URL_LOGIN">http://localhost:8080/congreso/resolver/login.htm</prop>
 				<prop key="IS_PRODUCTION_LOGIN">false</prop>
-				<prop key="IS_PRODUCTION_MAIL">false</prop>
+				<prop key="IS_PRODUCTION_MAIL">true</prop>
 				<prop key="CAPTCHA_PUBLIC_KEY">6LfzDM4SAAAAAOJdbw4vz68s0lDAqIBQ-RCiH-ap</prop>
 				<prop key="CAPTCHA_PRIVATE_KEY">6LfzDM4SAAAAAD7HAALpgRNZPq22RuFvhilgba-g</prop>
 	       	</props>

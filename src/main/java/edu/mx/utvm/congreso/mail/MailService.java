@@ -18,10 +18,9 @@ public class MailService implements Runnable{
 	@Value("${IS_PRODUCTION_MAIL}")
 	private boolean isProductionMode;
 	
-	public static final String TEMPLATE_PREREGISTER_CONFIRMATION = "mail_preregister_confirmation.vm";	
-	public static final String TEMPLATE_PREREGISTER_SUCCESS = "mail_preregister_success.vm";
-	public static final String TEMPLATE_PARTICIPATION_CONFIRMATION = "mail_participation_confirmation.vm";
-	public static final String TEMPLATE_PARTICIPATION_SUCCESS = "mail_participation_success.vm";
+	public static final String TEMPLATE_CONFIRMATION_ACCOUNT = "template_confirmation_account.vm";	
+	public static final String TEMPLATE_SUCCESS_ACCOUNT = "template_confirmation_success.vm";
+	public static final String TEMPLATE_CHANGED_PAYMENT_STATUS = "template_changed_payment_status.vm";
 
 	@Autowired
 	private JavaMailSender mailSender;

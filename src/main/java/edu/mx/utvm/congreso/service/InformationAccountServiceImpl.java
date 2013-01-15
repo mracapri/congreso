@@ -48,7 +48,7 @@ public class InformationAccountServiceImpl implements InformationAccountService{
 			params.get("usuario"), 
 			"Confirmación de cuenta",
 			params, 
-			MailService.TEMPLATE_PREREGISTER_SUCCESS
+			MailService.TEMPLATE_SUCCESS_ACCOUNT
 		);
 	}
 }

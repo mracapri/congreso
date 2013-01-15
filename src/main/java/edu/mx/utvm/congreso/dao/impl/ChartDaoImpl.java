@@ -58,8 +58,8 @@ public class ChartDaoImpl extends JdbcTemplate implements IChartDao{
 	@Override
 	public ChartPreregisterStatus getDataToChartPreregisterStatus() {
 	    String sql = "select ";
-	    sql = sql + 	"(select count(*) from preregister_information where payment_status = 'PAGADO') as pay,  ";
-	    sql = sql + 	"(select count(*) from preregister_information where payment_status = 'NO_PAGADO') as no_pay";
+	    sql = sql + 	"(select count(*) from preregister_information pi, information_account ia where pi.email = ia.email and ia.enabled = 1 and payment_status = 'PAGADO') as pay,  ";
+	    sql = sql + 	"(select count(*) from preregister_information pi, information_account ia where pi.email = ia.email and ia.enabled = 1 and payment_status = 'NO_PAGADO') as no_pay";
 		try {
 			ChartPreregisterStatus result = this.queryForObject(sql,
 					new Object[] { },

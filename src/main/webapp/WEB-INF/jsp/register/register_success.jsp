@@ -3,7 +3,7 @@
 	Agradecemos su participaci&oacute;n al <b>Congreso Nacional Bioalimentario</b>
 	<br/>
 	<br/>		    
-	Verifique su cuenta de correo electronico, en breve se le har&aacute; llegar un mensaje, 
+	Verifique su cuenta de correo electr&oacutenico, en breve se le har&aacute; llegar un mensaje, 
 	el cual permitir&aacute; continuar con el proceso de confirmaci&oacute;n de la cuenta, al correo
 	electronico asociado al registro.
 	<br/>

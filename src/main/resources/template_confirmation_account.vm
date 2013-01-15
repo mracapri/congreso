@@ -1,0 +1,29 @@
+<html>
+	<body style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:1em;">
+		<table>
+			<tr>
+				<td style="vertical-align:top; padding: 10px;">
+					<img src="http://23.23.109.117:8080/congreso/recursos/images/LOGO_ficha.png"/>
+				</td>
+				<td>	
+					<div>
+						
+						<p style="font-size:1em;">Estimado <b>${nombre},</b></p>
+						 
+						<p style="font-size:1em; width: 500px;">
+							El presente correo permitir&aacute confirmar la informaci&oacuten de su cuenta
+							en el sitio del <b>Congreso Nacional Bioalimentario</b>.
+			
+							Por lo tanto agradeceremos confirme su registro haciendo clic a la siguiente liga
+							<a href="${url}">${url}</a>
+						</p>
+			 
+						<p style="font-size:1em; width: 500px; font-size:0.7em">
+							<b>Aviso</b>: Por favor, no conteste a este correo!
+						<p/>			
+					</div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

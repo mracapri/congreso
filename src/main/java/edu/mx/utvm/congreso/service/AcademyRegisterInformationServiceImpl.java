@@ -59,7 +59,7 @@ public class AcademyRegisterInformationServiceImpl implements AcademyRegisterInf
     	
 		mail.sendMail(mailSender, academyRegisterInformation
 				.getInformationAccount().getEmail(), "Confirmación de cuenta",
-				model, MailService.TEMPLATE_PREREGISTER_CONFIRMATION);
+				model, MailService.TEMPLATE_CONFIRMATION_ACCOUNT);
 		
 		accountService.save(academyRegisterInformation.getInformationAccount());
 		informationDao.create(academyRegisterInformation);

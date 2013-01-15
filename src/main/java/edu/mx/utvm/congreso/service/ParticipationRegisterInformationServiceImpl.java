@@ -64,7 +64,7 @@ public class ParticipationRegisterInformationServiceImpl implements Participatio
     	
 		mail.sendMail(mailSender, participationRegisterInformation
 				.getInformationAccount().getEmail(), "Confirmación de cuenta",
-				model, MailService.TEMPLATE_PARTICIPATION_CONFIRMATION);
+				model, MailService.TEMPLATE_CONFIRMATION_ACCOUNT);
 		
 		accountService.save(participationRegisterInformation.getInformationAccount());
 		roleService.save(participationRegisterInformation.getUserRole());

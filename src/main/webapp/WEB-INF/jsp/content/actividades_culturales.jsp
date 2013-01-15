@@ -29,7 +29,7 @@
 	<li>19:00 hrs. Convivio de Integraci&oacute;n (Explanda)</li>
 </ul>
 <hr />
-<h4>Esenario II Tuzo Forum</h4>
+<h4>Escenario II Tuzo Forum</h4>
 
 <h5>Exposiciones</h5>
 <ul>
@@ -40,7 +40,7 @@
 	<li>Expo proveedores de maquinaria y equipo</li>
 	<li>Lunada por Ixmiquilpan</li>
 </ul>
-<h4>Escenario III Universidad Tecnollogica del Valle del Mezquital</h4>
+<h4>Escenario III Universidad Tecnol&oacutegica del Valle del Mezquital</h4>
 <ul>
 	<li>Talleres</li>
 	<li>Concursos</li>
