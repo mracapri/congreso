@@ -36,6 +36,22 @@ public class PagesInfoController {
         
     	return new ModelAndView("content/como_llegar", "modelo", modelo);
     }
+	@RequestMapping(value="/sede")
+    public ModelAndView handleSede(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+      
+        Map<String, Object> modelo = new HashMap<String, Object>();
+        
+    	return new ModelAndView("content/sede", "modelo", modelo);
+    }
+	@RequestMapping(value="/contacto")
+    public ModelAndView handleContacto(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+      
+        Map<String, Object> modelo = new HashMap<String, Object>();
+        
+    	return new ModelAndView("content/contacto", "modelo", modelo);
+    }
 
 	
 	@RequestMapping(value="/reuniones")

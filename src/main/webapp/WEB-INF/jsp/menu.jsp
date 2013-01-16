@@ -18,7 +18,7 @@
 	<li><a href="${pageContext.request.contextPath}/recursos/docs/programa_general.pdf" target="_blank">Programa general</a></li>
 	<li style="display:none;"><a href="#">Memoria del congreso</a></li>
 	<li style="display:none;"><a href="#">Evaluadores</a></li>
-	<li><a href="#">Contacto</a></li>
+	<li><a href="${pageContext.request.contextPath}/resolver/pages/contacto">Contacto</a></li>
 	<li class="divider"></li>
 	<li class="nav-header">Importante</li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/conferencias">Conferencias</a></li>

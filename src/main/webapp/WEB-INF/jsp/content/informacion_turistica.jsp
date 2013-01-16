@@ -2,7 +2,8 @@
 
 <h3>Informaci&oacuten Tur&iacutestica</h3>
 <br />
-<h4>Hoteles</h4>
+<h4>Hoteles en Pachuca Hgo.</h4>
+<br />
 <table class="table table-bordered">
 	<tbody>
 		<tr>
@@ -151,6 +152,7 @@
 		</tr>
 	</tbody>
 </table>
+<hr/>
 <table class="table table-bordered">
 	<tbody>
 		<tr>
