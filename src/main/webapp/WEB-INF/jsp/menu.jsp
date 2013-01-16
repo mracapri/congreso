@@ -29,8 +29,8 @@
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/carteles">Carteles</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/actividades_culturales">Actividades culturales</a></li>
 	<li class="nav-header">Redes Sociales</li>
-	<li><a href="#">Facebook</a></li>
-	<li><a href="#">Twitter</a></li>
+	<li><a href="https://www.facebook.com/profile.php?id=100004964263265&fref=ts" target="_blank" >Facebook</a></li>
+	<li><a href="https://twitter.com/7bioalimentario" target="_blank">Twitter</a></li>
 	<li class="nav-header">Comunicaci&oacuten</li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/sala_prensa">Sala de prensa</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/galeria_imagenes">Galeria de imagenes</a></li>
