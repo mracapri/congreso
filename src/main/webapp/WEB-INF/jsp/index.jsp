@@ -5,7 +5,7 @@
 </h3>
 <div class="row">
 	<div class="span3">
-		<p><img src="${pageContext.request.contextPath}/recursos/images/LOGO.jpg"></p>
+		<p><img src="${pageContext.request.contextPath}/recursos/images/LOGO.png"></p>
 	</div>
 	<div class="span9">
 		<p>
@@ -54,7 +54,7 @@
 			<div class="row-fluid">
 				<div class="span12">				
 					<div class="span6">
-						<img src="${pageContext.request.contextPath}/recursos/images/LOGO.jpg">
+						<img src="${pageContext.request.contextPath}/recursos/images/LOGO.png">
 					</div>
 					<div class="span6">
 						<div class="row-fluid">
