@@ -12,11 +12,6 @@
 						<p style="font-size:1em; width: 500px;">
 							Se le notifica que su estado del pago para el Congreso Nacional
 							Bioalimentario, ha sigo cambiado a: <b>${paymentStatus}</b>
-															
-							<br/>
-							<br/>
-							Para iniciar sesi&oacuten haga clic a la siguiente liga
-							<a href="${url}">${url}</a>
 						</p>
 			 
 						<p style="font-size:1em; width: 500px; font-size:0.7em">

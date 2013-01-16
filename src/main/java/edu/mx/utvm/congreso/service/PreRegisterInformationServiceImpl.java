@@ -116,9 +116,17 @@ public class PreRegisterInformationServiceImpl implements PreRegisterInformation
 		
 		roleService.update(byToken.getUserRole());
 		
+		
+    	/* Build name */
+    	StringBuffer nombre = new StringBuffer();
+    	nombre.append(byToken.getName()).append(" ");
+    	nombre.append(byToken.getSecondName()).append(" ");
+    	nombre.append(byToken.getThirdName()).append(" ");		
+		
 		/* Mapa de propiedades */
     	Map<String, String> model = new HashMap<String, String>();
     	model.put("paymentStatus", paymentStatus);
+    	model.put("nombre", nombre.toString());
     	
     	/* Send mail */
 		mail.sendMail(mailSender, byToken.getInformationAccount().getEmail(), "Estado del pago",

@@ -7,7 +7,7 @@
 		<button type="button" class="close" data-dismiss="alert">&times;</button>
 		<h4>Atenci&oacuten!</h4>
 		Para cambiar el estado de pago del participante, hagalo cambiando en
-		los botones debajo y seleccione aceptar
+		los botones debajo y seleccione "Cambiar el estao del pago"
 	</div>	
 	<form:hidden path="token"/>
 	<label class="checkbox">
@@ -21,6 +21,7 @@
 	</label>
 	<br/>
 	<button type="submit" class="btn btn-info">Cambiar estado del pago</button>
+	<a href="${pageContext.request.contextPath}/resolver/register/list_user_preregistered" class="btn btn-info">Cancelar</a>
 </form:form>
 
 <%@ include file="/WEB-INF/jsp/contenido_despues.jsp" %>
