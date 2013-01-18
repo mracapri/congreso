@@ -5,15 +5,15 @@
 	    	<strong>Registro de participaci&oacuten en el Congreso</strong><br/><br/>
 			<p>
 				El siguiente formulario, permitir&aacute registrar su informaci&oacuten de 
-				participaci&oacuten en el congreso
+				participaci&oacuten en el congreso.
 			</p>
 			<a target="_blank" href="${pageContext.request.contextPath}/recursos/docs/Instrucciones_presentacion_extensos.pdf">
 				<i class="icon-book"></i>
-				Instrucciones para extensos
+				Descargar instrucciones para extensos
 			</a>
 			<a target="_blank" href="${pageContext.request.contextPath}/recursos/docs/Instrucciones_presentacion_resumenes_trabajos.pdf">
 				<i class="icon-book"></i>
-				Instrucciones para resumenes
+				Descargar instrucciones para res&uacutemenes
 			</a>
 	    </div>
 	</div>
@@ -25,7 +25,7 @@
 	<fieldset>
 		<div class="row">
 			<div class="span9">
-				<label>Correo electronico</label> <span class="obligatorio">*</span>
+				<label>Correo electr&oacutenico</label> <span class="obligatorio">*</span>
 				<form:input path="correoElectronico" />
 				<spring:hasBindErrors name="formRegisterParticipation">
 					<span class="label label-important"> <form:errors
@@ -33,7 +33,7 @@
 					</span>
 				</spring:hasBindErrors>
 
-				<label>Confirmar correo electronico</label> <span
+				<label>Confirmar correo electr&oacutenico</label> <span
 					class="obligatorio">*</span>
 				<form:input path="confirmarcorreoElectronico" />
 				<spring:hasBindErrors name="formRegisterParticipation">
@@ -104,7 +104,7 @@
 					</span>
 				</spring:hasBindErrors>
 
-				<label>Telefono</label> <span class="obligatorio">*</span>
+				<label>Tel&eacutefono</label> <span class="obligatorio">*</span>
 				<form:input path="telefono" />
 				<spring:hasBindErrors name="formRegisterParticipation">
 					<span class="label label-important"> <form:errors

@@ -4,8 +4,8 @@
 	<br/>
 	<br/>		    
 	Verifique su cuenta de correo electr&oacutenico, en breve se le har&aacute; llegar un mensaje, 
-	el cual permitir&aacute; continuar con el proceso de confirmaci&oacute;n de la cuenta, al correo
-	electr&oacutenico asociado al registro. <b>Por favor revise tambien en la bandeja de correo electr&oacutenico
+	el cual permitir&aacute; continuar con el proceso de confirmaci&oacute;n de la cuenta. 
+	<b>Por favor revise tambi&eacuten en la bandeja de correo electr&oacutenico
 	no deseado</b>
 	<br/>
 	<br/>

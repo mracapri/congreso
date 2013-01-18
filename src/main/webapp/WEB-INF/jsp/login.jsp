@@ -4,8 +4,7 @@
 		<div class="span12">		    		    
 		    <div class="alert alert-info">
 		    	<strong>Inicie sesi&oacuten</strong>
-		    </div>
-		    Introduzca sus crendenciales de acceso		    
+		    </div>	    
 		</div>
 	</div>
 	<fieldset>
@@ -22,9 +21,9 @@
 			</div>
 			<div class="span9">
 
-				<label>Usuario</label> <span class="obligatorio">*</span>
+				<label>Correo electr&oacutenico</label> <span class="obligatorio">*</span>
 				<input id="j_username" name="j_username" type="text" />
-				<label>Clave</label> <span class="obligatorio">*</span>
+				<label>Contraseña</label> <span class="obligatorio">*</span>
 				<input id="j_password" name="j_password" type="password" />
 				${recaptchaHtml}
 			</div>

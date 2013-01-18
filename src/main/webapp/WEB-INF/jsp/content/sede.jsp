@@ -1,6 +1,6 @@
 <%@ include file="/WEB-INF/jsp/contenido_antes.jsp"%>
 
-<h3>Esceario I Teatro Gota de Plata</h3>
+<h3>Escenario I Teatro Gota de Plata</h3>
 <p>
 
 </p>

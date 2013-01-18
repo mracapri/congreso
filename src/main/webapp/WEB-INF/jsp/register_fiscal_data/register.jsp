@@ -5,7 +5,7 @@
 	    	<strong>Informaci&oacuten Fiscal</strong><br/><br/>
 			<p>
 				El siguiente formulario, permitir&aacute registrar su informaci&oacuten fiscal en caso de que
-				requiera se le factura 
+				requiera factura 
 			</p>
 	    </div>
 	</div>

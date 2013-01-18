@@ -9,9 +9,14 @@
 	</div>
 	<div class="span9">
 		<p>
-			Bienvenidos al VII Congreso Nacional Agroindustrial, Alimentario y Biotecnol&oacute;gico que se llevar&aacute; a cabo en la Universidad Tecnol&oacute;gica del Valle del Mezquital del 20, 21 y 22  de Marzo del 2013.
+			Bienvenidos al VII Congreso Nacional Agroindustrial, Alimentario y Biotecnol&oacute;gico que se 
+			llevar&aacute; a cabo en la Universidad Tecnol&oacute;gica del Valle del Mezquital del 20 al 22  
+			de Marzo del 2013.
 			<br/><br/>
-			El Congreso es un espacio para que investigadores, docentes, profesionales, estudiantes y empresarios del &aacute;rea de alimentos y afines compartan el fruto de sus investigaciones y aborden temas de inter&eacute;s nacional y mundial relacionado con procesos agroindustriales y biotecnol&oacute;gicos amigables con el ambiente; alimentos que contribuyan a mejorar la nutrici&oacute;n y salud, y la calidad e inocuidad de los mismos.
+			El Congreso es un espacio para que investigadores, docentes, profesionales, estudiantes y empresarios 
+			del &aacute;rea de alimentos y afines compartan el fruto de sus investigaciones y aborden temas de inter&eacute;s 
+			nacional y mundial relacionados con procesos agroindustriales y biotecnol&oacute;gicos amigables con el ambiente; 
+			alimentos que contribuyan a mejorar la nutrici&oacute;n y salud, y la calidad e inocuidad de los mismos.
 		</p>
 	</div>
 </div>
@@ -20,17 +25,37 @@
 	Presentaci&oacute;n	
 </h3>
 <p>
-	En la actualidad nos encontramos sumergidos en un mundo sumamente exigente y competitivo, que demanda tanto a los actuales como a nuevos profesionales mantenerse actualizados en cada una de sus &aacute;reas, manteniendo el enfoque interdisciplinario de aquellas que intervienen en su campo de especialidad, ya sean t&eacute;cnicas o administrativas. 
+	En la actualidad nos encontramos sumergidos en un mundo sumamente exigente y competitivo, que demanda tanto a los actuales como 
+	a nuevos profesionales mantenerse actualizados en cada una de sus &aacute;reas, manteniendo el enfoque interdisciplinario de aquellas 
+	que intervienen en su campo de especialidad, ya sean t&eacute;cnicas o administrativas. 
 	<br/><br/>
-	El presente de la agricultura y el sector alimentario hace necesario que se vinculen a la biotecnolog&iacute;a para mejorar sus actividades productivas y acelerar estos  sectores econ&oacute;micos. Estos sectores aportan los elementos para lograr  la seguridad alimentaria la cual se refiere a que todas las personas deben tener  acceso f&iacute;sico y econ&oacute;mico a suficientes alimentos inocuos y nutritivos para satisfacer sus necesidades alimentarias  y sus preferencias en cuanto a alimentos. Todas las &aacute;reas involucradas desde sus &aacute;mbitos desarrollan tecnolog&iacute;as y procesos tendientes a lograr este fin com&uacute;n, adem&aacute;s se pretende mejorar la calidad de vida de los productores y la sociedad en su conjunto y desarrollar productos que mejoren la salud humana.
+	El presente de la agricultura y el sector alimentario hace necesario que se vinculen a la biotecnolog&iacute;a para mejorar sus actividades 
+	productivas y acelerar estos  sectores econ&oacute;micos. Estos sectores aportan los elementos para lograr  la seguridad alimentaria la cual 
+	se refiere a que todas las personas deben tener  acceso f&iacute;sico y econ&oacute;mico a suficientes alimentos inocuos y nutritivos para 
+	satisfacer sus necesidades alimentarias  y sus preferencias en cuanto a alimentos. Todas las &aacute;reas involucradas desde sus &aacute;mbitos 
+	desarrollan tecnolog&iacute;as y procesos tendientes a lograr este fin com&uacute;n, adem&aacute;s se pretende mejorar la calidad de vida de 
+	los productores y la sociedad en su conjunto y desarrollar productos que mejoren la salud humana.
 	<br/><br/>
-	Por estos motivos surge en el 2006 el "I Congreso Nacional Agroindustrial, Alimentario y Biotecnol&oacute;gico", realizado en la Universidad Tecnol&oacute;gica de Tecamac, mismo que se le ha dado continuidad celebr&aacute;ndose en 2008 en la Universidad Tecnol&oacute;gica de Tabasco, 2009 Universidad Tecnol&oacute;gica de Nayarit,  2010 Universidad Tecnol&oacute;gica de la Selva, 2011 Universidad Tecnol&oacute;gica del Suroeste de Guanajuato y 2012 en la Universidad Tecnol&oacute;gica del Centro de Veracruz.
+	Por estos motivos surge en el 2006 el "I Congreso Nacional Agroindustrial, Alimentario y Biotecnol&oacute;gico", realizado en la Universidad 
+	Tecnol&oacute;gica de Tecamac, mismo que se le ha dado continuidad celebr&aacute;ndose en 2008 en la Universidad Tecnol&oacute;gica de Tabasco, 
+	2009 Universidad Tecnol&oacute;gica de Nayarit,  2010 Universidad Tecnol&oacute;gica de la Selva, 2011 Universidad Tecnol&oacute;gica del Suroeste 
+	de Guanajuato y 2012 en la Universidad Tecnol&oacute;gica del Centro de Veracruz.
 	<br/><br/>
-	Hoy en d&iacute;a, la Universidad Tecnol&oacute;gica del Valle del Mezquital,  le da continuidad a este esfuerzo integrando los programas educativos de T&eacute;cnico Superior Universitario en Procesos Alimentarios, TSU en Biotecnolog&iacute;a, TSU en Agrobiotecnolog&iacute;a e Ingenier&iacute;a en Procesos Bioalimentarios, Alimentarios y en Tecnolog&iacute;as Bioalimentarias; ofreciendo el "VII Congreso Nacional Agroindustrial, Alimentario y Biotecnol&oacute;gico". A esta idea se suman los programas de TSU en Acuicultura y de Licencia Profesional en Seguridad e Inocuidad Alimentaria, de Tecnolog&iacute;a y Calidad en la Producci&oacute;n de Quesos, del Sub-Sistema de Universidades Tecnol&oacute;gicas.
+	Hoy en d&iacute;a, la Universidad Tecnol&oacute;gica del Valle del Mezquital,  le da continuidad a este esfuerzo integrando los programas educativos 
+	de T&eacute;cnico Superior Universitario en Procesos Alimentarios, TSU en Biotecnolog&iacute;a, TSU en Agrobiotecnolog&iacute;a e Ingenier&iacute;a en 
+	Procesos Bioalimentarios, Alimentarios y en Tecnolog&iacute;as Bioalimentarias; ofreciendo el "VII Congreso Nacional Agroindustrial, Alimentario y 
+	Biotecnol&oacute;gico". A esta idea se suman los programas de TSU en Acuicultura y de Licencia Profesional en Seguridad e Inocuidad Alimentaria, de 
+	Tecnolog&iacute;a y Calidad en la Producci&oacute;n de Quesos, del Sub-Sistema de Universidades Tecnol&oacute;gicas.
 	<br/><br/>
-	El s&eacute;ptimo Congreso Nacional Agroindustrial, Alimentario y Biotecnol&oacute;gico Pretende ser un encuentro para la comunicaci&oacute;n e intercambio de ideas entre investigadores, alumnos, maestros y p&uacute;blico interesado con un sello sustentable para que en el futuro, dichas ideas sean aplicadas para mejorar el posicionamiento t&eacute;cnico-cient&iacute;fico de M&eacute;xico. De este modo se divulgar&aacute; la importancia que tienen estas &aacute;reas del conocimiento en nuestra vida cotidiana. Expertos en el &aacute;rea de agrobiotecnolog&iacute;a y alimentos  coincidir&aacute;n en los espacios del Congreso para reflexionar en torno a la agrobiotecnolog&iacute;a y la importancia que tiene en el desarrollo y tecnolog&iacute;a alimentaria que contribuyan al desarrollo sustentable.
+	El s&eacute;ptimo Congreso Nacional Agroindustrial, Alimentario y Biotecnol&oacute;gico Pretende ser un encuentro para la comunicaci&oacute;n e 
+	intercambio de ideas entre investigadores, alumnos, maestros y p&uacute;blico interesado con un sello sustentable para que en el futuro, dichas 
+	ideas sean aplicadas para mejorar el posicionamiento t&eacute;cnico-cient&iacute;fico de M&eacute;xico. De este modo se divulgar&aacute; la importancia 
+	que tienen estas &aacute;reas del conocimiento en nuestra vida cotidiana. Expertos en el &aacute;rea de agrobiotecnolog&iacute;a y alimentos 
+	coincidir&aacute;n en los espacios del Congreso para reflexionar en torno a la agrobiotecnolog&iacute;a y la importancia que tiene en el desarrollo y 
+	tecnolog&iacute;a alimentaria que contribuyan al desarrollo sustentable.
 	<br/><br/>
-	El evento estar&aacute; colmado de la vasta experiencia de quienes ya se han desarrollado "en el campo profesional" o bien que han buscado soluciones por medio de la investigaci&oacute;n, igualmente de los responsables de organizar estos esfuerzos para brindar respuestas sociales y empresariales. 
+	El evento estar&aacute; colmado de la vasta experiencia de quienes ya se han desarrollado "en el campo profesional" o bien que han buscado soluciones 
+	por medio de la investigaci&oacute;n, igualmente de los responsables de organizar estos esfuerzos para brindar respuestas sociales y empresariales. 
 </p>
 
 

@@ -3,7 +3,7 @@
 <h3>Concursos</h3>
 <ul>
   <li> Concuso de Creatividad  </li>
-  <li> Really  de Conocimientos</li>
+  <li> Rally  de Conocimientos</li>
 </ul>
 
 

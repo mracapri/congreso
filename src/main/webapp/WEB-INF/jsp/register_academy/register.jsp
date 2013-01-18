@@ -2,10 +2,10 @@
 <div class="row">
 	<div class="span12">
 	    <div class="alert alert-info">
-	    	<strong>Registro de Cuerpo Academico</strong><br/><br/>
+	    	<strong>Registro de Cuerpo Acad&eacutemico</strong><br/><br/>
 			<p>
 				El siguiente formulario, permitir&aacute registrar informaci&oacuten de 
-				los cuerpos academicos
+				los Cuerpos Acad&eacutemicos.
 			</p>
 	    </div>
 	</div>
@@ -17,7 +17,7 @@
 	
 		<div class="row">
 			<div class="span9">
-				<label>Correo electronico</label> <span class="obligatorio">*</span>
+				<label>Correo electr&oacutenico</label> <span class="obligatorio">*</span>
 				<form:input path="correoElectronico" />
 				<spring:hasBindErrors name="formRegisterAcademy">
 					<span class="label label-important"> <form:errors
@@ -25,7 +25,7 @@
 					</span>
 				</spring:hasBindErrors>
 
-				<label>Confirmar correo electronico</label> <span
+				<label>Confirmar correo electr&oacutenico</label> <span
 					class="obligatorio">*</span>
 				<form:input path="confirmarcorreoElectronico" />
 				<spring:hasBindErrors name="formRegisterAcademy">
@@ -61,7 +61,7 @@
 		<div class="row">
 			<div class="span9">
 
-				<label>Institucion de procedencia</label> <span class="obligatorio">*</span>
+				<label>Instituci&oacuten de procedencia</label> <span class="obligatorio">*</span>
 				<form:select path="idInstitucionProcedencia">
 					<form:option value="" label="--- Seleccione ---"/>
 					<form:options items="${universities}" itemValue="id" itemLabel="name" />
@@ -72,7 +72,7 @@
 					</span>
 				</spring:hasBindErrors>
 
-				<label>Nombre del cuerpo academico</label> <span class="obligatorio">*</span>
+				<label>Nombre del Cuerpo Acad&eacutemico</label> <span class="obligatorio">*</span>
 				<form:input path="nombreDelCuerpoAcademico" />
 				<spring:hasBindErrors name="formRegisterAcademy">
 					<span class="label label-important"> <form:errors
@@ -80,7 +80,7 @@
 					</span>
 				</spring:hasBindErrors>
 
-				<label>Lineas de investigacion</label> <span class="obligatorio">*</span>
+				<label>Lineas de investigaci&oacuten</label> <span class="obligatorio">*</span>
 				<form:textarea path="lineasDeInvestigacion" rows="5" cols="30"/>
 				<spring:hasBindErrors name="formRegisterAcademy">
 					<span class="label label-important"> <form:errors
@@ -88,7 +88,7 @@
 					</span>
 				</spring:hasBindErrors>
 
-				<label>Contacto</label> <span class="obligatorio">*</span>
+				<label>Cont&aacutecto</label> <span class="obligatorio">*</span>
 				<form:textarea path="contacto" rows="5" cols="30"/>
 				<spring:hasBindErrors name="formRegisterAcademy">
 					<span class="label label-important"> <form:errors

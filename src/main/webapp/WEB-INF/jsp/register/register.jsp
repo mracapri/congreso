@@ -13,10 +13,10 @@
 		    	<strong>Instrucciones</strong>
 		    	<ol>
 			    	<li>Realice su pregregistro en el siguiente formulario de captura</li>
-			    	<li>Confirme su cuenta de usuario, a travez del correo electronico</li>
-			    	<li>Inicie sesion en el sitio para generar su ficha de deposito</li>
+			    	<li>Confirme su cuenta de usuario, a trav&eacutes del correo electr&oacutenico</li>
+			    	<li>Inicie sesi&oacuten en el sitio para generar su ficha de dep&oacutesito</li>
 			    	<li>
-			    		Envie su ficha de deposito, escaneada al siguiente correo 
+			    		Envie su ficha de dep&oacutesito, escaneada al siguiente correo 
 			    		<a href="mailto:#">finanzas@utvm.edu.mx</a> 
 			    		para confirmar su pago en el sistema
 			    	</li>
@@ -28,7 +28,7 @@
 	<fieldset>
 		<div class="row">
 			<div class="span9">
-				<label>Correo electronico</label>
+				<label>Correo electr&oacutenico</label>
 				<span class="obligatorio">*</span>
 				<form:input path="correoElectronico"/>								
 				<spring:hasBindErrors name="formRegister">
@@ -37,7 +37,7 @@
 					</span>
 				</spring:hasBindErrors>
 				
-				<label>Confirmar correo electronico</label>
+				<label>Confirmar correo electr&oacutenico</label>
 				<span class="obligatorio">*</span>								
 				<form:input path="confirmarcorreoElectronico"/>								
 				<spring:hasBindErrors name="formRegister">
@@ -75,7 +75,7 @@
 		<div class="row">
 			<div class="span9">			
 			
-				<label>Institucion de procedencia</label>
+				<label>Instituci&oacuten de procedencia</label>
 				<span class="obligatorio">*</span>
 				<form:select path="idInstitucionProcedencia">
 					<form:option value="" label="--- Seleccione ---"/>
@@ -114,7 +114,7 @@
 					</span>
 				</spring:hasBindErrors>
 				
-				<label>Telefono</label>
+				<label>Tel&eacutefono</label>
 				<span class="obligatorio">*</span>
 				<form:input path="telefono"/>
 				<spring:hasBindErrors name="formRegister">

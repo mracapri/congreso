@@ -2,10 +2,9 @@
 
 
 <div class="alert alert-info">
-	<h3>Contactanos!</h3>
+	<h3>Cont&aacutectanos!</h3>
 
-	<p>INSCRIPCI&OacuteN Y REGISTRO DE ACTIVIDADES DEL 7 CONGRESO
-		NACIONAL</p>
+	<p>Inscripci&oacuten y registro de actividades del 7 Congreso Bioalimentario Nacional</p>
 	<dl>
 		<dt>Registro de Ponencias</dt>
 		<dd>

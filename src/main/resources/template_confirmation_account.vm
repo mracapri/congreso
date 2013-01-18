@@ -8,10 +8,10 @@
 				<td>	
 					<div>
 						
-						<p style="font-size:1em;">Estimado <b>${nombre},</b></p>
+						<p style="font-size:1em;">Estimado <b>${nombre}:</b></p>
 						 
 						<p style="font-size:1em; width: 500px;">
-							El presente correo permitir&aacute confirmar la informaci&oacuten de su cuenta
+							El presente correo permitir‡ confirmar la informaci—n de su cuenta
 							en el sitio del <b>Congreso Nacional Bioalimentario</b>.
 			
 							Por lo tanto agradeceremos confirme su registro haciendo clic a la siguiente liga

@@ -51,7 +51,7 @@ td {
 						<td>
 							<p style="font-size:25px;">
 								<strong>
-									Ficha de Deposito
+									Ficha de Dep&oacutesito
 								</strong>
 							</p>
 							<p style="font-size:16px;">
@@ -77,7 +77,7 @@ td {
 						<td colspan="2">
 							<p class="label-ticket" style="font-size:14px;">
 								<strong>
-									Numero empresa: 
+									N&uacutemero empresa: 
 								</strong>
 								126361
 							</p>
