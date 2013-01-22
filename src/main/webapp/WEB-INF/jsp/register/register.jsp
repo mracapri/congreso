@@ -6,8 +6,8 @@
 		    <div class="alert alert-info">
 		    	<strong>Preregistro</strong>
 		    	<ul>
-			    	<li>$400.00 M.N hasta el 31 de Enero del 2013</li>
-			    	<li>$450.00 M.N a partir del 1 de Febrero del 2013</li>
+			    	<li>$400.00 M.N hasta el 8 de Febrero del 2013</li>
+			    	<li>$450.00 M.N a partir del 9 de Febrero del 2013</li>
 		    	</ul>
 		    
 		    	<strong>Instrucciones</strong>
