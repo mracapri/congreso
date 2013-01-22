@@ -1,7 +1,7 @@
 var index = {
 	init: function(){
 		$this = this;
-		$('#myModal').modal('show');
+		//$('#myModal').modal('show');
 	}
 };
 
