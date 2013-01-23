@@ -16,28 +16,28 @@
 		<br />
 		<dt>Registro de Ponencias</dt>
 		<dd>
-			Ing. Elia Trejo Trejo <br /> etrejo@utvm.edu.mx
+			Ing. Elia Trejo Trejo <br /> 7congreso_ponencias@utvm.edu.mx
 		</dd>
 		
 		
 		<br />
 		<dt>Registro de Carteles</dt>
 		<dd>
-			Ing. Celerino Arroyo cruz <br /> carroyo@utvm.edu.mx
+			Ing. Celerino Arroyo cruz <br /> 7congreso_carteles@utvm.edu.mx
 		</dd>
 		
 		
 		<br />
 		<dt>Inscripci&oacuten a Concurso de Creatividad</dt>
 		<dd>
-			Ing. Mauro V&aacutezquez Jahuey <br /> mvazquezj@utvm.edu.mx
+			Ing. Mauro V&aacutezquez Jahuey <br /> 7congreso_concurso@utvm.edu.mx
 		</dd>
 		
 		
 		<br />
 		<dt>Registro de la impartci&oacuten de talleres por parte de las instituciones particpantes</dt>
 		<dd>
-			Ing. Jonatan Zuñiga Morales <br /> 	jzuniga@utvm.edu.mx
+			Ing. Jonatan Zuñiga Morales <br /> 	7congreso_talleres@utvm.edu.mx
 		</dd>
 	</dl>
 	<h3>Direcci&oacuten</h3>
