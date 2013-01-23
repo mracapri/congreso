@@ -17,7 +17,7 @@
 			    	<li>Inicie sesi&oacuten en el sitio para generar su ficha de dep&oacutesito</li>
 			    	<li>
 			    		Envie su ficha de dep&oacutesito, escaneada al siguiente correo 
-			    		<a href="mailto:#">finanzas@utvm.edu.mx</a> 
+			    		<a href="mailto:#">avazquez@utvm.edu.mx</a> 
 			    		para confirmar su pago en el sistema
 			    	</li>
 		    	</ol>
