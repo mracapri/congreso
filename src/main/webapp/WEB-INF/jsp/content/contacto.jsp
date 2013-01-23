@@ -3,9 +3,25 @@
 
 <div class="alert alert-info">
 	<h3>Cont&aacutectanos!</h3>
-
-	<p>Inscripci&oacuten y registro de actividades del 7 Congreso Bioalimentario Nacional</p>
 	<dl>
+		<dt>Contacto general</dt>
+		<dd>
+			M.C Luis Salazar Crvantes<br /> lsalazar@utvm.edu.mx
+		</dd>
+		<dd>
+			Director del Programa Educativo de Procesos Bioalimentarios
+		</dd>		
+		<dd>
+			01 759 72 327 89 Ext 58
+		</dd>
+		<br />
+		
+		<dt>Inscripci&oacuten y registro de asistentes</dt>
+		<dd>
+			Con copia para: Antonio Vargas M&aacuterquez<br /> avargaz@utvm.edu.mx
+		</dd>		
+		<br />
+		
 		<dt>Inscripci&oacuten y registro de asistentes</dt>
 		<dd>
 			Biol. Alfredo V&aacutezquez Garc&iacuteas<br /> avazquez@utvm.edu.mx
@@ -35,7 +51,7 @@
 		
 		
 		<br />
-		<dt>Registro de la impartci&oacuten de talleres por parte de las instituciones particpantes</dt>
+		<dt>Registro de la impartici&oacuten de talleres por parte de las instituciones particpantes</dt>
 		<dd>
 			Ing. Jonatan Zuñiga Morales <br /> 	7congreso_talleres@utvm.edu.mx
 		</dd>
