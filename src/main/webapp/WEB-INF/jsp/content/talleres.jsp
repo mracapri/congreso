@@ -7,7 +7,10 @@ trabajar&aacuten en 2 sesiones de 1hora y media  a tres horas de duraci&oacuten 
 en alguno de los temas del Congreso. Los asistentes participar&aacuten de las actividades propuestas
 por el coordinador del taller mismo.	
 </p>
-<h4>Lista de Talleres</h4>
+</br>
+<h3>Escenario III Universidad Tecnol&oacutegica del Valle del Mezquital</h3>
+</br>
+<h3>Lista de Talleres</h3>
 <ul>
   <li> L&aacutecteos  </li>
   <li>C&aacuternicos </li>

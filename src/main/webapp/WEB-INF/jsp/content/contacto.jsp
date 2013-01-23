@@ -6,19 +6,38 @@
 
 	<p>Inscripci&oacuten y registro de actividades del 7 Congreso Bioalimentario Nacional</p>
 	<dl>
+		<dt>Inscripci&oacuten y registro de asistentes</dt>
+		<dd>
+			Biol. Alfredo V&aacutezquez Garc&iacuteas<br /> avazquez@utvm.edu.mx
+		</dd>
+		<dd>
+			Con copia para: Antonio Vargas M&aacuterquez<br /> avargaz@utvm.edu.mx
+		</dd>		
+		<br />
 		<dt>Registro de Ponencias</dt>
 		<dd>
 			Ing. Elia Trejo Trejo <br /> etrejo@utvm.edu.mx
 		</dd>
+		
+		
 		<br />
 		<dt>Registro de Carteles</dt>
 		<dd>
 			Ing. Celerino Arroyo cruz <br /> carroyo@utvm.edu.mx
 		</dd>
+		
+		
 		<br />
 		<dt>Inscripci&oacuten a Concurso de Creatividad</dt>
 		<dd>
 			Ing. Mauro V&aacutezquez Jahuey <br /> mvazquezj@utvm.edu.mx
+		</dd>
+		
+		
+		<br />
+		<dt>Registro de la impartci&oacuten de talleres por parte de las instituciones particpantes</dt>
+		<dd>
+			Ing. Jonatan Zuñiga Morales <br /> 	jzuniga@utvm.edu.mx
 		</dd>
 	</dl>
 	<h3>Direcci&oacuten</h3>

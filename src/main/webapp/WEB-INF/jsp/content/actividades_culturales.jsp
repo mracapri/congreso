@@ -28,11 +28,6 @@ El estado de hidalgo es rico en regiones naturales eco tur&iacutesticas, monumen
 </dl>
 <p>Jueves 21 de Marzo</p>
 <dl>
-	<dt>Ballet Folkl&oacuterico
-	<dd>(Amalia Mendoza, Hidalgu&iacute;a)</dd>
-	<dd>Jueves 21 de Marzo de 2013</dd>
-	<dd>19:00 hrs.</dd>
-	</dt>
 	</dt>
 	<br />
 	<dt>Noche Hidalguense
@@ -54,11 +49,6 @@ El estado de hidalgo es rico en regiones naturales eco tur&iacutesticas, monumen
 	<dd>Viernes 22 de Marzo de 2013</dd>
 	<dd>18:30 hrs.</dd>
 	</dt>
-	<br />
-	<dt>Convivio de Integraci&oacute;n (Explanda)
-	<dd>Viernes 22 de Marzo de 2013</dd>
-	<dd>19:00 hrs.</dd>
-	</dt>
 </dl>
 <hr />
 <br />
@@ -73,17 +63,5 @@ El estado de hidalgo es rico en regiones naturales eco tur&iacutesticas, monumen
 	<dt>Expo proveedores de maquinaria y equipo</dt>
 	<dt>Lunada por Ixmiquilpan</dt>
 </dl>
-<h4>Escenario III Universidad Tecnollogica del Valle del Mezquital</h4>
-<dl>
-	<dt>Talleres</dt>
-	<dd><ul>
-	<li>L&aacutecteos</li>
-<li>C&aacuternicos</li> 
-<li>Confiter&iacutea</li>	
-<li>Demostraciones de an&aacutelisis bromatol&oacutegico</li>
-<li>An&aacutelisis fisicoqu&iacutemico de agua</li>
-</ul>
-	</dd>
-	<dt>Concursos</dt>
-</dl>
+
 <%@ include file="/WEB-INF/jsp/contenido_despues.jsp"%>

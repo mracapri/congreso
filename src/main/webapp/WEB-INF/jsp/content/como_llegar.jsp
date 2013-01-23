@@ -12,6 +12,7 @@
 	href="https://maps.google.com.mx/maps?f=q&amp;source=embed&amp;hl=es&amp;geocode=&amp;q=Auditorio+Gota+de+Plata,+Camino+Real+de+La+Plata,+Pachuca+de+Soto&amp;aq=0&amp;oq=auditorio+gota&amp;sll=20.05478,-99.343188&amp;sspn=0.045715,0.084543&amp;t=h&amp;ie=UTF8&amp;hq=Auditorio+Gota+de+Plata,+Camino+Real+de+La+Plata,+Pachuca+de+Soto&amp;ll=20.092299,-98.774568&amp;spn=0.020958,0.032015"
 	style="color: #0000FF; text-align: left">Ver mapa m&aacutes grande</a></small>
 <br />
+<img src="${pageContext.request.contextPath}/recursos/images/mapa.png"/>
 <hr/>
 <h5>Universidad Tecnologica del Valle del Mezquital</h5>
 <br />
