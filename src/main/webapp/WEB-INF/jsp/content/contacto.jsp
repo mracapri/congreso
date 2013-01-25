@@ -6,7 +6,7 @@
 	<dl>
 		<dt>Contacto general</dt>
 		<dd>
-			M.C Luis Salazar Crvantes<br /> lsalazar@utvm.edu.mx
+			M.C Luis Salazar Cervantes<br /> lsalazar@utvm.edu.mx
 		</dd>
 		<dd>
 			Director del Programa Educativo de Procesos Bioalimentarios
@@ -18,16 +18,16 @@
 		
 		<dt>Inscripci&oacuten y registro de asistentes</dt>
 		<dd>
-			Con copia para: Antonio Vargas M&aacuterquez<br /> avargaz@utvm.edu.mx
+			Antonio Vargas M&aacuterquez<br /> avargas@utvm.edu.mx
 		</dd>		
 		<br />
 		
 		<dt>Inscripci&oacuten y registro de asistentes</dt>
 		<dd>
-			Biol. Alfredo V&aacutezquez Garc&iacuteas<br /> avazquez@utvm.edu.mx
+			Biol. Alfredo V&aacutezquez Garc&iacutea<br /> avazquez@utvm.edu.mx
 		</dd>
 		<dd>
-			Con copia para: Antonio Vargas M&aacuterquez<br /> avargaz@utvm.edu.mx
+			Antonio Vargas M&aacuterquez<br /> avargas@utvm.edu.mx
 		</dd>		
 		<br />
 		<dt>Registro de Ponencias</dt>

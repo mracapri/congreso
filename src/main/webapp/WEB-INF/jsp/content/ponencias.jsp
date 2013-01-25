@@ -1,6 +1,12 @@
 <%@ include file="/WEB-INF/jsp/contenido_antes.jsp"%>
 
 <h3>Ponencias</h3>
+<a target="_blank" href="${pageContext.request.contextPath}/recursos/docs/Convocatoria_ponencias.pdf">
+	<i class="icon-book"></i>
+	Descargar la convocatoria para ponencias
+</a>
+
+
 <p>De aproximadamente 20 minutos de duraci&oacute;n, donde un especialista
 	en alguno de los temas a tratar brinda a los asistentes a la reuni&oacute;n
 	que consideran a los temas as&iacute; abordados como parte de su campo de
@@ -9,46 +15,45 @@
 	atendi&eacute;ndose desde diferentes puntos de vista de acuerdo al &aacute;rea de
 	conocimiento, de acuerdo a los ejes tem&aacute;ticos siguientes:</p>
 <ol>
-	<li>Biotecnolog&iacute;a Alimentaria (BA):
+	<li>Biotecnolog&iacute;a (BA):
 		<ol type="a">
-			<li>Fermentaciones industriales.</li>
-			<li>Bios&iacute;ntesis.</li>
-			<li>Cultivo de Tejidos.</li>
-			<li>Fisiolog&iacute;a y Tecnolog&iacute;a postcosecha de vegetales.</li>
+			<li>Biotecnolog&iacutea Ambiental.</li>
+			<li>Agrobiotecnolog&iacutea.</li>
+			<li>Biotecnolog&iacutea en la Salud.</li>
+			<li>Biotecnolog&iacutea Alimentaria.</li>
 		</ol>
 	</li>
 	<li>Inocuidad Alimentaria (IA):
 		<ol type="a">
 			<li>Normatividad.</li>
-			<li>Diagn&oacute;sticos y Sistemas de reducci&oacute;n de Riesgos.</li>
+			<li>Diagn&oacutesticos y Sistemas de reducci&oacuten de Riesgos.</li>
 			<li>Certificaciones en inocuidad alimentaria.</li>
 		</ol>
 	</li>
 	<li>Productos Agroindustriales como agronegocios (AA):
 		<ol type="a">
-			<li>Comercializaci&oacute;n.</li>
+			<li>Comercializaci&oacuten.</li>
 			<li>Estudios de mercado.</li>
 			<li>Financiamiento.</li>
 			<li>Oportunidades de negocio.</li>
 			<li>Tendencias alimentarias en los agronegocios.</li>
 		</ol>
 	</li>
-	<li>Aplicaciones de la computaci&oacute;n en la agroindustria (ACA):
+	<li>Aplicaciones de la computaci&oacuten en la Agroindustria y la Biotecnolog&iacutea (ACA):
 		<ol type="a">
-			<li>Simulaci&oacute;n.</li>
+			<li>Simulaci&oacuten.</li>
 			<li>Sistemas de informaci&oacute;n.</li>
 			<li>Desarrollo de software.</li>
 		</ol>
 	</li>
-	<li>Procesos Agroindustriales (PA):
+	<li>Procesos Agroindustriales y Biotecnol&oacutegicos (PA):
 		<ol type="a">
 			<li>Desarrollo de Procesos y Productos agroindustriales.</li>
 			<li>Operaciones Unitarias.</li>
 			<li>Bioprocesos.</li>
 		</ol>
 	</li>
-	<li>Aplicaciones de la energ&iacute;a renovable en la conservaci&oacute;n y
-		transformaci&oacute;n de los alimentos (AER):
+	<li>Aplicaciones de la energ&iacutea renovable en la conservaci&oacuten y transformaci&oacuten de los alimentos (AER):
 		<ol type="a">
 			<li>Energ&iacute;a Solar (cocina, refrigeraci&oacute;n, deshidrataci&oacute;n,
 				generaci&oacute;n de vapor).</li>
@@ -88,8 +93,7 @@
 		<ol type="a">
 			<li>Alimentos Funcionales.</li>
 			<li>Alimentaci&oacute;n para grupos vulnerables.</li>
-			<li>Plantas medicinales.</li>
-			<li>Farmacolog&iacute;a.</li>
+			<li>Plantas medicinales.</li>>
 		</ol>
 	</li>
 	<li>Acuicultura (AC):

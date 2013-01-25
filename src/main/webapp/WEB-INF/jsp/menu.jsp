@@ -20,7 +20,7 @@
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/contacto">Cont&aacutecto</a></li>
 	<li class="divider"></li>
 	<li class="nav-header">Importante</li>
-	<li><a href="${pageContext.request.contextPath}/resolver/pages/conferencias">Conferencias</a></li>
+	<li><a href="${pageContext.request.contextPath}/resolver/pages/conferencias">Conferencias Magistrales</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/reuniones">Reuniones</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/talleres">Talleres</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/concursos">Concursos</a></li>
