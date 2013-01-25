@@ -70,27 +70,66 @@
 	<li>Establecer redes de colaboraci&oacute;n entre los Cuerpos Acad&eacute;micos</li>
 </ol>
 <c:if test="${param['unshow-message'] == null}">
-	<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div id="myModal" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: block;">
 		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#215;</button>
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 			<h3 id="myModalLabel">Congreso Nacional Bioalimentario</h3>
 		</div>
 		<div class="modal-body">
 			<div class="row-fluid">
 				<div class="span12">				
-					<div class="span6">
-						<img src="${pageContext.request.contextPath}/recursos/images/LOGO.png">
-					</div>
-					<div class="span6">
+					
+					<div class="span12">
 						<div class="row-fluid">
 							<div class="span12">
 								<p><b>Palabras del Rector</b></p>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-									sed do eiusmod tempor incididunt ut labore et dolore magna 
-									aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-									ullamco laboris nisi ut aliquip ex ea commodo consequat.
-								</p>
+								
+<img src="/congreso/recursos/images/LOGO.png" style="float:left; margin:15px">
+
+<p>Palabras dirigidas por el Rector de la UTVM.
+
+Como cada año, las Universidades Tecnológicas se reúnen en un Congreso Nacional para dar a
+conocer los avances y aportaciones desarrolladas en las diferentes áreas del sector alimentario y
+biotecnológico.<br><br>
+
+Para esta Casa de Estudios es satisfactorio participar en este 7º Congreso Nacional Agroindustrial
+Alimentario y Biotecnológico, un espacio propicio para la transmisión de saberes y cuya magnitud,
+se mide por la excelencia de sus ponentes, así como el interés que nos une en torno a temas
+relacionados con la producción agroalimentaria.<br><br>
+
+El subsistema de Universidades Tecnológicas considera a los programas educativos de acuacultura,
+biotecnología, procesos alimentarios y programas afines como transcendentales para el desarrollo
+del país; esto implica desarrollar ciencia y tecnología de vanguardia aplicadas en este rubro
+estratégico para el crecimiento poblacional y económico.<br><br>
+
+La sociedad actual otorga cada vez más importancia a la calidad y a la seguridad de los alimentos,
+es por esto una exigencia el desarrollo e innovación de nuevas tecnologías para su procesamiento.
+En ese sentido, es necesario redoblar esfuerzos desde las Instituciones de Educación Superior, los
+centros de investigación especializados y las comunidades científicas, para asegurar un alto nivel de
+calidad en los productos de exportación y consumo nacional.<br><br>
+
+Es necesario contar con un foro específico donde se intercambien y difundan los conocimientos
+adquiridos y desarrollados en las aulas, laboratorios y talleres por docentes y estudiantes, con el
+objetivo de transferirlos a la sociedad en general.<br><br>
+
+Por nuestra parte, estamos haciendo lo propio al realizar proyectos de investigación, para desarrollar
+conocimientos en la materia, además de signar convenios con instituciones de vanguardia, que nos
+permitan contribuir a la consolidación de la industria alimentaria en la entidad. Asimismo nos hemos
+esforzado por elevar la calidad de nuestros programas educativos afines al sector de agroalimentos,
+reiterando el compromiso que tenemos con el desarrollo económico de la sociedad y el impulso de
+nuevas tecnologías aplicadas a este rubro.<br><br>
+
+Es por ello que este VII Congreso Nacional Agroindustrial, Alimentario y Biotecnológico 2013;
+representa un importante mecanismo de comunicación que permitirá mejorar el desarrollo
+tecnocientífico y que reforzará los lazos existentes de vinculación entre las comunidades
+estudiantiles del país para seguir fortaleciendo la industria agroalimentaria.<br><br>
+
+Nuevamente sean bienvenidos y esperamos que los resultados que se deriven rindan frutos y
+constituyan un aporte sustancial para el progreso de esta región, el estado y el país.<br><br>
+
+Muchas gracias y éxito.</p><br><br>
+
+
 							</div>	
 						</div>
 						<div class="row-fluid">
@@ -98,10 +137,10 @@
 								<p><b>Interes</b></p>
 								<ul>
 									<li>
-										<a href="${pageContext.request.contextPath}">Sala de prensa</a>
+										<a href="/congreso">Sala de prensa</a>
 									</li>
 									<li>
-										<a href="${pageContext.request.contextPath}">Galeria de imagenes</a>
+										<a href="/congreso">Galeria de imagenes</a>
 									</li>
 								</ul>
 							</div>	
