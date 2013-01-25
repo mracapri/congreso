@@ -88,11 +88,11 @@
 
 <p>Palabras dirigidas por el Rector de la UTVM.
 
-Como cada año, las Universidades Tecnol&oacutegicas se re&uacutenen en un Congreso Nacional para dar a
+Como cada a&ntildeo, las Universidades Tecnol&oacutegicas se re&uacutenen en un Congreso Nacional para dar a
 conocer los avances y aportaciones desarrolladas en las diferentes &aacutereas del sector alimentario y
 biotecnol&oacutegico.<br><br>
 
-Para esta Casa de Estudios es satisfactorio participar en este 7º Congreso Nacional Agroindustrial
+Para esta Casa de Estudios es satisfactorio participar en este 7 Congreso Nacional Agroindustrial
 Alimentario y Biotecnol&oacutegico, un espacio propicio para la transmisi&oacuten de saberes y cuya magnitud,
 se mide por la excelencia de sus ponentes, as&iacute como el inter&eacutes que nos une en torno a temas
 relacionados con la producci&oacuten agroalimentaria.<br><br>
