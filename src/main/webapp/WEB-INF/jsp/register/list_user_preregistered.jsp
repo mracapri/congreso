@@ -8,6 +8,7 @@
 			<option id="${university.id}">${university.name}</option>
 		</c:forEach>
 	</select>
+	<span id="wrapper-num-records">Registros: <span id="num-records"></span></span>
 </form>
 <table id="preregistrados" class="table">
 	<thead>
@@ -41,18 +42,24 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		$("#university").change(function(){
-			var idUniversity = $("#university > option:selected").attr("id");
+			var countRecords= 0;
+			var idUniversity = parseInt($("#university > option:selected").attr("id"));
 			if(idUniversity == 0){
+				countRecords = $("table#preregistrados tbody > tr").size();
+				$("#num-records").html(countRecords);
 				$("table#preregistrados tbody > tr").show();
 			}else{
 				$("table#preregistrados tbody > tr").hide();
 				$.each($("table#preregistrados tbody > tr"), function(key, value){					
-					if(idUniversity == $(value).attr("id-university")){
+					if(idUniversity == $(value).attr("id-university")){						
 						$(value).show();
+						countRecords++;
 					}
 				});
-			}		
+			}
+			$("#num-records").html(countRecords);
 		});
+		$("#university").change();
 	});
 </script>
 <%@ include file="/WEB-INF/jsp/contenido_despues.jsp"%>
