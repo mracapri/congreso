@@ -27,6 +27,8 @@
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/ponencias">Ponencias</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/carteles">Carteles</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/actividades_culturales">Actividades culturales</a></li>
+	<li><a href="${pageContext.request.contextPath}/resolver/pages/turismo">Turismo</a></li>
+	<li><a href="${pageContext.request.contextPath}/resolver/pages/palabras_rector">Palabras del Rector</a></li>
 	<li class="nav-header">Redes Sociales</li>
 	<li><a href="https://www.facebook.com/profile.php?id=100004964263265&fref=ts" target="_blank" >Facebook</a></li>
 	<li><a href="https://twitter.com/7bioalimentario" target="_blank">Twitter</a></li>

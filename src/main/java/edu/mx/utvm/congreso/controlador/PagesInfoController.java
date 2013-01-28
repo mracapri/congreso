@@ -132,4 +132,20 @@ public class PagesInfoController {
 		ModelAndView model = new ModelAndView("content/sala_prensa");
 		return model;
 	}
+	
+	@RequestMapping(value = "/turismo")
+	public ModelAndView handleTurismo(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+
+		ModelAndView model = new ModelAndView("content/turismo");
+		return model;
+	}
+	
+	@RequestMapping(value = "/palabras_rector")
+	public ModelAndView handlePalabrasRectorTurismo(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+
+		ModelAndView model = new ModelAndView("content/palabras_rector");
+		return model;
+	}
 }
