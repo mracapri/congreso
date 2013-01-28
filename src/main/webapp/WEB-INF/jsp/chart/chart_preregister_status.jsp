@@ -15,14 +15,41 @@
       
         // Create and draw the visualization.
         new google.visualization.PieChart(document.getElementById('visualization')).
-            draw(data, {title:"Estado de pago de participantes preregistrados"});
+            draw(data, {});
       }
       
 
       google.setOnLoadCallback(drawVisualization);
-    </script>
-    
-    <div id="visualization" style="width: 600px; height: 400px;"></div>
-    
-    
+    </script>      
+ 
+ 	<h4>
+		Estado de pago de participantes preregistrados
+ 	</h4>
+ 	<hr/>
+    <div class="row">
+	    <div class="span12">	    	
+			<div class="span2">
+				<br/><br/><br/>
+			    <p>
+			    	<small>
+			    		<b>#Pagado: </b> ${dataChart.pay}
+			    	</small>
+			    </p>
+			    <p>
+			    	<small>
+			    		<b>#No pagado: </b> ${dataChart.noPay}
+			    	</small>
+			    </p>
+			    <p>
+			    	<small>
+			    		<b>Total: </b> ${dataChart.pay + dataChart.noPay}
+			    	</small>
+			    </p>
+			</div>
+			<div class="span6">
+				<div id="visualization" style="width: 400px; height: 400px;"></div>
+			</div>
+	    </div>	    
+    </div>
+
 <%@ include file="/WEB-INF/jsp/contenido_despues.jsp" %>

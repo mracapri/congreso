@@ -62,7 +62,7 @@ public class PreRegisterInformationDaoImpl extends JdbcTemplate implements IPreR
 	@Override
 	public List<PreRegisterInformation> findAll() {
 		String sql = "select ";
-		sql = sql + 	"ia.token, ia.password, pi.email,pi.name, pi.second_name, pi.third_name, o.name, u.name, pi.payment_status ";
+		sql = sql + 	"ia.token, ia.password, pi.email, pi.name, pi.second_name, pi.third_name, o.id, o.name, u.id, u.name, pi.payment_status ";
 		sql = sql + "from ";
 		sql = sql + 	"preregister_information pi, ocupation o, university u, information_account ia ";
 		sql = sql + "where ";
@@ -73,9 +73,11 @@ public class PreRegisterInformationDaoImpl extends JdbcTemplate implements IPreR
 				
 				Ocupation ocupation = new Ocupation();
 				ocupation.setName(rs.getString("o.name"));
+				ocupation.setId(rs.getInt("o.id"));
 				
 				University university = new University();
 				university.setName(rs.getString("u.name"));
+				university.setId(rs.getInt("u.id"));
 				
 				InformationAccount account = new InformationAccount();
 				account.setEmail(rs.getString("pi.email"));
@@ -178,7 +180,7 @@ public class PreRegisterInformationDaoImpl extends JdbcTemplate implements IPreR
 		searchParameter = "%" + searchParameter + "%";
 		
 		String sql = "select ";		
-		sql = sql + 	"ia.token, ia.password, pi.email, pi.name, pi.second_name, pi.third_name, o.name, u.name, pi.payment_status ";
+		sql = sql + 	"ia.token, ia.password, pi.email, pi.name, pi.second_name, pi.third_name, o.id, o.name, u.id, u.name, pi.payment_status ";
 		sql = sql + "from ";
 		sql = sql + 	"preregister_information pi, ocupation o, university u, information_account ia ";
 		sql = sql + "where ";
@@ -194,9 +196,11 @@ public class PreRegisterInformationDaoImpl extends JdbcTemplate implements IPreR
 			public PreRegisterInformation mapRow(ResultSet rs, int rowNum) throws SQLException {
 				
 				Ocupation ocupation = new Ocupation();
+				ocupation.setId(rs.getInt("o.id"));
 				ocupation.setName(rs.getString("o.name"));
 				
 				University university = new University();
+				university.setId(rs.getInt("u.id"));
 				university.setName(rs.getString("u.name"));
 				
 				InformationAccount account = new InformationAccount();

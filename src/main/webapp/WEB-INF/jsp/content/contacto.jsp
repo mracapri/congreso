@@ -18,12 +18,6 @@
 		
 		<dt>Inscripci&oacuten y registro de asistentes</dt>
 		<dd>
-			Antonio Vargas M&aacuterquez<br /> avargas@utvm.edu.mx
-		</dd>		
-		<br />
-		
-		<dt>Inscripci&oacuten y registro de asistentes</dt>
-		<dd>
 			Biol. Alfredo V&aacutezquez Garc&iacutea<br /> avazquez@utvm.edu.mx
 		</dd>
 		<dd>

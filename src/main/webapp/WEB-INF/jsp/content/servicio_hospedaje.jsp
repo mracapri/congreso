@@ -1,6 +1,6 @@
 <%@ include file="/WEB-INF/jsp/contenido_antes.jsp"%>
 
-<h3>Informaci&oacuten Tur&iacutestica</h3>
+<h3>Servicio de Hospedaje</h3>
 <br />
 <h4>Hoteles en Pachuca Hgo.</h4>
 <br />
@@ -93,7 +93,7 @@
 		</tr>
 		<tr>
 			<th>Tel&eacutefono</th>
-			<td>01 (771) 7154083 <br/> 01 (771) 7155351 
+			<td>01 (771) 7155408 <br/> 01 (771) 7155351 
 			</td>
 		</tr>
 		<tr>
@@ -131,7 +131,7 @@
 		</tr>
 		<tr>
 			<th>Tel&eacutefono</th>
-			<td>01 (771) 7142908  
+			<td>01 (771) 2120560 al 65
 			</td>
 		</tr>
 		<tr>

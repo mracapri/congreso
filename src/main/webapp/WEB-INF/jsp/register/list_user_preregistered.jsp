@@ -2,8 +2,14 @@
 <form class="form-search" action="${pageContext.request.contextPath}/resolver/register/list_user_preregistered">
 	<input name="search-param" type="text" class="input-medium search-query" placeholder="nombre, correo" value="${param['search-param']}"/>
 	<button type="submit" class="btn">Buscar registro</button>
+	<select id="university">
+		<option id="0">SIN FILTRO</option>
+		<c:forEach var="university" items="${universities}">
+			<option id="${university.id}">${university.name}</option>
+		</c:forEach>
+	</select>
 </form>
-<table class="table">
+<table id="preregistrados" class="table">
 	<thead>
 		<tr>
 			<th>Nombre</th>
@@ -15,7 +21,7 @@
 	</thead>
 	<tbody>
 		<c:forEach var="preRegister" items="${preRegisters}">
-			<tr>
+			<tr id-university="${preRegister.university.id}">
 				<td style="color: blue;">${preRegister.name} ${preRegister.secondName} ${preRegister.thirdName}</td>
 				<td>${preRegister.informationAccount.email}</td>
 				<td>${preRegister.ocupation.name}</td>
@@ -32,4 +38,21 @@
 		</c:forEach>
 	</tbody>
 </table>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#university").change(function(){
+			var idUniversity = $("#university > option:selected").attr("id");
+			if(idUniversity == 0){
+				$("table#preregistrados tbody > tr").show();
+			}else{
+				$("table#preregistrados tbody > tr").hide();
+				$.each($("table#preregistrados tbody > tr"), function(key, value){					
+					if(idUniversity == $(value).attr("id-university")){
+						$(value).show();
+					}
+				});
+			}		
+		});
+	});
+</script>
 <%@ include file="/WEB-INF/jsp/contenido_despues.jsp"%>

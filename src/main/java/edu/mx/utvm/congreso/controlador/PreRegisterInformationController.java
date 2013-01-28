@@ -176,6 +176,7 @@ public class PreRegisterInformationController {
 		
     	ModelAndView modelAndView = new ModelAndView("register/list_user_preregistered");
     	modelAndView.addObject("preRegisters", findAllPreRegisters);
+    	modelAndView.addObject("universities", catalogService.findAllUniversities());
     	return modelAndView;
     }
 	

@@ -108,13 +108,13 @@ public class PagesInfoController {
 		return new ModelAndView("content/concursos", "modelo", modelo);
 	}
 		
-	@RequestMapping(value = "/informacion_turistica")
-	public ModelAndView handleInformacionTuristica(HttpServletRequest request,
+	@RequestMapping(value = "/servicio_hospedaje")
+	public ModelAndView handleServicioHospedaje(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
 		Map<String, Object> modelo = new HashMap<String, Object>();
 
-		return new ModelAndView("content/informacion_turistica", "modelo", modelo);
+		return new ModelAndView("content/servicio_hospedaje", "modelo", modelo);
 	}
 	
 	@RequestMapping(value = "/galeria_imagenes")
