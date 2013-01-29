@@ -54,7 +54,7 @@
 </style>
 
 <div class="row">
-	<div class="span12" style="">
+	<div class="span12">
 		<script type="text/javascript"
 			src="http://www.flickr.com/badge_code_v2.gne?show_name=1&count=50&display=random&size=s&layout=x&source=user&user=92136115%40N07">
 		</script>
