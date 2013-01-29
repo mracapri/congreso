@@ -52,7 +52,7 @@
 				$("table#preregistrados tbody > tr").hide();
 				$.each($("table#preregistrados tbody > tr"), function(key, value){					
 					if(idUniversity == $(value).attr("id-university")){						
-						$(value).show();
+						$(value).show(300);
 						countRecords++;
 					}
 				});
