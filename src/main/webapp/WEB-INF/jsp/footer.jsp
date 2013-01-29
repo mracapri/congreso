@@ -1,5 +1,5 @@
 <div id="footer"><!-- footer -->
-	<img id="logo-pie" src="${pageContext.request.contextPath}/recursos/images/PIE.png"/>
+	<img id="logo-pie" src="${pageContext.request.contextPath}/recursos/images/PIE.jpg"/>
 	<%@ include file="/WEB-INF/jsp/slide.jsp" %>
 	<p>
 		<b>Direcci&oacute;n:</b> Universidad Tecnol&oacute;gica del Valle del Mezquital, 

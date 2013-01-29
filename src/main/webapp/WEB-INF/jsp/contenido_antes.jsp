@@ -15,8 +15,8 @@
 	<div id="wrapper">
 		<!-- banner-->
 		<div id="banner">
-			<img src="${pageContext.request.contextPath}/recursos/images/CABEZA.png" />
-			<img src="${pageContext.request.contextPath}/recursos/images/FOTOS.png" />
+			<img src="${pageContext.request.contextPath}/recursos/images/encabezado.jpg" />
+			<img src="${pageContext.request.contextPath}/recursos/images/FOTOS.jpg" />
 		</div>
 		<!-- fin banner-->
 		<div class="row-fluid" id="wrapper-navbar">
