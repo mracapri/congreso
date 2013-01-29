@@ -53,6 +53,19 @@
 
 </style>
 
+<div class="row">
+	<div class="span12">
+		<script type="text/javascript"
+			src="http://www.flickr.com/badge_code_v2.gne?show_name=1&count=50&display=random&size=s&layout=x&source=user&user=92136115%40N07">
+		</script>
+		<script type="text/javascript"
+			src="http://www.flickr.com/badge_code_v2.gne?show_name=1&count=50&display=random&size=s&layout=x&source=user&user=92136115%40N07">
+		</script>
+	</div>
+</div>
+
+<%@ include file="/WEB-INF/jsp/contenido_despues.jsp" %>
+
 <script type="text/javascript">
 $(document).ready(function(){
 	
@@ -68,7 +81,7 @@ $(document).ready(function(){
 	newSetImages = _.uniq(newSetImages);
 	
 	$.each(newSetImages, function(key, value){
-		console.log(value);
+		$("a[href*='" + value + "']").eq(0).show();
 	});
 	
 	
@@ -80,16 +93,3 @@ $(document).ready(function(){
 	});
 });
 </script>
-
-<div class="row">
-	<div class="span12">
-		<script type="text/javascript"
-			src="http://www.flickr.com/badge_code_v2.gne?show_name=1&count=50&display=random&size=s&layout=x&source=user&user=92136115%40N07">
-		</script>
-		<script type="text/javascript"
-			src="http://www.flickr.com/badge_code_v2.gne?show_name=1&count=50&display=random&size=s&layout=x&source=user&user=92136115%40N07">
-		</script>
-	</div>
-</div>
-
-<%@ include file="/WEB-INF/jsp/contenido_despues.jsp" %>
