@@ -19,7 +19,7 @@
 			<img src="${pageContext.request.contextPath}/recursos/images/FOTOS.png" />
 		</div>
 		<!-- fin banner-->
-		<div class="row-fluid">
+		<div class="row-fluid" id="wrapper-navbar">
 			<div class="navbar">
 				<div class="navbar-inner">
 					<a class="brand" href="${pageContext.request.contextPath}/resolver/index.htm?unshow-message">Inicio</a>
@@ -71,7 +71,7 @@
 						</sec:authorize>
 						<sec:authorize access="hasRole('ROLE_ADMIN')">
 							<li>
-								<a href="${pageContext.request.contextPath}/resolver/register/list_user_preregistered">Usuarios de PreRegistro</a>
+								<a href="${pageContext.request.contextPath}/resolver/register/list_user_preregistered">Usuarios de Pre-Registro</a>
 							</li>
 							<li>
 								<a href="${pageContext.request.contextPath}/resolver/chart/chart_preregister_status">Gr&aacutefica de pagos</a>
@@ -79,10 +79,10 @@
 						</sec:authorize>
 						<sec:authorize access="hasRole('ROLE_ADMIN_PARTICIPATION')">
 							<li>
-								<a href="${pageContext.request.contextPath}/resolver/register_participation/list_user_participation">Lista de participantes</a>
+								<a href="${pageContext.request.contextPath}/resolver/register_participation/list_user_participation">Participantes</a>
 							</li>
 							<li>
-								<a href="${pageContext.request.contextPath}/resolver/register_academy/list_academic">Cuerpos academicos registrados</a>
+								<a href="${pageContext.request.contextPath}/resolver/register_academy/list_academic">CA registrados</a>
 							</li>
 							<li>
 								<a href="${pageContext.request.contextPath}/resolver/chart/chart_participants_academics">Gr&aacutefica de participaci&oacuten</a>
