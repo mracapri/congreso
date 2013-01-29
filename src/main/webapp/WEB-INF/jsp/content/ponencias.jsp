@@ -6,6 +6,11 @@
 	Descargar la convocatoria para ponencias
 </a>
 
+<a target="_blank" href="${pageContext.request.contextPath}/recursos/docs/Plantilla_ponencias.pptx">
+	<i class="icon-book"></i>
+	Descargar la plantilla para ponencias
+</a>
+
 
 <p>De aproximadamente 20 minutos de duraci&oacute;n, donde un especialista
 	en alguno de los temas a tratar brinda a los asistentes a la reuni&oacute;n

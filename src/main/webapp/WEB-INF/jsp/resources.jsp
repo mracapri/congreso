@@ -5,6 +5,7 @@
 <!-- css bootstrap framework -->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/recursos/bootstrap/css/bootstrap.min.css" type="text/css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/recursos/bootstrap/css/bootstrap-responsive.min.css" type="text/css">   
-<script src="${pageContext.request.contextPath}/recursos/js/jquery-1.8.3.js"></script>		
+<script src="${pageContext.request.contextPath}/recursos/js/jquery-1.8.3.js"></script>
+<script src="${pageContext.request.contextPath}/recursos/js/underscore-min.js"></script>		
 <!-- js bootstrap framework -->		
 <script type='text/javascript' src='${pageContext.request.contextPath}/recursos/bootstrap/js/bootstrap.js'></script>

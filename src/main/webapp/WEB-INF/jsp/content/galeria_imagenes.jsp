@@ -3,38 +3,37 @@
 <h3>
 	Galeria de imagenes	
 </h3>
+<br/>
 
 <!-- Start of Flickr Badge -->
 <style type="text/css">
-
-#flickr_badge_source_txt {
-    color: #666666;
-    font: 11px Arial,Helvetica,Sans serif;
-    padding: 0;
+#flickr_badge_uber_wrapper {
+    text-align: center;
+    width: 150px;
 }
-#flickr_badge_icon {
-    border: 1px solid #000000 !important;
-    display: block !important;
-    margin: 0 !important;
-}
-#flickr_icon_td {
-    padding: 0 5px 0 0 !important;
+#flickr_badge_wrapper {
+    padding: 10px 0;
 }
 .flickr_badge_image {
-    text-align: center !important;
+    margin: 0 20px 20px;
+    float: left;
 }
 .flickr_badge_image img {
     border: 1px solid gray !important;
 }
-#flickr_badge_uber_wrapper {
-    width: 150px;
+#flickr_badge_source {
+    margin: 0 10px;
+    text-align: left;
+}
+#flickr_badge_icon {
+    float: left;
+    margin-right: 5px;
 }
 #flickr_www {
     color: #3993FF !important;
     display: block;
     font: 11px Arial,Helvetica,Sans serif !important;
     padding: 0 10px !important;
-    text-align: center;
 }
 #flickr_badge_uber_wrapper a:hover, #flickr_badge_uber_wrapper a:link, #flickr_badge_uber_wrapper a:active, #flickr_badge_uber_wrapper a:visited {
     background: inherit !important;
@@ -43,6 +42,7 @@
 }
 #flickr_badge_wrapper {
     background-color: #FFFFFF;
+    border: 1px solid #000000;
 }
 #flickr_badge_source {
     color: #666666 !important;
@@ -50,10 +50,28 @@
     padding: 0 !important;
 }
 
+
 </style>
 
 <script type="text/javascript">
 $(document).ready(function(){
+	
+
+	var setImages = $(".flickr_badge_image a")
+	var newSetImages = [];
+	$.each(setImages, function(key, value){
+		$(value).hide();
+		newSetImages.push($(value).attr("href"));
+	});
+	
+	
+	newSetImages = _.uniq(newSetImages);
+	
+	$.each(newSetImages, function(key, value){
+		console.log(value);
+	});
+	
+	
 	$("a[href*='http://www.flickr.com/photos/']").attr("target", "_blank");
 	var photos = $("a[href*='http://www.flickr.com/photos/']");
 	$.each(photos, function(key, value){
@@ -63,15 +81,15 @@ $(document).ready(function(){
 });
 </script>
 
-<table id="flickr_badge_uber_wrapper" cellpadding="0" cellspacing="10" border="0">
-	<tr>
-		<td>
-			<table cellpadding="0" cellspacing="10" border="0" id="flickr_badge_wrapper">
-				<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?show_name=1&count=3&display=latest&size=s&layout=v&source=user&user=92136115%40N07"></script>
-			</table>
-		</td>
-	</tr>
-</table>
-<!-- End of Flickr Badge -->
+<div class="row">
+	<div class="span12">
+		<script type="text/javascript"
+			src="http://www.flickr.com/badge_code_v2.gne?show_name=1&count=50&display=random&size=s&layout=x&source=user&user=92136115%40N07">
+		</script>
+		<script type="text/javascript"
+			src="http://www.flickr.com/badge_code_v2.gne?show_name=1&count=50&display=random&size=s&layout=x&source=user&user=92136115%40N07">
+		</script>
+	</div>
+</div>
 
 <%@ include file="/WEB-INF/jsp/contenido_despues.jsp" %>

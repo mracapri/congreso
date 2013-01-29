@@ -21,6 +21,16 @@
 			    		para confirmar su pago en el sistema
 			    	</li>
 		    	</ol>
+		    	
+		    	<strong>&Oacute deposito a cuenta</strong>
+		    	<ol>
+		    		<li>Banco Mercantil del Norte, S.A.</li>
+			    	<li>Nombre: Universidad Tecnol&oacutegica  del  Valle del Mezquital</li>
+			    	<li>No de cuenta: <b>0860465674</b></li>
+			    	<li>CLABE: <b>072 298 00860465674 4</b></li>
+			    	<li>Plaza: <b>2538</b></li>
+			    	<li>Sucursal: <b>Ixmiquilpan</b></li>
+		    	</ol>
 		    </div>
 		</div>
 	</div>
