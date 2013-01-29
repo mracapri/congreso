@@ -1,7 +1,7 @@
 <%@ include file="/WEB-INF/jsp/contenido_antes.jsp" %>
 		
 <h3>
-	Galeria de imagenes	
+	Galer&iacutea de imagenes	
 </h3>
 <br/>
 
