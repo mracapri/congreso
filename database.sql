@@ -32,7 +32,7 @@ insert into university(id, name) values
 (11, 'Universidad Tecnologica Valles Centrales de Oaxaca'),
 (12, 'Universidad Tecnologica de Morelia'),
 (13, 'Universidad Tecnologica de la Costa'),
-(14, 'Universidad Tecnologica del poniente (Maxcano, Yucatan)'),
+(14, 'Universidad Tecnologica del poniente (Maxcanu, Yucatan)'),
 (15, 'Universidad Tecnologica de Tecamachalco'),
 (16, 'Universidad Tecnologica del Sur del Estado de México'),
 (17, 'Universidad Tecnologica  de Nayarit'),

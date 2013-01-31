@@ -8,8 +8,7 @@
 </p>
 <br/>
 <br/>
-<dt>Conferencia Magistral
-	<dd>Jueves 21 de Marzo de 2013</dd>
-	<dd>11:00 hrs.</dd>
+<dt>Conferencia Magistral "Pasteurizaci&oacuten y aplicaci&oacuten de fermentos para elaboraci&oacuten de derivados l&aacutecteos"
+	<dd>Impartida por: Lactoingredientes RAFF S.A. de C.V.</dd>
 </dt>
 <%@ include file="/WEB-INF/jsp/contenido_despues.jsp" %>
