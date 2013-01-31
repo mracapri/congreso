@@ -46,7 +46,7 @@ public class UniversityDaoImpl extends JdbcTemplate implements IUniversityDao{
 
 	@Override
 	public List<University> findAll() {
-		String sql = "SELECT * FROM university";
+		String sql = "SELECT * FROM university order by 2 asc";
 		List<University> result = this.query(sql, new RowMapper<University>() {
 			@Override
 			public University mapRow(ResultSet rs, int rowNum) throws SQLException {

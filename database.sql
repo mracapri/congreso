@@ -104,7 +104,8 @@ CREATE TABLE IF NOT EXISTS participation (
 insert into participation(id, name) values 
 (1, 'Ponencia'), 
 (2, 'Cartel'),
-(3, 'Taller');
+(3, 'Taller'),
+(4, 'Concurso de creatividad');
 
 CREATE TABLE IF NOT EXISTS participation_register_information (
   email varchar(50) NOT NULL,

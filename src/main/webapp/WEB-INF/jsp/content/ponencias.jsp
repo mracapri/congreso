@@ -11,6 +11,10 @@
 	Descargar la plantilla para ponencias
 </a>
 
+<a target="_blank" href="${pageContext.request.contextPath}/recursos/docs/Formato_extenso_congreso.pdf">
+	<i class="icon-book"></i>
+	Descargar formato para extensos
+</a>
 
 <p>De aproximadamente 20 minutos de duraci&oacute;n, donde un especialista
 	en alguno de los temas a tratar brinda a los asistentes a la reuni&oacute;n
