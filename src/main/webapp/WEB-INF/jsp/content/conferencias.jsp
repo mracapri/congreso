@@ -8,7 +8,31 @@
 </p>
 <br/>
 <br/>
-<dt>Conferencia Magistral "Pasteurizaci&oacuten y aplicaci&oacuten de fermentos para elaboraci&oacuten de derivados l&aacutecteos"
-	<dd>Impartida por: Lactoingredientes RAFF S.A. de C.V.</dd>
-</dt>
+
+<div class="row">
+
+	<div class="span3">
+		<img src="http://www.adriangauna.com/sponsors_files/logo_raff.jpg" class="img-polaroid">
+	</div>
+	<div class="span1">
+	</div>
+	<div class="span7">
+	
+		<div class="row">
+			<div class="span12">
+				<b>
+					Conferencia Magistral "Pasteurizaci&oacuten y aplicaci&oacuten de fermentos 
+					para elaboraci&oacuten de derivados l&aacutecteos"
+				</b>
+			</div>
+		</div>
+		<br/>
+		<div class="row">					
+			<div class="span12">
+				Impartida por: Lactoingredientes RAFF S.A. de C.V.
+			</div>					
+		</div>				
+	</div>			
+</div>
+
 <%@ include file="/WEB-INF/jsp/contenido_despues.jsp" %>
