@@ -1,15 +1,31 @@
 <%@ include file="/WEB-INF/jsp/contenido_antes.jsp"%>
 <form class="form-search" action="${pageContext.request.contextPath}/resolver/register/list_user_preregistered">
 	<input name="search-param" type="text" class="input-medium search-query" placeholder="nombre, correo" value="${param['search-param']}"/>
-	<button type="submit" class="btn">Buscar registro</button>
+	<button type="submit" class="btn">Buscar</button>
+
+	<br/><br/>
+	
+	Universidades: 
 	<select id="university">
 		<option id="0">SIN FILTRO</option>
 		<c:forEach var="university" items="${universities}">
 			<option id="${university.id}">${university.name}</option>
 		</c:forEach>
 	</select>
-	<span id="wrapper-num-records">Registros: <span id="num-records"></span></span>
+	
+	Pagado: 
+	<select id="chk-pay">
+		<option value="all">TODOS</option>
+		<option value="pay">PAGADO</option>
+		<option value="nopay">NO PAGADO</option>
+	</select>
 </form>
+<p>
+	<span id="wrapper-num-records">
+		<b>rows:</b> 
+		<span id="num-records"></span>
+	</span>
+</p>
 <table id="preregistrados" class="table">
 	<thead>
 		<tr>
@@ -41,16 +57,37 @@
 </table>
 <script type="text/javascript">
 	$(document).ready(function(){
+		
+		$("#chk-pay").change(function(){
+			$("#university").change();
+		});
+		
 		$("#university").change(function(){
+			
+			var keyPaymentStatus = $("#chk-pay > option:selected").attr("value");
 			var countRecords= 0;
 			var idUniversity = parseInt($("#university > option:selected").attr("id"));
-			if(idUniversity == 0){
-				countRecords = $("table#preregistrados tbody > tr").size();
-				$("#num-records").html(countRecords);
-				$("table#preregistrados tbody > tr").show();
+			var rows = {};
+			
+			/* adjunta filtro de pago al selector */
+			if(keyPaymentStatus == 'pay'){
+				rows = $("table#preregistrados tbody > tr").find("a.btn-success").parent().parent();
+				$("table#preregistrados tbody > tr").find("a.btn-danger").parent().parent().hide();
+			}else if(keyPaymentStatus == 'nopay'){
+				rows = $("table#preregistrados tbody > tr").find("a.btn-danger").parent().parent();
+				$("table#preregistrados tbody > tr").find("a.btn-success").parent().parent().hide();
 			}else{
-				$("table#preregistrados tbody > tr").hide();
-				$.each($("table#preregistrados tbody > tr"), function(key, value){					
+				rows = $("table#preregistrados tbody > tr");
+			}
+			
+			/* selecciona por universidades */
+			if(idUniversity == 0){
+				countRecords = $(rows).size();
+				$("#num-records").html(countRecords);
+				$(rows).show();
+			}else{
+				$(rows).hide();
+				$.each($(rows), function(key, value){					
 					if(idUniversity == $(value).attr("id-university")){						
 						$(value).show(300);
 						countRecords++;
@@ -59,6 +96,7 @@
 			}
 			$("#num-records").html(countRecords);
 		});
+		
 		$("#university").change();
 	});
 </script>
