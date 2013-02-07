@@ -1,6 +1,65 @@
 <%@ include file="/WEB-INF/jsp/contenido_antes.jsp"%>
 <h3>Como Llegar?</h3>
 
+
+<p>
+	Para llegar a la zona plateada donde se encuentra el Teatro "Gota de Plata", La biblioteca del Estado  "Ricardo Garibay" 
+	as&iacute como el Centro de Convenciones "Tuzoforum", se recomienda lo siguiente:
+</p>
+
+
+<ul>
+	<li>
+		Desde la ciudad de M&eacutexico.
+		<ul>
+			<li>
+				Se toma la avenida Insurgentes en direcci&oacuten al norte, cuando se haya pasado Indios Verdes, 
+				a unos 5 kil&oacutemetros despu&eacutes se encontrar&aacute una divisi&oacuten en donde deber&aacute elegir si conducir 
+				por la autopista (se dirige hacia la izquierda) o por la libre (hacia la derecha). 
+				
+				Se recomienda tomar la autopista, y se llevar&aacute unos 50 minutos desde esta divisi&oacuten 
+				hasta el centro de Pachuca.			
+			</li>
+			<li>
+				Del Aeropuerto Internacional de la Cd de M&eacutexico salen autobuses hacia la cd de Pachuca, Hgo; 
+				as&iacute como la Central de Autobuses del Norte.
+			</li>
+		</ul> 
+	</li>
+	<li>Desde Quer&eacutetaro.
+		<ul>
+			<li>
+				En el Km 90 de la autopista M&eacutexico-Quer&eacutetaro se encuentra el entronque del Arco Norte; se orilla hacia la derecha.  
+				La primera salida llevar&aacute hacia Atlacomulco, Morelia, Toluca o Guadalajara.  La segunda salida del entronque a mano 
+				derecha llevar&aacute la direcci&oacuten a Pachuca y Puebla.
+			</li>
+			<li>
+				Una segunda opci&oacuten es tomar la carretera Quer&eacutetaro-Pachuca en el entronque palmillas para entrar al Estado de Hidalgo 
+				y pasar por Huichapan, Ixmiquilpan, Actopan y Pachuca  con un total de 224 km de distancia.
+			</li>
+		</ul> 
+	</li>
+	<li>Desde Puebla
+		<ul>
+			<li>
+				Despu&eacutes de salir de la zona urbana de la ciudad de Puebla, se toma la autopista M&eacutexico-Puebla, en antes de llegar a 
+				San Mart&iacuten Texmelucan dirigirse a la salida al Arco Norte tomar direcci&oacuten hacia Quer&eacutetaro hasta llegar a la salida 
+				Pachuca. ( aproxi. 2 horas)
+			</li>
+		</ul> 
+	</li>
+	<li>Desde Poza Rica, Veracruz
+		<ul>
+			<li>
+				Desde Poza Rica se dirige por la carretera Federal a Xicot&eacutepec de Ju&aacuterez, Pue. y a  4 km aproximadamente de Nuevo 
+				Necaxa est&aacute la entrada a la autopista a la ciudad de M&eacutexico la cual toma y sale en Tulancingo, un km delante de 
+				las antenas est&aacute la salida a Pachuca, a donde llegar&aacute en 45 minutos.
+			</li>
+		</ul> 
+	</li>
+</ul>
+
+
 <br />
 <h5>Auditorio Gota de Plata</h5>
 <br />

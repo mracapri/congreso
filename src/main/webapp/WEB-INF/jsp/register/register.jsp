@@ -5,9 +5,9 @@
 		<div class="span12">		    		    
 		    <div class="alert alert-info">
 		    	<strong>Preregistro</strong>
-		    	<ul>
-			    	<li>$400.00 M.N hasta el 8 de Febrero del 2013</li>
-			    	<li>$450.00 M.N a partir del 9 de Febrero del 2013</li>
+		    	<ul>		    		
+			    	<li><span class="label label-warning">Aviso</span> $400.00 M.N hasta el 15 de Febrero del 2013</li>
+			    	<li><span class="label label-warning">Aviso</span> $450.00 M.N a partir del 16 de Febrero del 2013</li>
 		    	</ul>
 		    
 		    	<strong>Instrucciones</strong>
