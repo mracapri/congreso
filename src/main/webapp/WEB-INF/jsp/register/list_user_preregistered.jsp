@@ -1,4 +1,11 @@
 <%@ include file="/WEB-INF/jsp/contenido_antes.jsp"%>
+<style>
+	.label-mail-wrap{
+		width:200px;
+		display:block;
+		word-wrap:break-word;
+	}
+</style>
 <form class="form-search" action="${pageContext.request.contextPath}/resolver/register/list_user_preregistered">
 	<input name="search-param" type="text" class="input-medium search-query" placeholder="nombre, correo" value="${param['search-param']}"/>
 	<button type="submit" class="btn">Buscar</button>
@@ -40,7 +47,11 @@
 		<c:forEach var="preRegister" items="${preRegisters}">
 			<tr id-university="${preRegister.university.id}">
 				<td style="color: blue;">${preRegister.name} ${preRegister.secondName} ${preRegister.thirdName}</td>
-				<td>${preRegister.informationAccount.email}</td>
+				<td>
+					<span class="label-mail-wrap">
+						${preRegister.informationAccount.email}
+					</span>
+				</td>
 				<td>${preRegister.ocupation.name}</td>
 				<td>${preRegister.university.name}</td>								
 				<c:choose>
