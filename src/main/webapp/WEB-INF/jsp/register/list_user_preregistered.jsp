@@ -37,6 +37,7 @@
 	<thead>
 		<tr>
 			<th>Nombre</th>
+			<th>RFC</th>
 			<th>Correo</th>
 			<th>Oupacion</th>
 			<th>Universidad</th>
@@ -47,6 +48,11 @@
 		<c:forEach var="preRegister" items="${preRegisters}">
 			<tr id-university="${preRegister.university.id}">
 				<td style="color: blue;">${preRegister.name} ${preRegister.secondName} ${preRegister.thirdName}</td>
+				<td>
+					<a href="${pageContext.request.contextPath}/resolver/register_fiscal_data/get/${preRegister.informationAccount.token}">
+						<li class="icon-eye-open"></li>
+					</a>					
+				</td>
 				<td>
 					<span class="label-mail-wrap">
 						${preRegister.informationAccount.email}

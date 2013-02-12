@@ -12,6 +12,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
@@ -65,7 +66,7 @@ public class FiscalDataRegisterInformationController {
     		modelAndView.setViewName("register_fiscal_data/register_success");
     	}    	    			    	
     	return modelAndView;
-	}    
+	}
 
 	@RequestMapping(value="/form")
 	public ModelAndView mostrarFormularioRegistro(
@@ -82,6 +83,16 @@ public class FiscalDataRegisterInformationController {
     	ModelAndView modelAndView = new ModelAndView("register_fiscal_data/register");
     	
     	return modelAndView;
+    }
+	
+	@RequestMapping(value="/get/{token}")
+	public String consultarRfc(
+			HttpServletRequest request, HttpServletResponse response, 
+			Principal principal, ModelMap map )
+            throws ServletException, IOException {
+		FiscalRegisterInformation o = new FiscalRegisterInformation();
+    	map.put("rfc", o);
+    	return "jsonView";
     }
     
 	@InitBinder("formFiscalData")
