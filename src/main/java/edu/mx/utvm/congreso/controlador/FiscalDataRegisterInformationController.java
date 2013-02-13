@@ -17,6 +17,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -86,12 +87,16 @@ public class FiscalDataRegisterInformationController {
     }
 	
 	@RequestMapping(value="/get/{token}")
-	public String consultarRfc(
-			HttpServletRequest request, HttpServletResponse response, 
-			Principal principal, ModelMap map )
+	public String consultarRfc(HttpServletRequest request, 
+			HttpServletResponse response, 
+			ModelMap map, @PathVariable("token") String token )
             throws ServletException, IOException {
 		FiscalRegisterInformation o = new FiscalRegisterInformation();
-    	map.put("rfc", o);
+		FiscalRegisterInformation readByToken = informationService.readByToken(token);
+    	map.put("informacionFiscal", readByToken);
+    	if(readByToken == null){
+    		response.sendError(response.SC_BAD_REQUEST);
+    	}
     	return "jsonView";
     }
     

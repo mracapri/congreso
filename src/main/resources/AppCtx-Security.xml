@@ -21,6 +21,7 @@
     	
     	<intercept-url pattern='/resolver/register/list_user_preregistered' access="hasRole('ROLE_ADMIN')" />
     	<intercept-url pattern='/resolver/chart/chart_preregister_status' access="hasRole('ROLE_ADMIN')" />
+    	<intercept-url pattern='/resolver/register_fiscal_data/get/*' access="hasRole('ROLE_ADMIN')" />
     	<intercept-url pattern='/resolver/payment/form/*' access="hasRole('ROLE_ADMIN')" />
     	<intercept-url pattern='/resolver/payment/save' access="hasRole('ROLE_ADMIN')" />
     	

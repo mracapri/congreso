@@ -77,6 +77,30 @@ public class InformationAccountDaoImpl extends JdbcTemplate implements IInformat
 			return null;
 		}
 	}
+	
+	@Override
+	public InformationAccount findAccountWithToken(String token) {
+	    String sql = "SELECT * FROM information_account WHERE TOKEN = ?";	    
+		try {
+			InformationAccount resultado = this.queryForObject(sql,
+					new Object[] { token },
+					new RowMapper<InformationAccount>() {
+						@Override
+						public InformationAccount mapRow(ResultSet rs,
+								int rowNum) throws SQLException {
+							InformationAccount informationAccount = new InformationAccount();
+							informationAccount.setEmail(rs.getString("email"));
+							informationAccount.setEnabled(rs.getInt("enabled"));
+							informationAccount.setToken(rs.getString("token"));
+							informationAccount.setPassword(rs.getString("password"));
+							return informationAccount;
+						}
+					});
+			return resultado;
+		} catch (EmptyResultDataAccessException accessException) {
+			return null;
+		}
+	}
 
 	@Override
 	public void confirmToken(String token) {

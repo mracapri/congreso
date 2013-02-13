@@ -49,7 +49,7 @@
 			<tr id-university="${preRegister.university.id}">
 				<td style="color: blue;">${preRegister.name} ${preRegister.secondName} ${preRegister.thirdName}</td>
 				<td>
-					<a href="${pageContext.request.contextPath}/resolver/register_fiscal_data/get/${preRegister.informationAccount.token}">
+					<a class="fiscal-data-get" href="${pageContext.request.contextPath}/resolver/register_fiscal_data/get/${preRegister.informationAccount.token}">
 						<li class="icon-eye-open"></li>
 					</a>					
 				</td>
@@ -72,8 +72,60 @@
 		</c:forEach>
 	</tbody>
 </table>
+
+<!-- Modal -->
+<div id="myModal-no" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-header">
+		<h3 id="myModalLabel">Informaci&oacuten fiscal</h3>
+	</div>
+	<div class="modal-body">
+		El usuario no cuenta con datos fiscales registrados
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Aceptar</button>
+	</div>
+</div>
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-header">
+		<h3 id="myModalLabel">Informaci&oacuten fiscal</h3>
+	</div>
+	<div class="modal-body">
+		<b>Nombre:</b>
+		<p id="output-nombre"></p>
+		<b>Registro Federal de Contribuyente:</b>
+		<p id="output-rfc"></p>
+		<b>Direccion:</b>
+		<p>
+			<textarea id="output-direccion" rows="5" style="width: 400px;"></textarea>
+		</p>
+		
+	</div>
+	<div class="modal-footer">
+		<button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+	</div>
+</div>
+
 <script type="text/javascript">
 	$(document).ready(function(){
+		
+		$(".fiscal-data-get").click(function(){
+			var url = $(this).attr("href");
+			$.ajax({
+				url: url,
+				type: 'POST',
+				dataType: 'json',
+				success: function(data){
+					$("#output-nombre").html(data.informacionFiscal.fiscalName);
+					$("#output-rfc").html(data.informacionFiscal.rfc);
+					$("#output-direccion").html(data.informacionFiscal.address);
+					$('#myModal').modal('show');
+				},
+				error: function(error){
+					$('#myModal-no').modal('show');
+				}
+			});
+			return false;
+		});
 		
 		$("#chk-pay").change(function(){
 			$("#university").change();
