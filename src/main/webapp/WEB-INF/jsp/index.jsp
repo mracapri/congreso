@@ -70,34 +70,6 @@
 	<li>Establecer redes de colaboraci&oacute;n entre los Cuerpos Acad&eacute;micos</li>
 </ol>
 <c:if test="${param['unshow-message'] == null}">
-
-
-<div 
-	id="aviso-modal" 
-	class="modal hide fade in" 
-	tabindex="-1" role="dialog" 
-	aria-labelledby="myModalLabel" 
-	aria-hidden="false" style="display: block;">
-		<div class="modal-header">
-			<h3 id="myModalLabel">Aviso urgente</h3>
-		</div>
-		<div class="modal-body">
-			<p>
-				En respuesta a la solicitud realizada por los distintos interesados en el <b>concurso de creatividad</b>,
-				la fecha limite de registro de participaci&oacuten se extiende hasta el d&iacutea viernes 22 de febrero del
-				presente a&ntildeo.
-			</p>
-			<p>
-				Para mayores inormes comunicarse al siguiente correo <email>7congreso_concurso@utvm.edu.mx</email> con el Ing.
-				Mauro V&aacutequez Jahuey Coordinador del concurso de creatividad. 
-				
-			</p>
-		</div>
-		<div class="modal-footer">
-			<button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-		</div>
-</div>
-
 <div id="myModal" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: block;">
 		<div class="modal-header">
 			<h3 id="myModalLabel">Congreso Nacional Bioalimentario</h3>
