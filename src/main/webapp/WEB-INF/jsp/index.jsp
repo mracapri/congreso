@@ -83,14 +83,16 @@
 		</div>
 		<div class="modal-body">
 			<p>
+				Convovatoria de carteles y ponencias se ha cerrado. Gracias
+			</p>
+			<p>
 				En respuesta a la solicitud realizada por los distintos interesados en el <b>concurso de creatividad</b>,
 				la fecha limite de registro de participaci&oacuten se extiende hasta el d&iacutea viernes 22 de febrero del
 				presente a&ntildeo.
-			</p>
+			</p>			
 			<p>
 				Para mayores inormes comunicarse al siguiente correo <email>7congreso_concurso@utvm.edu.mx</email> con el Ing.
 				Mauro V&aacutequez Jahuey Coordinador del concurso de creatividad. 
-				
 			</p>
 		</div>
 		<div class="modal-footer">
