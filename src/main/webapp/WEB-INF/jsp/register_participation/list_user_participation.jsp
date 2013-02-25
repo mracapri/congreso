@@ -9,6 +9,7 @@
 			<th>Nombre</th>
 			<th>Correo</th>
 			<th>Oupacion</th>
+			<th>Participaci&oacuten</th>
 			<th>Universidad</th>
 			<th>Telefono</th>
 			<th>PDF</th>
@@ -20,6 +21,7 @@
 				<td style="color: blue;">${participant.name} ${participant.secondName} ${participant.thirdName}</td>
 				<td>${participant.informationAccount.email}</td>
 				<td>${participant.ocupation.name}</td>
+				<td>${participant.participation.name}</td>
 				<td>${participant.university.name}</td>
 				<td>${participant.phone}</td>
 				<td>
