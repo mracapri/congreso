@@ -49,6 +49,12 @@
 		<dd>
 			Ing. Jonatan Zuñiga Morales <br /> 	7congreso_talleres@utvm.edu.mx
 		</dd>
+		
+		<br />
+		<dt>Expoempresarial</dt>
+		<dd>
+			Mtro. Oliver Garc&iacutea Ram&iacuterez<br />ogarcia@utvm.edu.mx
+		</dd>		
 	</dl>
 	<h3>Direcci&oacuten</h3>
 	<p>UTVM/ Carr. Ixmiquilpan Capula km 4.0, Col Nith Ixmiquilpan,

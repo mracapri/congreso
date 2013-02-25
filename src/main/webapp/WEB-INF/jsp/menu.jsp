@@ -11,7 +11,7 @@
 	<li><a href="${pageContext.request.contextPath}/resolver/register/form">Preregistro</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/register_participation/form">Registro de participaci&oacute;n</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/register_academy/form">Registro de cuerpo acad&eacutemico</a></li>	
-	<li><a href="${pageContext.request.contextPath}/resolver/pages/servicio_hospedaje">Servicio de Hospedaje</a></li>
+	<li><a href="${pageContext.request.contextPath}/recursos/docs/Hoteles.pdf">Servicio de Hospedaje</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/sede">Sedes</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/como_llegar">C&oacutemo llegar?</a></li>
 	<li><a href="${pageContext.request.contextPath}/recursos/docs/programa_general.pdf" target="_blank">Programa general</a></li>

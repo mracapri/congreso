@@ -83,7 +83,7 @@
 		</div>
 		<div class="modal-body">
 			<p>
-				Convovatoria de carteles y ponencias se ha cerrado. Gracias
+				Convocatoria de carteles y ponencias se ha cerrado. Gracias
 			</p>
 			<p>
 				En respuesta a la solicitud realizada por los distintos interesados en el <b>concurso de creatividad</b>,
