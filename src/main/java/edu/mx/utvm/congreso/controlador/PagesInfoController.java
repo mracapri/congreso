@@ -19,6 +19,15 @@ import org.springframework.web.servlet.ModelAndView;
 public class PagesInfoController {
 	protected final Log logger = LogFactory.getLog(getClass());
 
+	@RequestMapping(value="/foro_egresados")
+    public ModelAndView handleForoEgresados(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+      
+        Map<String, Object> modelo = new HashMap<String, Object>();
+        
+    	return new ModelAndView("content/foro_egresados", "modelo", modelo);
+    }
+	
 	@RequestMapping(value="/conferencias")
     public ModelAndView handleConferencias(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

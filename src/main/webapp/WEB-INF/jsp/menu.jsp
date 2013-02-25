@@ -25,6 +25,7 @@
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/talleres">Talleres</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/concursos">Concursos</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/ponencias">Ponencias</a></li>
+	<li><a href="${pageContext.request.contextPath}/resolver/pages/foro_egresados">Foro de Egresados</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/carteles">Carteles</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/actividades_culturales">Actividades culturales</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/turismo">Turismo</a></li>
