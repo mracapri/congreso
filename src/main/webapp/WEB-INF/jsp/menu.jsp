@@ -11,7 +11,7 @@
 	<li><a href="${pageContext.request.contextPath}/resolver/register/form">Preregistro</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/register_participation/form">Registro de participaci&oacute;n</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/register_academy/form">Registro de cuerpo acad&eacutemico</a></li>	
-	<li><a href="${pageContext.request.contextPath}/resolver/pages/servicio_hospedaje">Servicio de Hospedaje</a></li>
+	<li><a href="${pageContext.request.contextPath}/recursos/docs/Hoteles.pdf">Servicio de Hospedaje</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/sede">Sedes</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/como_llegar">C&oacutemo llegar?</a></li>
 	<li><a href="${pageContext.request.contextPath}/recursos/docs/programa_general.pdf" target="_blank">Programa general</a></li>
@@ -25,6 +25,7 @@
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/talleres">Talleres</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/concursos">Concursos</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/ponencias">Ponencias</a></li>
+	<li><a href="${pageContext.request.contextPath}/resolver/pages/foro_egresados">Foro de Egresados</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/carteles">Carteles</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/actividades_culturales">Actividades culturales</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/turismo">Turismo</a></li>

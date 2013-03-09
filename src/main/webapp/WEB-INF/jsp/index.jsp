@@ -70,6 +70,10 @@
 	<li>Establecer redes de colaboraci&oacute;n entre los Cuerpos Acad&eacute;micos</li>
 </ol>
 <c:if test="${param['unshow-message'] == null}">
+
+
+
+
 <div id="myModal" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: block;">
 		<div class="modal-header">
 			<h3 id="myModalLabel">Congreso Nacional Bioalimentario</h3>

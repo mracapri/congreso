@@ -1,4 +1,11 @@
 <%@ include file="/WEB-INF/jsp/contenido_antes.jsp"%>
+<style>
+	.label-mail-wrap{
+		width:200px;
+		display:block;
+		word-wrap:break-word;
+	}
+</style>
 <form class="form-search" action="${pageContext.request.contextPath}/resolver/register_participation/list_user_participation">
 	<input name="search-param" type="text" class="input-medium search-query" placeholder="nombre, correo" value="${param['search-param']}"/>
 	<button type="submit" class="btn">Buscar registro</button>
@@ -9,6 +16,7 @@
 			<th>Nombre</th>
 			<th>Correo</th>
 			<th>Oupacion</th>
+			<th>Participaci&oacuten</th>
 			<th>Universidad</th>
 			<th>Telefono</th>
 			<th>PDF</th>
@@ -18,8 +26,13 @@
 		<c:forEach var="participant" items="${participants}">
 			<tr>
 				<td style="color: blue;">${participant.name} ${participant.secondName} ${participant.thirdName}</td>
-				<td>${participant.informationAccount.email}</td>
+				<td>
+					<span class="label-mail-wrap">
+						${participant.informationAccount.email}
+					</span>
+				</td>
 				<td>${participant.ocupation.name}</td>
+				<td>${participant.participation.name}</td>
 				<td>${participant.university.name}</td>
 				<td>${participant.phone}</td>
 				<td>

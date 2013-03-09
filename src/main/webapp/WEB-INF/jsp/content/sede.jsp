@@ -7,6 +7,15 @@ p.muted {
 </style>
 
 <p>
+	<b>
+		<p>
+			Auditorio  Gota de Plata, Centro de Convenciones y Biblioteca del Estado "Ricardo Garibay"
+		</p>
+	</b>
+	Camino Real de la Plata s/n, Parque Cultural David Ben Guri&oacuten, Col. Zona Plateada, Pachuca de Soto, Hidalgo. C.P. 42083
+</p>
+
+<p>
 	La zona Plateada es hoy en d&iacutea, el desarrollo urbano de mayor plusval&iacutea y modernidad en el Estado de Hidalgo, 
 	Ubicado en el coraz&oacuten de la Ciudad de Pachuca. Y fue creada para vivir, hacer negocios, disfrutar de actividades 
 	recreativas y de esparcimiento, gozar de los servicios y productos de empresas que encontramos en ciudades cosmopolitas.
@@ -54,6 +63,14 @@ p.muted {
 		</tr>	
 	</table>
 </div>
+
+
+<p>
+	<b>
+		<p>Universidad Tecnol&oacutegica del Valle del Mezquital</p>
+	</b>
+	Carretera Ixmiquilpan-Capula, Km. 4 Col. El Nith,Ixmiquilpan, Hidalgo
+</p>
 
 <p>
 	La Universidad Tecnol&oacutegica del Valle del Mezquital (UTVM), se crea el 9 de Septiembre de 1996 con la finalidad de dar respuesta 

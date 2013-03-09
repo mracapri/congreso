@@ -115,7 +115,7 @@ td {
 								<strong>
 									Importe:
 								</strong>
-								400.00 M.N
+								450.00 M.N
 							</p>
 						</td>
 						<td></td>
