@@ -157,4 +157,11 @@ public class PagesInfoController {
 		ModelAndView model = new ModelAndView("content/palabras_rector");
 		return model;
 	}
+	
+	@RequestMapping(value = "/programa_general")
+	public ModelAndView handleProgramaGeneral(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		ModelAndView model = new ModelAndView("content/programa_general");
+		return model;
+	}	
 }

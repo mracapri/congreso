@@ -14,7 +14,7 @@
 	<li><a href="${pageContext.request.contextPath}/recursos/docs/Hoteles.pdf">Servicio de Hospedaje</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/sede">Sedes</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/como_llegar">C&oacutemo llegar?</a></li>
-	<li><a href="${pageContext.request.contextPath}/recursos/docs/programa_general.pdf" target="_blank">Programa general</a></li>
+	<li><a href="${pageContext.request.contextPath}/resolver/pages/programa_general">Programa general <span class="label label-important">Nuevo</span></a></li>
 	<li style="display:none;"><a href="#">Memoria del congreso</a></li>
 	<li style="display:none;"><a href="#">Evaluadores</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/contacto">Cont&aacutecto</a></li>
