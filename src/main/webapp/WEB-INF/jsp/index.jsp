@@ -130,9 +130,14 @@ estudiantiles del pa&iacutes para seguir fortaleciendo la industria agroalimenta
 Nuevamente sean bienvenidos y esperamos que los resultados que se deriven rindan frutos y
 constituyan un aporte sustancial para el progreso de esta regi&oacuten, el estado y el pa&iacutes.<br><br>
 
-Muchas gracias y &eacutexito.</p><br><br>
+Muchas gracias y &eacutexito.
 
-
+<p style="text-align: right;">
+	<b>
+		Lic. Marco Antonio Ocadiz Cruz
+	</b>
+</p>
+</p><br><br>
 							</div>	
 						</div>
 						<div class="row-fluid">
