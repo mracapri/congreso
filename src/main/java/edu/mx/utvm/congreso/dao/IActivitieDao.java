@@ -8,6 +8,7 @@ public interface IActivitieDao extends Dao<Activitie, Integer>{
 	List<Activitie> findAllByEmail(String email);
 	void asist(int idActivitie, String email);
 	void deasist(int idActivitie, String email);
-	boolean canAsistAtActivitie(String email, int h1, int h2);
+	boolean canAsistAtActivitie(String email, int h1, int h2, String day);
 	int countActivitiesAsigned(int idActivitie);
+	boolean haveAVisit(String email);
 }

@@ -11,6 +11,7 @@ public class Activitie {
 	private int capacityMax;
 	private int capacityMin;
 	private int asignacion;
+	private String visit;
 	public int getId() {
 		return id;
 	}
@@ -70,5 +71,11 @@ public class Activitie {
 	}
 	public void setAsignacion(int asignacion) {
 		this.asignacion = asignacion;
+	}
+	public String getVisit() {
+		return visit;
+	}
+	public void setVisit(String visit) {
+		this.visit = visit;
 	}	
 }

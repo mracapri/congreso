@@ -34,7 +34,7 @@ public class ActivitieDaoImpl extends JdbcTemplate implements IActivitieDao{
 	public Activitie read(Integer id) {
 		String sql = "";
 		sql = sql + "select ";
-		sql = sql + 	"a.id, a.id_place_section, a.day, a.activitie, a.hour, a.h1 , a.h2, a.capacity_max, a.capacity_min,ps.id, ";
+		sql = sql + 	"a.id, a.id_place_section, a.day, a.activitie, a.hour, a.h1 , a.h2, a.capacity_max, a.capacity_min,ps.id, a.is_visit, ";
 		sql = sql + 	"ps.id_place, ps.place_section,p.id, p.place ";
 		sql = sql + "from ";
 		sql = sql + 	"activities a ";
@@ -58,6 +58,7 @@ public class ActivitieDaoImpl extends JdbcTemplate implements IActivitieDao{
 						activitie.setH2(rs.getInt("a.h2"));
 						activitie.setHour(rs.getString("a.hour"));
 						activitie.setId(rs.getInt("a.id"));
+						activitie.setVisit(rs.getString("a.is_visit"));
 						
 						PlaceSection placeSection = new PlaceSection();
 						placeSection.setId(rs.getInt("ps.id"));
@@ -99,7 +100,7 @@ public class ActivitieDaoImpl extends JdbcTemplate implements IActivitieDao{
 		
 		String sql = "";
 		sql = sql + "select ";
-		sql = sql + 	"a.id, a.id_place_section, a.day, a.activitie, a.hour, a.h1 , a.h2, a.capacity_max, a.capacity_min,";
+		sql = sql + 	"a.id, a.id_place_section, a.day, a.activitie, a.hour, a.h1 , a.h2, a.capacity_max, a.capacity_min, a.is_visit, ";
 		sql = sql + 	"ps.id, ps.id_place, ps.place_section,";
 		sql = sql + 	"p.id, p.place,";
 		sql = sql + 	"coalesce(ap.id_activitie,0) as asignacion ";
@@ -122,6 +123,7 @@ public class ActivitieDaoImpl extends JdbcTemplate implements IActivitieDao{
 				activitie.setH2(rs.getInt("a.h2"));
 				activitie.setHour(rs.getString("a.hour"));
 				activitie.setId(rs.getInt("a.id"));
+				activitie.setVisit(rs.getString("a.is_visit"));
 				
 				PlaceSection placeSection = new PlaceSection();
 				placeSection.setId(rs.getInt("ps.id"));
@@ -161,7 +163,7 @@ public class ActivitieDaoImpl extends JdbcTemplate implements IActivitieDao{
 	}
 
 	@Override
-	public boolean canAsistAtActivitie(String email, int h1, int h2) {
+	public boolean canAsistAtActivitie(String email, int h1, int h2, String day) {
 		boolean result = false;
 		String sql = "";
 		sql = sql + "select ";
@@ -171,16 +173,43 @@ public class ActivitieDaoImpl extends JdbcTemplate implements IActivitieDao{
 		sql = sql + "where ap.email = ? ";
 		sql = sql + 	"and a.id = ap.id_activitie ";
 		sql = sql + 	"and a.h1 >= ? ";
-		sql = sql + 	"and a.h2 <= ?";
+		sql = sql + 	"and a.h2 <= ? ";
+		sql = sql + 	"and a.day = ? ";
 		try {			
 			this.queryForInt(sql,
 				new Object[] {
-					email,h1,h2
+					email,h1,h2, day
 				}
 			);
 			result = false;
 		} catch (EmptyResultDataAccessException accessException) {
 			result = true;
+		}
+		return result;
+	}
+	
+	@Override
+	public boolean haveAVisit(String email) {
+		boolean result = false;
+		String sql = "";
+		sql = sql + "select ";
+		sql = sql + 	"NULL ";
+		sql = sql + "from ";
+		sql = sql + 	"activitie_participant ap, ";
+		sql = sql + 	"activities a ";
+		sql = sql + "where ";
+		sql = sql + 	"ap.email = ? ";
+		sql = sql + 	"and a.id = ap.id_activitie and a.is_visit = 'SI'";
+		
+		try {			
+			this.queryForInt(sql,
+				new Object[] {
+					email
+				}
+			);
+			result = true;
+		} catch (EmptyResultDataAccessException accessException) {
+			result = false;
 		}
 		return result;
 	}

@@ -1,22 +1,31 @@
 <%@ include file="/WEB-INF/jsp/contenido_antes.jsp"%>
 <style>
-	.label-wrap, .label-wrap-button, .label-wrap-day{
+	.label-wrap, .label-wrap-button, .label-wrap-day, .label-wrap-hour, .label-wrap-section{
 		width:130px;
 		display:block;
 		word-wrap:break-word;
+	    text-transform: uppercase;
+	    font-size: 11px;
 	}
+	
+	.label-wrap-section{
+		width:110px;
+	}
+	
 	.label-wrap-button{
-		width:80px;
+		width:110px;
 	}
 	
 	.label-wrap-day{
-		width:30px;
+		width:15px;
 		font-weight: bold;
 	}
-	
+
+	.label-wrap-hour{
+		width:60px;
+		font-weight: bold;
+	}
 	#activities tr:nth-child(2n) {
-	    /*background-color: #999999;
-	    color: #000;*/
 	    border: 1px solid;
 	}
 </style>
@@ -45,7 +54,7 @@
 					</span>
 				</td>
 				<td>
-					<span class="label-wrap">
+					<span class="label-wrap-section">
 						${activitie.placeSection.placeSection}
 					</span>
 				</td>
@@ -55,7 +64,9 @@
 					</span>
 				</td>
 				<td>
-					${activitie.hour}
+					<span class="label-wrap-hour">
+						${activitie.hour}
+					</span>
 				</td>
 				<td>
 					<span class="label-wrap-button">

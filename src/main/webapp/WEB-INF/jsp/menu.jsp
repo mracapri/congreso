@@ -8,7 +8,7 @@
 <ul class="nav nav-list">  
 	<li class="divider"></li>
 	<li class="nav-header">Congreso Nacional</li>	
-	<li><a href="${pageContext.request.contextPath}/resolver/activitie/list">Agenda - Preregistro <span class="label label-important">Nuevo</span></a></li>
+	<li><a href="${pageContext.request.contextPath}/resolver/activitie/list">Agenda - Registro <span class="label label-important">Nuevo</span></a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/register/form">Preregistro</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/register_participation/form">Registro de participaci&oacute;n</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/register_academy/form">Registro de cuerpo acad&eacutemico</a></li>	
