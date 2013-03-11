@@ -21,6 +21,10 @@
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/contacto">Cont&aacutecto</a></li>
 	<li class="divider"></li>
 	<li class="nav-header">Importante</li>
+	<li><a target="_blank" href="${pageContext.request.contextPath}/recursos/docs/Reglamento_Congreso_2013.pdf">Reglamento Congreso <span class="label label-important">Nuevo</a></li>
+	<li><a target="_blank" href="${pageContext.request.contextPath}/recursos/docs/programa_detallado/relacion_de_visitas_culturales.pdf">Visitas Culturales <span class="label label-important">Nuevo</a></li>
+	<li><a target="_blank" href="${pageContext.request.contextPath}/recursos/docs/programa_detallado/relacion_de_visitas_industriales.pdf">Visitas Industriales <span class="label label-important">Nuevo</a></li>
+	<li><a target="_blank" href="${pageContext.request.contextPath}/recursos/docs/programa_detallado/relacion_de_participantes_en la_expo_empresarial.pdf">Expo Empresarial <span class="label label-important">Nuevo</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/conferencias">Conferencias Magistrales <span class="label label-important">Nuevo</span></a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/reuniones">Reuniones</a></li>
 	<li><a href="${pageContext.request.contextPath}/resolver/pages/talleres">Talleres</a></li>
