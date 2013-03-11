@@ -1,19 +1,9 @@
 <%@ include file="/WEB-INF/jsp/contenido_antes.jsp"%>
 
 <h3>Ponencias</h3>
-<a target="_blank" href="${pageContext.request.contextPath}/recursos/docs/Convocatoria_ponencias.pdf">
+<a target="_blank" href="${pageContext.request.contextPath}/recursos/docs/programa_detallado/relacion_general_de_ponencias_por ejes_tematicos_del_7_congreso_bioalimentario.pdf">
 	<i class="icon-book"></i>
-	Descargar la convocatoria para ponencias
-</a>
-
-<a target="_blank" href="${pageContext.request.contextPath}/recursos/docs/Plantilla_ponencias.pptx">
-	<i class="icon-book"></i>
-	Descargar la plantilla para ponencias
-</a>
-
-<a target="_blank" href="${pageContext.request.contextPath}/recursos/docs/Formato_extenso_congreso.pdf">
-	<i class="icon-book"></i>
-	Descargar formato para extensos
+	Descargar programa general de ponencias 
 </a>
 
 <p>De aproximadamente 20 minutos de duraci&oacute;n, donde un especialista

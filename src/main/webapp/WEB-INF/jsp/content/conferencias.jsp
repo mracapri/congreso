@@ -1,4 +1,8 @@
 <%@ include file="/WEB-INF/jsp/contenido_antes.jsp" %>
+<a target="_blank" href="${pageContext.request.contextPath}/recursos/docs/programa_detallado/Relacion_de_Conferencias_Magistrales.pdf">
+	<i class="icon-book"></i>
+	Descargar Programa de Conferencias Magistrales 
+</a>
 		
 <h3>
 	Conferencias Magistrales	

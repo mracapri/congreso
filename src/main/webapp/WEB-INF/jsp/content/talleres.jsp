@@ -2,9 +2,9 @@
 
 <h3>Talleres</h3>
 
-<a target="_blank" href="${pageContext.request.contextPath}/recursos/docs/Convocatoria_para_talleres.pdf">
+<a target="_blank" href="${pageContext.request.contextPath}/recursos/docs/programa_detallado/relacion_de_practicas_Talleres.pdf">
 	<i class="icon-book"></i>
-	Descargar convocatoria para talleres
+	Descargar Programa de Talleres 
 </a>
 
 <p>
