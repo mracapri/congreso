@@ -1,5 +1,10 @@
 <%@ include file="/WEB-INF/jsp/contenido_antes.jsp" %>
     
+<div class="alert alert-error">
+	<button type="button" class="close" data-dismiss="alert">&times;</button>
+	<h4>Atenci&oacuten!</h4>
+	Recuerda que para realizar tu agenda tendr&aacutes que completar el proceso de pago
+</div>
 <h3>
 	Bienvenida
 </h3>
