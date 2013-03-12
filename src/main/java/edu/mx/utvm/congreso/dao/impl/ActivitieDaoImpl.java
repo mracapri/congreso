@@ -219,4 +219,28 @@ public class ActivitieDaoImpl extends JdbcTemplate implements IActivitieDao{
 		String sql = "select count(id_activitie) from activitie_participant where id_activitie = ?";
 		return this.queryForInt(sql,new Object[] {idActivitie});
 	}
+	
+	@Override
+	public boolean paySucced(String email) {
+		boolean result = false;
+		String sql = "";
+		sql = sql + "select ";
+		sql = sql + 	"NULL ";
+		sql = sql + "from ";
+		sql = sql + 	"preregister_information ";
+		sql = sql + "where ";
+		sql = sql + 	"email = ? ";
+		sql = sql + 	"and payment_status = 'PAGADO'";		
+		try {			
+			this.queryForInt(sql,
+				new Object[] {
+					email
+				}
+			);
+			result = true;
+		} catch (EmptyResultDataAccessException accessException) {
+			result = false;
+		}
+		return result;
+	}
 }

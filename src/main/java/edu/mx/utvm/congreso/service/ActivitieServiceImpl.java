@@ -24,22 +24,27 @@ public class ActivitieServiceImpl implements ActivitieService {
 		Activitie activitie = activitieDao.read(idActivitie);
 		boolean canAsistAtActivitie = activitieDao.canAsistAtActivitie(email,
 				activitie.getH1(), activitie.getH2(), activitie.getDay());
-		if(canAsistAtActivitie){			
-			int countActivitiesAsigned = activitieDao.countActivitiesAsigned(idActivitie);
-			if(activitie.getCapacityMin() > 0 && countActivitiesAsigned <= activitie.getCapacityMin()){				
-				if(activitie.getVisit().equals("SI")){					
-					boolean haveAVisit = activitieDao.haveAVisit(email);
-					if(haveAVisit){
-						return 4; // have a visit
+		boolean paySucced = activitieDao.paySucced(email);
+		if(paySucced){
+			if(canAsistAtActivitie){			
+				int countActivitiesAsigned = activitieDao.countActivitiesAsigned(idActivitie);
+				if(activitie.getCapacityMin() > 0 && countActivitiesAsigned <= activitie.getCapacityMin()){				
+					if(activitie.getVisit().equals("SI")){					
+						boolean haveAVisit = activitieDao.haveAVisit(email);
+						if(haveAVisit){
+							return 4; // have a visit
+						}
 					}
+					activitieDao.asist(idActivitie, email);
+					return 1; // ok	
+				}else{
+					return 2; // overload
 				}
-				activitieDao.asist(idActivitie, email);
-				return 1; // ok	
 			}else{
-				return 2; // overload
+				return 3; // can't assist
 			}
 		}else{
-			return 3; // can't assist
+			return 5; // payment succed
 		}
 	}
 

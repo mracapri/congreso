@@ -11,4 +11,5 @@ public interface IActivitieDao extends Dao<Activitie, Integer>{
 	boolean canAsistAtActivitie(String email, int h1, int h2, String day);
 	int countActivitiesAsigned(int idActivitie);
 	boolean haveAVisit(String email);
+	boolean paySucced(String email);
 }

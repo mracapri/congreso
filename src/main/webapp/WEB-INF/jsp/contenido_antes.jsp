@@ -62,9 +62,7 @@
 								</a>
 							</li>
 							<li>
-								<a rel="tooltip" 
-									data-original-title="Funcionalidad activada hasta el 1 de Marzo"
-									href="#">
+								<a  href="${pageContext.request.contextPath}/resolver/activitie/list">
 									Armar agenda
 								</a>
 							</li>
