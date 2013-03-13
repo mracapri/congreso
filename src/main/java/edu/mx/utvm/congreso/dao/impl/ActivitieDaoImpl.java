@@ -269,7 +269,6 @@ public class ActivitieDaoImpl extends JdbcTemplate implements IActivitieDao{
 			public Activitie mapRow(ResultSet rs, int rowNum) throws SQLException {
 				Activitie activitie = new Activitie();
 				activitie.setActivitie(rs.getString("a.activitie"));
-				activitie.setAsignacion(rs.getInt("asignacion"));
 				activitie.setCapacityMax(rs.getInt("a.capacity_max"));
 				activitie.setCapacityMin(rs.getInt("a.capacity_min"));
 				activitie.setDay(rs.getString("a.day"));
