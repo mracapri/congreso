@@ -70,11 +70,7 @@
 				</td>
 				<td>
 					<span class="label-wrap-button">
-						<c:choose>
-						    <c:when test="${activitie.asignacion != 0}">
-								<button class="btn btn-danger btn-deassist" id="${activitie.id}">Retirarse</button>
-						    </c:when>
-						</c:choose>
+						<button class="btn btn-danger btn-deassist" id="${activitie.id}">Retirarse</button>
 					</span>
 				</td>
 			</tr>

@@ -255,7 +255,7 @@ public class ActivitieDaoImpl extends JdbcTemplate implements IActivitieDao{
 		sql = sql + "from  ";
 		sql = sql + 	"activitie_participant ap, activities a, place_section ps, place p ";
 		sql = sql + "where ";
-		sql = sql + 	"ap.email = 'mogugos_adony@hotmail.com' and ";
+		sql = sql + 	"ap.email = ? and ";
 		sql = sql + 	"a.id = ap.id_activitie and ";
 		sql = sql + 	"ps.id = a.id_place_section and ";
 		sql = sql + 	"p.id = ps.id_place ";
@@ -264,7 +264,7 @@ public class ActivitieDaoImpl extends JdbcTemplate implements IActivitieDao{
 
 
 		
-		List<Activitie> resultados = this.query(sql, new RowMapper<Activitie>() {
+		List<Activitie> resultados = this.query(sql, new Object[] {email}, new RowMapper<Activitie>() {
 			@Override
 			public Activitie mapRow(ResultSet rs, int rowNum) throws SQLException {
 				Activitie activitie = new Activitie();
