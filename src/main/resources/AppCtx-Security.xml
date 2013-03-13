@@ -22,6 +22,7 @@
     	<intercept-url pattern='/resolver/activitie/assist' access="hasRole('ROLE_PREREGISTERED_SUCCESS_PAYMENT')" />
     	<intercept-url pattern='/resolver/activitie/deassist' access="hasRole('ROLE_PREREGISTERED_SUCCESS_PAYMENT')" />
     	<intercept-url pattern='/resolver/activitie/list' access="hasRole('ROLE_PREREGISTERED_SUCCESS_PAYMENT')" />
+    	<intercept-url pattern='/resolver/activitie/list/me' access="hasRole('ROLE_PREREGISTERED_SUCCESS_PAYMENT')" />
     	
     	<intercept-url pattern='/resolver/register/list_user_preregistered' access="hasRole('ROLE_ADMIN')" />
     	<intercept-url pattern='/resolver/chart/chart_preregister_status' access="hasRole('ROLE_ADMIN')" />

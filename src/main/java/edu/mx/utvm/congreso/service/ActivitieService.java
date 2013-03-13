@@ -8,4 +8,5 @@ public interface ActivitieService {
 	List<Activitie> findAllByEmail(String email);
 	int asist(int idActivitie, String email);
 	void deasist(int idActivitie, String email);
+	List<Activitie> findActivitiesSelectedByEmail(String email);
 }

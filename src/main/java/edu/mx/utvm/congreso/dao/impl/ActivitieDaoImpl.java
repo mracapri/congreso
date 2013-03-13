@@ -243,4 +243,56 @@ public class ActivitieDaoImpl extends JdbcTemplate implements IActivitieDao{
 		}
 		return result;
 	}
+
+	@Override
+	public List<Activitie> findActivitiesSelectedByEmail(String email) {
+				
+		String sql = "";
+		sql = sql + "select ";
+		sql = sql + 	"a.id, a.id_place_section, a.day, a.activitie, a.hour, a.h1 , a.h2, a.capacity_max, a.capacity_min, a.is_visit,ps.id,  ";
+		sql = sql + 	"ps.id_place, ps.place_section, ";
+		sql = sql + 	"p.id, p.place ";
+		sql = sql + "from  ";
+		sql = sql + 	"activitie_participant ap, activities a, place_section ps, place p ";
+		sql = sql + "where ";
+		sql = sql + 	"ap.email = 'mogugos_adony@hotmail.com' and ";
+		sql = sql + 	"a.id = ap.id_activitie and ";
+		sql = sql + 	"ps.id = a.id_place_section and ";
+		sql = sql + 	"p.id = ps.id_place ";
+		sql = sql + "order by ";
+		sql = sql + 	"a.day, a.hour";
+
+
+		
+		List<Activitie> resultados = this.query(sql, new RowMapper<Activitie>() {
+			@Override
+			public Activitie mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Activitie activitie = new Activitie();
+				activitie.setActivitie(rs.getString("a.activitie"));
+				activitie.setAsignacion(rs.getInt("asignacion"));
+				activitie.setCapacityMax(rs.getInt("a.capacity_max"));
+				activitie.setCapacityMin(rs.getInt("a.capacity_min"));
+				activitie.setDay(rs.getString("a.day"));
+				activitie.setH1(rs.getInt("a.h1"));
+				activitie.setH2(rs.getInt("a.h2"));
+				activitie.setHour(rs.getString("a.hour"));
+				activitie.setId(rs.getInt("a.id"));
+				activitie.setVisit(rs.getString("a.is_visit"));
+				
+				PlaceSection placeSection = new PlaceSection();
+				placeSection.setId(rs.getInt("ps.id"));
+				placeSection.setPlaceSection(rs.getString("ps.place_section"));
+				
+				Place place = new Place();
+				place.setId(rs.getInt("p.id"));
+				place.setPlace(rs.getString("p.place"));
+				placeSection.setPlace(place);
+				
+				activitie.setPlaceSection(placeSection);
+				
+				return activitie;
+			}
+		});
+		return resultados;
+	}
 }

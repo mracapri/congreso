@@ -33,12 +33,22 @@ public class ActivitieController {
 	private ActivitieService activitieService;
 	
 	@RequestMapping(value="/list")
-	public ModelAndView showChartPreRegisterStatus(
+	public ModelAndView showAllActivities(
 			HttpServletRequest request, HttpServletResponse response, Principal principal)
             throws ServletException, IOException {
 		
     	ModelAndView modelAndView = new ModelAndView("activities/list_activities");
     	modelAndView.addObject("activities", activitieService.findAllByEmail(principal.getName()));
+    	return modelAndView;
+    }
+	
+	@RequestMapping(value="/list/me")
+	public ModelAndView showActivitiesSelected(
+			HttpServletRequest request, HttpServletResponse response, Principal principal)
+            throws ServletException, IOException {
+		
+    	ModelAndView modelAndView = new ModelAndView("activities/list_me");
+    	modelAndView.addObject("activities", activitieService.findActivitiesSelectedByEmail(principal.getName()));
     	return modelAndView;
     }
 	

@@ -52,4 +52,9 @@ public class ActivitieServiceImpl implements ActivitieService {
 	public void deasist(int idActivitie, String email) {
 		activitieDao.deasist(idActivitie, email);
 	}
+
+	@Override
+	public List<Activitie> findActivitiesSelectedByEmail(String email) {
+		return activitieDao.findActivitiesSelectedByEmail(email);
+	}
 }
