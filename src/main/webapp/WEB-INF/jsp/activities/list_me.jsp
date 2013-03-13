@@ -79,10 +79,31 @@
 </table>
 <script type="text/javascript">
 $(document).ready(function(){	
-	$(".btn-deassist").click(function(){
+	$(".btn-assist").live('click', function(){
+	    $this = this;
 		var id = $(this).attr("id");
-		$.getJSON("${pageContext.request.contextPath}/resolver/activitie/deassist?idActivitie=" + id,function(result){			
-			$("body").load("/congreso/resolver/activitie/list/me");
+		$.getJSON("${pageContext.request.contextPath}/resolver/activitie/assist?idActivitie=" + id,function(result){
+			alert(result.result);
+			window.console.log(result.result);
+			if(result.result === "OK"){
+				$($this).removeClass("btn-assist");
+				$($this).addClass("btn-deassist");
+				$($this).removeClass("btn-info");
+				$($this).addClass("btn-danger");
+				$($this).html("Retirarse");
+			}
+		});
+	});
+
+	$(".btn-deassist").live('click',function(){
+	    $this = this;
+		var id = $(this).attr("id");
+		$.getJSON("${pageContext.request.contextPath}/resolver/activitie/deassist?idActivitie=" + id,function(result){
+			$($this).removeClass("btn-deassist");
+			$($this).addClass("btn-assist");
+			$($this).addClass("btn-info");
+			$($this).removeClass("btn-danger");
+			$($this).html("Asistir");
 		});
 	});
 });
