@@ -15,4 +15,5 @@ public interface IActivitieDao extends Dao<Activitie, Integer>{
 	boolean paySucced(String email);
 	List<Activitie> findActivitiesSelectedByEmail(String email);
 	List<ActivitieCount> reportStateCountAllActivities();
+	List<ActivitieCount> reportStateCountAllActivitiesByUniversity(int idUniversity);
 }

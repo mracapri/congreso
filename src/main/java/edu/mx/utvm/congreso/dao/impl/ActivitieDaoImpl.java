@@ -312,12 +312,69 @@ public class ActivitieDaoImpl extends JdbcTemplate implements IActivitieDao{
 		sql = sql + 	"left join place p on p.id = ps.id_place ";
 		sql = sql + "group by ";
 		sql = sql + 	"ap.id_activitie ";
-		sql = sql + "order by a.day, a.hour";
+		sql = sql + "order by count_activitie desc";
 		
-
-
 		
 		List<ActivitieCount> resultados = this.query(sql, new RowMapper<ActivitieCount>() {
+			@Override
+			public ActivitieCount mapRow(ResultSet rs, int rowNum) throws SQLException {
+				ActivitieCount activitieCount = new ActivitieCount();
+				
+				Activitie activitie = new Activitie();
+				activitie.setActivitie(rs.getString("a.activitie"));
+				activitie.setCapacityMax(rs.getInt("a.capacity_max"));
+				activitie.setCapacityMin(rs.getInt("a.capacity_min"));
+				activitie.setDay(rs.getString("a.day"));
+				activitie.setH1(rs.getInt("a.h1"));
+				activitie.setH2(rs.getInt("a.h2"));
+				activitie.setHour(rs.getString("a.hour"));
+				activitie.setId(rs.getInt("a.id"));
+				activitie.setVisit(rs.getString("a.is_visit"));
+				
+				PlaceSection placeSection = new PlaceSection();
+				placeSection.setId(rs.getInt("ps.id"));
+				placeSection.setPlaceSection(rs.getString("ps.place_section"));
+				
+				Place place = new Place();
+				place.setId(rs.getInt("p.id"));
+				place.setPlace(rs.getString("p.place"));
+				placeSection.setPlace(place);
+				
+				activitie.setPlaceSection(placeSection);
+				
+				activitieCount.setActivitie(activitie);
+				activitieCount.setCountActivitie(rs.getInt("count_activitie"));
+				return activitieCount;
+			}
+		});
+		return resultados;
+	}
+
+	@Override
+	public List<ActivitieCount> reportStateCountAllActivitiesByUniversity(
+			int idUniversity) {
+		
+		String sql = "";
+		sql = sql + "select ";
+		sql = sql + 	"count(ap.id_activitie) as count_activitie,a.capacity_min, a.capacity_max, ";
+		sql = sql + 	"a.id, a.id_place_section, a.day, a.activitie, a.hour, a.h1 , a.h2, a.capacity_max, a.capacity_min, a.is_visit, ";
+		sql = sql + 	"ps.id, ps.id_place, ps.place_section, ";
+		sql = sql + 	"p.id, p.place ";
+		sql = sql + "from ";
+		sql = sql + 	"preregister_information pi, ";
+		sql = sql + 	"activities a ";
+		sql = sql + 	"left join activitie_participant ap on a.id = ap.id_activitie ";
+		sql = sql + 	"left join place_section ps on ps.id = a.id_place_section ";
+		sql = sql + 	"left join place p on p.id = ps.id_place ";
+		sql = sql + "where ";
+		sql = sql + 	"ap.email = pi.email and pi.id_university = ? ";
+		sql = sql + "group by ";
+		sql = sql + 	"ap.id_activitie	";
+		sql = sql + "order by ";
+		sql = sql + 	"count_activitie desc";
+		
+		
+		List<ActivitieCount> resultados = this.query(sql, new Object[]{idUniversity}, new RowMapper<ActivitieCount>() {
 			@Override
 			public ActivitieCount mapRow(ResultSet rs, int rowNum) throws SQLException {
 				ActivitieCount activitieCount = new ActivitieCount();
