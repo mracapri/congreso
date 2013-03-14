@@ -157,6 +157,17 @@ public class PreRegisterInformationController {
     	loadCatalogs(modelAndView);	
     	return modelAndView;
     }
+	
+	@RequestMapping(value="/form_capture")
+	public ModelAndView mostrarFormularioCaptura(
+			@ModelAttribute("formRegister") FormPreRegister formRegister,
+			HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+		
+    	ModelAndView modelAndView = new ModelAndView("register/capture");
+    	loadCatalogs(modelAndView);	
+    	return modelAndView;
+    }
     
 	@RequestMapping(value="/list_user_preregistered")
 	public ModelAndView showListUserPreRegister(

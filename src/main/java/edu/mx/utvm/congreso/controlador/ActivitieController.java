@@ -52,6 +52,16 @@ public class ActivitieController {
     	return modelAndView;
     }
 	
+	@RequestMapping(value="/report/count")
+	public ModelAndView reportActivitiesCount(
+			HttpServletRequest request, HttpServletResponse response, Principal principal)
+            throws ServletException, IOException {
+		
+    	ModelAndView modelAndView = new ModelAndView("activities/report_count");
+    	modelAndView.addObject("activities", activitieService.reportStateCountAllActivities());
+    	return modelAndView;
+    }
+	
 	@RequestMapping(value="/assist")
 	public ModelAndView assist(@RequestParam int idActivitie, 
 			HttpServletRequest request, HttpServletResponse response, Principal principal)

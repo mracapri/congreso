@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import edu.mx.utvm.congreso.dao.impl.ActivitieDaoImpl;
 import edu.mx.utvm.congreso.dominio.Activitie;
+import edu.mx.utvm.congreso.dominio.ActivitieCount;
 @Service
 public class ActivitieServiceImpl implements ActivitieService {
 
@@ -28,7 +29,7 @@ public class ActivitieServiceImpl implements ActivitieService {
 		if(paySucced){
 			if(canAsistAtActivitie){			
 				int countActivitiesAsigned = activitieDao.countActivitiesAsigned(idActivitie);
-				if(activitie.getCapacityMin() > 0 && countActivitiesAsigned <= activitie.getCapacityMin()){				
+				if(activitie.getCapacityMin() > 0 && countActivitiesAsigned <= activitie.getCapacityMax()){				
 					if(activitie.getVisit().equals("SI")){					
 						boolean haveAVisit = activitieDao.haveAVisit(email);
 						if(haveAVisit){
@@ -56,5 +57,10 @@ public class ActivitieServiceImpl implements ActivitieService {
 	@Override
 	public List<Activitie> findActivitiesSelectedByEmail(String email) {
 		return activitieDao.findActivitiesSelectedByEmail(email);
+	}
+
+	@Override
+	public List<ActivitieCount> reportStateCountAllActivities() {
+		return activitieDao.reportStateCountAllActivities();
 	}
 }

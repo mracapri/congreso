@@ -3,6 +3,7 @@ package edu.mx.utvm.congreso.dao;
 import java.util.List;
 
 import edu.mx.utvm.congreso.dominio.Activitie;
+import edu.mx.utvm.congreso.dominio.ActivitieCount;
 
 public interface IActivitieDao extends Dao<Activitie, Integer>{
 	List<Activitie> findAllByEmail(String email);
@@ -13,4 +14,5 @@ public interface IActivitieDao extends Dao<Activitie, Integer>{
 	boolean haveAVisit(String email);
 	boolean paySucced(String email);
 	List<Activitie> findActivitiesSelectedByEmail(String email);
+	List<ActivitieCount> reportStateCountAllActivities();
 }
