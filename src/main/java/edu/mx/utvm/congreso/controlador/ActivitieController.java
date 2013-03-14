@@ -20,6 +20,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.support.RequestContextUtils;
 
 import edu.mx.utvm.congreso.service.ActivitieService;
+import edu.mx.utvm.congreso.service.CatalogService;
 
 @Controller
 @RequestMapping("/activitie")
@@ -31,6 +32,9 @@ public class ActivitieController {
 	
 	@Autowired
 	private ActivitieService activitieService;
+	
+	@Autowired
+	private CatalogService catalogService;
 	
 	@RequestMapping(value="/list")
 	public ModelAndView showAllActivities(
@@ -59,6 +63,25 @@ public class ActivitieController {
 		
     	ModelAndView modelAndView = new ModelAndView("activities/report_count");
     	modelAndView.addObject("activities", activitieService.reportStateCountAllActivities());
+    	return modelAndView;
+    }
+	
+	@RequestMapping(value="/report/count/for/university")
+	public ModelAndView reportActivitiesCountForUniersity(
+			HttpServletRequest request, HttpServletResponse response, Principal principal)
+            throws ServletException, IOException {
+		int idUniversity = 1;
+    	ModelAndView modelAndView = new ModelAndView("activities/report_count_university");    	
+    	if(request.getParameter("id-university") != null){    		
+    		try{
+    			idUniversity = Integer.parseInt(request.getParameter("id-university"));	
+    		}catch(Exception e){}    		
+    		
+    		modelAndView.addObject("activities", activitieService.reportStateCountAllActivitiesByUniversity(idUniversity));    		
+    	}else{
+    		modelAndView.addObject("activities", activitieService.reportStateCountAllActivitiesByUniversity(idUniversity));
+    	}
+    	modelAndView.addObject("universities", catalogService.findAllUniversities());
     	return modelAndView;
     }
 	

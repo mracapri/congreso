@@ -11,4 +11,5 @@ public interface ActivitieService {
 	void deasist(int idActivitie, String email);
 	List<Activitie> findActivitiesSelectedByEmail(String email);
 	List<ActivitieCount> reportStateCountAllActivities();
+	List<ActivitieCount> reportStateCountAllActivitiesByUniversity(int idUniversity);
 }

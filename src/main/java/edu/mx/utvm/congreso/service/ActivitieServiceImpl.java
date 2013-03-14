@@ -63,4 +63,10 @@ public class ActivitieServiceImpl implements ActivitieService {
 	public List<ActivitieCount> reportStateCountAllActivities() {
 		return activitieDao.reportStateCountAllActivities();
 	}
+
+	@Override
+	public List<ActivitieCount> reportStateCountAllActivitiesByUniversity(
+			int idUniversity) {
+		return activitieDao.reportStateCountAllActivitiesByUniversity(idUniversity);
+	}
 }
