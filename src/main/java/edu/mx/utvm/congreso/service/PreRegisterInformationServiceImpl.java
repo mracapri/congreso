@@ -150,4 +150,10 @@ public class PreRegisterInformationServiceImpl implements PreRegisterInformation
 			String userName) {
 		return informationDao.findPreRegisterInformationByUserName(userName);
 	}
+
+	@Override
+	public void updateName(PreRegisterInformation preRegisterInformation,
+			String email) {
+		informationDao.updateName(preRegisterInformation, email);
+	}
 }

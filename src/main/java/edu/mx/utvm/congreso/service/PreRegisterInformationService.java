@@ -12,5 +12,6 @@ public interface PreRegisterInformationService {
 	List<PreRegisterInformation> findAllPreRegistersByParamSearch(String searchParameter);
 	PreRegisterInformation findPreRegisterInformationByToken(String token);
 	PreRegisterInformation findPreRegisterInformationByUserName(String userName);
+	void updateName(PreRegisterInformation preRegisterInformation, String email);
 }
 

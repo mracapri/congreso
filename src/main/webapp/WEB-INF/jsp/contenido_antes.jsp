@@ -71,6 +71,11 @@
 									Mi agenda
 								</a>
 							</li>
+							<li>
+								<a  href="${pageContext.request.contextPath}/resolver/register/form_modification">
+									Modificar nombre
+								</a>
+							</li>
 						</sec:authorize>
 						<sec:authorize access="hasRole('ROLE_ADMIN')">
 							<li>

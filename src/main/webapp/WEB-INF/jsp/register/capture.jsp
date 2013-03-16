@@ -1,5 +1,5 @@
 <%@ include file="/WEB-INF/jsp/contenido_antes.jsp" %>
-<form:form action="save_capture" method="post" modelAttribute="formRegister" id="formRegister" name="formRegister">
+<form:form action="save_capture" method="post" modelAttribute="formCapture" id="formCapture" name="formCapture">
 	<div class="row">
 		<div class="span12">		    		    
 		    <div class="alert alert-info">
@@ -17,7 +17,7 @@
 					<form:option value="" label="--- Seleccione ---"/>
 					<form:options items="${universities}" itemValue="id" itemLabel="name" />
 				</form:select>
-				<spring:hasBindErrors name="formRegister">
+				<spring:hasBindErrors name="formCapture">
 					<span class="label label-important">
 						<form:errors path="idInstitucionProcedencia" />
 					</span>
@@ -26,7 +26,7 @@
 				<label>Nombre</label>
 				<span class="obligatorio">*</span>																
 				<form:input path="nombre"/>
-				<spring:hasBindErrors name="formRegister">
+				<spring:hasBindErrors name="formCapture">
 					<span class="label label-important">
 						<form:errors path="nombre" />
 					</span>
@@ -35,7 +35,7 @@
 				<label>Apellido paterno</label>
 				<span class="obligatorio">*</span>
 				<form:input path="apellidoPaterno"/>
-				<spring:hasBindErrors name="formRegister">
+				<spring:hasBindErrors name="formCapture">
 					<span class="label label-important">
 						<form:errors path="apellidoPaterno" />
 					</span>
@@ -44,7 +44,7 @@
 				<label>Apellido materno</label>
 				<span class="obligatorio">*</span>
 				<form:input path="apellidoMaterno"/>
-				<spring:hasBindErrors name="formRegister">
+				<spring:hasBindErrors name="formCapture">
 					<span class="label label-important">
 						<form:errors path="apellidoMaterno" />
 					</span>
@@ -56,11 +56,22 @@
 					<form:option value="" label="--- Seleccione ---"/>
 					<form:options items="${ocupations}" itemValue="id" itemLabel="name" />
 				</form:select>
-				<spring:hasBindErrors name="formRegister">
+				<spring:hasBindErrors name="formCapture">
 					<span class="label label-important">
 						<form:errors path="idOcupacion" />
 					</span>
 				</spring:hasBindErrors>
+				
+
+				<label>Correo electr&oacutenico</label>
+				<span class="obligatorio">*</span>
+				<form:input path="correoElectronico"/>
+				<spring:hasBindErrors name="formCapture">
+					<span class="label label-important">
+						<form:errors path="correoElectronico" />
+					</span>
+				</spring:hasBindErrors>
+				
 			</div>
 			
 			<div class="span9">

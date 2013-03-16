@@ -270,4 +270,19 @@ public class PreRegisterInformationDaoImpl extends JdbcTemplate implements IPreR
 			return null;
 		}
 	}
+	
+	@Override
+	public void updateName(PreRegisterInformation preRegisterInformation, String email) {	
+		this.update(
+			"UPDATE " +
+			"preregister_information SET" +
+			" name = ?, second_name = ?, third_name = ? WHERE email = ?",
+			new Object[] { 
+				preRegisterInformation.getName(),
+				preRegisterInformation.getSecondName(),
+				preRegisterInformation.getThirdName(),
+				email
+			}
+		);
+	}
 }

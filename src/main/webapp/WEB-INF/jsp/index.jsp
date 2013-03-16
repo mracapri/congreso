@@ -1,8 +1,27 @@
 <%@ include file="/WEB-INF/jsp/contenido_antes.jsp" %>
+<div class="alert alert-info">
+	<button type="button" class="close" data-dismiss="alert">&times;</button>
+	<h4>Atenci&oacuten!</h4>
+	Si deseas imprimir tu agenda hazlo <a href="${pageContext.request.contextPath}/resolver/activitie/list/me">aqui</a>
+</div>
+
+<div class="alert alert-error">
+	<button type="button" class="close" data-dismiss="alert">&times;</button>
+	<h4>Importante!</h4>
+	Es muy importante presentar el comprobante de pago original el d&iacutea del congreso para agilizar el
+	proceso de inscripci&oacuten y entrega de materiales
+</div>
+
+<div class="alert alert-error">
+	<button type="button" class="close" data-dismiss="alert">&times;</button>
+	<h4>Importante!</h4>
+	Es muy importante realizar la correcci&oacuten de datos personales, ya que
+	con ellos se imprimiran las constancias los d&iacuteas del congreso <a href="${pageContext.request.contextPath}/resolver/register/form_modification">aqui</a>
+</div>
     
 <div class="alert alert-error">
 	<button type="button" class="close" data-dismiss="alert">&times;</button>
-	<h4>Atenci&oacuten!</h4>
+	<h4>Importante!</h4>
 	Recuerda que para realizar tu agenda tendr&aacutes que completar el proceso de pago
 </div>
 <h3>

@@ -312,7 +312,7 @@ public class ActivitieDaoImpl extends JdbcTemplate implements IActivitieDao{
 		sql = sql + 	"left join place p on p.id = ps.id_place ";
 		sql = sql + "group by ";
 		sql = sql + 	"ap.id_activitie ";
-		sql = sql + "order by count_activitie desc";
+		sql = sql + "order by a.day, count_activitie desc";
 		
 		
 		List<ActivitieCount> resultados = this.query(sql, new RowMapper<ActivitieCount>() {
@@ -371,7 +371,7 @@ public class ActivitieDaoImpl extends JdbcTemplate implements IActivitieDao{
 		sql = sql + "group by ";
 		sql = sql + 	"ap.id_activitie	";
 		sql = sql + "order by ";
-		sql = sql + 	"count_activitie desc";
+		sql = sql + 	"a.day, count_activitie desc";
 		
 		
 		List<ActivitieCount> resultados = this.query(sql, new Object[]{idUniversity}, new RowMapper<ActivitieCount>() {

@@ -6,6 +6,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
+import edu.mx.utvm.congreso.controlador.formbeans.FormCapture;
 import edu.mx.utvm.congreso.controlador.formbeans.FormPreRegister;
 import edu.mx.utvm.congreso.controlador.formbeans.FormRegisterAcademy;
 import edu.mx.utvm.congreso.controlador.formbeans.FormRegisterAccount;
@@ -37,6 +38,8 @@ public class MainValidator extends LocalValidatorFactoryBean implements Validato
 		}else if(FormRegisterAcademy.class.isAssignableFrom(object.getClass())){
 			claveValidator.validate(object, error);
 			electronicoValidator.validate(object, error);
+		}else if(FormCapture.class.isAssignableFrom(FormCapture.class)){
+			electronicoValidator.validate(object, error);
 		}
 	}
 
@@ -45,7 +48,8 @@ public class MainValidator extends LocalValidatorFactoryBean implements Validato
 		return clazz.isAssignableFrom(FormRegisterAccount.class)
 				|| clazz.isAssignableFrom(FormPreRegister.class)
 				|| clazz.isAssignableFrom(FormRegisterParticipation.class)
-				|| clazz.isAssignableFrom(FormRegisterAcademy.class);
+				|| clazz.isAssignableFrom(FormRegisterAcademy.class) 
+				|| clazz.isAssignableFrom(FormCapture.class);
 	}
 
 }

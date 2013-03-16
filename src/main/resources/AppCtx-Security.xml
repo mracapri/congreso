@@ -17,6 +17,8 @@
     	
     	<intercept-url pattern='/resolver/register_fiscal_data/form' access="hasRole('ROLE_PREREGISTERED_SUCCESS') or hasRole('ROLE_PREREGISTERED_SUCCESS_PAYMENT')" />
     	<intercept-url pattern='/resolver/register_fiscal_data/save' access="hasRole('ROLE_PREREGISTERED_SUCCESS') or hasRole('ROLE_PREREGISTERED_SUCCESS_PAYMENT')" />
+    	<intercept-url pattern='/resolver/register/form_modification' access="hasRole('ROLE_PREREGISTERED_SUCCESS') or hasRole('ROLE_PREREGISTERED_SUCCESS_PAYMENT')" />
+    	<intercept-url pattern='/resolver/register/save_modification' access="hasRole('ROLE_PREREGISTERED_SUCCESS') or hasRole('ROLE_PREREGISTERED_SUCCESS_PAYMENT')" />
     	<intercept-url pattern='/resolver/payment/payment_ticket' access="hasRole('ROLE_PREREGISTERED_SUCCESS')" />
     	
     	<intercept-url pattern='/resolver/activitie/assist' access="hasRole('ROLE_PREREGISTERED_SUCCESS_PAYMENT')" />

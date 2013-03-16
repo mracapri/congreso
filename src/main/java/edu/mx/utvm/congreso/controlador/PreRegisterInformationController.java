@@ -1,6 +1,7 @@
 package edu.mx.utvm.congreso.controlador;
 
 import java.io.IOException;
+import java.security.Principal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import edu.mx.utvm.congreso.controlador.formbeans.FormModification;
 import edu.mx.utvm.congreso.controlador.formbeans.FormPreRegister;
 import edu.mx.utvm.congreso.controlador.validator.MainValidator;
 import edu.mx.utvm.congreso.dominio.InformationAccount;
@@ -157,17 +159,6 @@ public class PreRegisterInformationController {
     	loadCatalogs(modelAndView);	
     	return modelAndView;
     }
-	
-	@RequestMapping(value="/form_capture")
-	public ModelAndView mostrarFormularioCaptura(
-			@ModelAttribute("formRegister") FormPreRegister formRegister,
-			HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-		
-    	ModelAndView modelAndView = new ModelAndView("register/capture");
-    	loadCatalogs(modelAndView);	
-    	return modelAndView;
-    }
     
 	@RequestMapping(value="/list_user_preregistered")
 	public ModelAndView showListUserPreRegister(
@@ -182,7 +173,7 @@ public class PreRegisterInformationController {
 		if(searchParameter != null && !searchParameter.equals("")){
 			findAllPreRegisters = preRegisterInformationService.findAllPreRegistersByParamSearch(searchParameter);				
 		}else{
-			findAllPreRegisters = preRegisterInformationService.findAllPreRegisters();			
+			findAllPreRegisters = preRegisterInformationService.findAllPreRegisters();
 		}
 		
     	ModelAndView modelAndView = new ModelAndView("register/list_user_preregistered");
@@ -190,6 +181,54 @@ public class PreRegisterInformationController {
     	modelAndView.addObject("universities", catalogService.findAllUniversities());
     	return modelAndView;
     }
+	
+	
+	@RequestMapping(value="/form_modification")
+	public ModelAndView mostrarFormularioModification(
+			@ModelAttribute("formModification") FormModification formModification,
+			Principal principal)
+            throws ServletException, IOException {
+		PreRegisterInformation modification = preRegisterInformationService.findPreRegisterInformationByUserName(principal.getName());
+		formModification.setNombre(modification.getName());
+		formModification.setApellidoPaterno(modification.getSecondName());
+		formModification.setApellidoMaterno(modification.getThirdName());
+		
+    	ModelAndView modelAndView = new ModelAndView("register/modification");
+    	modelAndView.addObject("preRegisterInformationModification", modification);
+    	return modelAndView;
+    }
+	
+	@RequestMapping(value="/save_modification")
+	public ModelAndView mostrarFormularioModificationSave(
+			@ModelAttribute("formModification") FormModification formModification)
+            throws ServletException, IOException {
+		
+    	ModelAndView modelAndView = new ModelAndView("register/modification");
+    	return modelAndView;
+    }
+	
+	@RequestMapping(value="/save_modification", method = RequestMethod.POST)
+	public ModelAndView saveModification(
+			@ModelAttribute("formModification") @Valid FormModification formModification,
+			@ModelAttribute("preRegisterInformationModification") PreRegisterInformation modification, BindingResult result, Principal principal)
+            throws ServletException, IOException {
+		
+    	ModelAndView modelAndView = new ModelAndView("register/modification");
+    
+    	if(!result.hasErrors()){
+    		modification.setName(formModification.getNombre());
+    		modification.setSecondName(formModification.getApellidoPaterno());
+    		modification.setThirdName(formModification.getApellidoMaterno());
+    		
+    		preRegisterInformationService.updateName(modification, principal.getName());
+    	}
+    	
+    	modelAndView.addObject("result", result);
+    
+    	return modelAndView;
+    }
+	
+	
 	
 	@InitBinder("formRegister")
 	protected void initBinder(WebDataBinder webDataBinder) {
