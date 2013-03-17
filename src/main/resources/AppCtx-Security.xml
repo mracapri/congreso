@@ -38,6 +38,9 @@
     	<intercept-url pattern='/resolver/register_participation/list_user_participation' access="hasRole('ROLE_ADMIN_PARTICIPATION')" />
     	<intercept-url pattern='/resolver/register_academy/list_academic' access="hasRole('ROLE_ADMIN_PARTICIPATION')" />
     	<intercept-url pattern='/resolver/register_participation/show_pdf_file/*' access="hasRole('ROLE_ADMIN_PARTICIPATION')" />
+    	
+    	<intercept-url pattern='/resolver/register/form_capture' access="hasRole('ROLE_CAPTURA')" />
+    	<intercept-url pattern='/resolver/register/save_capture' access="hasRole('ROLE_CAPTURA')" />
 	    
 	    
         <form-login login-page="/resolver/login.htm" 

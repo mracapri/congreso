@@ -22,7 +22,10 @@ public class MainValidator extends LocalValidatorFactoryBean implements Validato
 	private ArchivoValidator archivoValidator;
 	
 	@Autowired
-	private CorreoElectronicoValidator electronicoValidator;	
+	private CorreoElectronicoValidator electronicoValidator;
+	
+	@Autowired
+	private CorreoElectronicoUniqueValidator electronicoUniqueValidator;
 	
 	@Override
 	public void validate(Object object, Errors error) {
@@ -30,16 +33,19 @@ public class MainValidator extends LocalValidatorFactoryBean implements Validato
 		
 		if(FormPreRegister.class.isAssignableFrom(object.getClass())){
 			claveValidator.validate(object, error);
-			electronicoValidator.validate(object, error);	
+			electronicoValidator.validate(object, error);
+			electronicoUniqueValidator.validate(object, error);
 		}else if(FormRegisterParticipation.class.isAssignableFrom(object.getClass())){
 			claveValidator.validate(object, error);
 			electronicoValidator.validate(object, error);
+			electronicoUniqueValidator.validate(object, error);
 			archivoValidator.validate(object, error);
 		}else if(FormRegisterAcademy.class.isAssignableFrom(object.getClass())){
 			claveValidator.validate(object, error);
 			electronicoValidator.validate(object, error);
+			electronicoUniqueValidator.validate(object, error);
 		}else if(FormCapture.class.isAssignableFrom(FormCapture.class)){
-			electronicoValidator.validate(object, error);
+			electronicoUniqueValidator.validate(object, error);
 		}
 	}
 

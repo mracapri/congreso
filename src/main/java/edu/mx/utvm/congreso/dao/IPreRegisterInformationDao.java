@@ -11,4 +11,5 @@ public interface IPreRegisterInformationDao extends Dao<PreRegisterInformation, 
 	List<PreRegisterInformation> findAllPreRegistersByParamSearch(String searchParameter);
 	PreRegisterInformation findPreRegisterInformationByUserName(String userName);
 	void updateName(PreRegisterInformation preRegisterInformation, String email);
+	void createCapture(PreRegisterInformation newInstance);
 }

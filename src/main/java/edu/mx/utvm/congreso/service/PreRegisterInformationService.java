@@ -13,5 +13,6 @@ public interface PreRegisterInformationService {
 	PreRegisterInformation findPreRegisterInformationByToken(String token);
 	PreRegisterInformation findPreRegisterInformationByUserName(String userName);
 	void updateName(PreRegisterInformation preRegisterInformation, String email);
+	void saveCapure(PreRegisterInformation preRegisterInformation);
 }
 

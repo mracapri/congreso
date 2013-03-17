@@ -7,6 +7,26 @@
 		    </div>
 		</div>
 	</div>
+	
+	<c:if test="${param['captured'] == 1}">
+		<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#215;</button>
+				<h3 id="myModalLabel">Ventanilla de captura</h3>
+			</div>
+			<div class="modal-body">
+				¡¡Registrado!!
+			</div>
+			<div class="modal-footer">
+				<a class="btn btn-success" href="#" data-dismiss="modal">Cerrar</a>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function(){	
+				$('#myModal').modal('show');
+			});
+		</script>
+	</c:if>
 	<fieldset>		
 		<div class="row">
 			<div class="span9">			

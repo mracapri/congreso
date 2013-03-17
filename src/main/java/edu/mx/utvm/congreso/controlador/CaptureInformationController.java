@@ -22,8 +22,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import edu.mx.utvm.congreso.controlador.formbeans.FormCapture;
 import edu.mx.utvm.congreso.controlador.validator.MainValidator;
+import edu.mx.utvm.congreso.dominio.InformationAccount;
 import edu.mx.utvm.congreso.dominio.Ocupation;
+import edu.mx.utvm.congreso.dominio.PreRegisterInformation;
 import edu.mx.utvm.congreso.dominio.University;
+import edu.mx.utvm.congreso.dominio.UserRole;
 import edu.mx.utvm.congreso.service.CatalogService;
 import edu.mx.utvm.congreso.service.InformationAccountService;
 import edu.mx.utvm.congreso.service.PreRegisterInformationService;
@@ -89,6 +92,44 @@ public class CaptureInformationController {
             throws ServletException, IOException {
 		
     	ModelAndView modelAndView = new ModelAndView("register/capture");
+    	
+    	if(!result.hasErrors()){
+    		
+    		// build object     		
+    		InformationAccount informationAccount = new InformationAccount();
+    		informationAccount.setEmail(formCapture.getCorreoElectronico());
+    		informationAccount.setPassword(formCapture.getCorreoElectronico());
+    		informationAccount.setToken("");
+    		informationAccount.setReferenceKey("");
+    		informationAccount.setEnabled(1);
+    		
+    		Ocupation ocupation = new Ocupation();
+    		ocupation.setId(Integer.parseInt(formCapture.getIdOcupacion()));
+    		
+    		University university = new University();
+    		university.setId(Integer.parseInt(formCapture.getIdInstitucionProcedencia()));
+    		
+    		UserRole userRole = new UserRole();
+    		userRole.setAuthority(UserRole.ROLE_PREREGISTERED_SUCCESS_PAYMENT);
+    		userRole.setUserId(formCapture.getCorreoElectronico());
+    		
+    		PreRegisterInformation preRegisterInformation = new PreRegisterInformation();
+    		preRegisterInformation.setInformationAccount(informationAccount);
+    		preRegisterInformation.setName(formCapture.getNombre());
+    		preRegisterInformation.setPhone("");
+    		preRegisterInformation.setSecondName(formCapture.getApellidoPaterno());
+    		preRegisterInformation.setThirdName(formCapture.getApellidoMaterno());
+    		preRegisterInformation.setOcupation(ocupation);
+    		preRegisterInformation.setUniversity(university);
+    		preRegisterInformation.setUserRole(userRole);
+    		
+    		// save object whit service    		
+    		preRegisterInformationService.saveCapure(preRegisterInformation);
+    		
+    		modelAndView.setViewName("redirect:form_capture?captured=1");
+    		formCapture = new FormCapture();
+    	}
+    	
     	modelAndView.addObject("result", result);
     	loadCatalogs(modelAndView);	
     	return modelAndView;

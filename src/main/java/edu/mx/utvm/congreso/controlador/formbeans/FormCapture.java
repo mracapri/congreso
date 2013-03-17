@@ -2,9 +2,10 @@ package edu.mx.utvm.congreso.controlador.formbeans;
 
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
-public class FormCapture extends FormRegisterAccount{
+public class FormCapture{
 	
 	@NotEmpty
 	@Size(min = 1, max = 30)
@@ -23,6 +24,10 @@ public class FormCapture extends FormRegisterAccount{
 	
 	@NotEmpty
 	private String idOcupacion;
+	
+	@NotEmpty
+	@Email
+	private String correoElectronico;
 	
 
 	public String getNombre() {
@@ -64,11 +69,13 @@ public class FormCapture extends FormRegisterAccount{
 	public void setIdOcupacion(String idOcupacion) {
 		this.idOcupacion = idOcupacion;
 	}
-	
-	@Override
+
+	public String getCorreoElectronico() {
+		return correoElectronico;
+	}
+
 	public void setCorreoElectronico(String correoElectronico) {
-		super.setCorreoElectronico(correoElectronico);
-		super.setConfirmarcorreoElectronico(correoElectronico);
+		this.correoElectronico = correoElectronico;
 	}
 	
 }

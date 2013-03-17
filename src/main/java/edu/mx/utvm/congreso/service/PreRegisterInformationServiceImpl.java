@@ -47,6 +47,13 @@ public class PreRegisterInformationServiceImpl implements PreRegisterInformation
 	}
 	
 	@Override
+	public void saveCapure(PreRegisterInformation preRegisterInformation) {
+		accountService.save(preRegisterInformation.getInformationAccount());
+		roleService.save(preRegisterInformation.getUserRole());
+		informationDao.createCapture(preRegisterInformation);
+	}
+	
+	@Override
 	public void save(PreRegisterInformation preRegisterInformation) {
 
     	/* Build name */

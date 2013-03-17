@@ -14,17 +14,26 @@ import edu.mx.utvm.congreso.controlador.formbeans.FormRegisterParticipation;
 import edu.mx.utvm.congreso.service.InformationAccountService;
 
 @Component
-public class CorreoElectronicoValidator extends LocalValidatorFactoryBean implements Validator{
+public class CorreoElectronicoUniqueValidator extends LocalValidatorFactoryBean implements Validator{
 
 	@Autowired
 	private InformationAccountService accountService;
 	
 	@Override
 	public void validate(Object object, Errors error) {
-		FormRegisterAccount register = (FormRegisterAccount) object;
-		if(!register.getCorreoElectronico().equals(register.getConfirmarcorreoElectronico())){
-			error.rejectValue("correoElectronico", "correo.confirmacion.validation");
+		String email = "";
+		if(FormRegisterAccount.class.isAssignableFrom(object.getClass())){
+			FormRegisterAccount register = (FormRegisterAccount) object;
+			email = register.getCorreoElectronico();
+		}else if(FormCapture.class.isAssignableFrom(object.getClass())){
+			FormCapture register = (FormCapture) object;
+			email = register.getCorreoElectronico();			
 		}
+		
+		if(accountService.existEmailAccount(email)){
+			error.rejectValue("correoElectronico", "correo.unico.validation");
+		}
+
 	}
 
 	@Override

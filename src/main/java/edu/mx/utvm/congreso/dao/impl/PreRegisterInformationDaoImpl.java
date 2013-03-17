@@ -42,6 +42,23 @@ public class PreRegisterInformationDaoImpl extends JdbcTemplate implements IPreR
 					newInstance.getOcupation().getId()
 				});
 	}
+	
+	@Override
+	public void createCapture(PreRegisterInformation newInstance) {
+		this.update(
+				"INSERT INTO " +
+				"preregister_information(EMAIL, NAME, SECOND_NAME, THIRD_NAME, ID_UNIVERSITY, ID_OCUPATION, PAYMENT_STATUS) " +
+				"VALUES(?,?,?,?,?,?,?)",
+				new Object[] { 
+					newInstance.getInformationAccount().getEmail(),
+					newInstance.getName(),
+					newInstance.getSecondName(),
+					newInstance.getThirdName(),
+					newInstance.getUniversity().getId(),
+					newInstance.getOcupation().getId(),
+					"PAGADO"
+				});
+	}
 
 	@Override
 	public PreRegisterInformation read(Integer id) {

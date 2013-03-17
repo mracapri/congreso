@@ -43,6 +43,13 @@
 							</sec:authorize>
 						</li>
 						
+						<sec:authorize access="hasRole('ROLE_CAPTURA')">
+							<li>
+								<a href="${pageContext.request.contextPath}/resolver/register/form_capture">Ventanilla de captura</a>
+							</li>
+
+						</sec:authorize>
+						
 						<sec:authorize access="hasRole('ROLE_PREREGISTERED_SUCCESS')">
 							<li>
 								<a href="${pageContext.request.contextPath}/resolver/register_fiscal_data/form">
