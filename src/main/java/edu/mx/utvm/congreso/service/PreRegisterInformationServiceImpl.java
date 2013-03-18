@@ -48,6 +48,10 @@ public class PreRegisterInformationServiceImpl implements PreRegisterInformation
 	
 	@Override
 	public void saveCapure(PreRegisterInformation preRegisterInformation) {
+		/* Generate token and set to object*/
+		String token = Util.generateToken(preRegisterInformation.getInformationAccount().getEmail());
+		preRegisterInformation.getInformationAccount().setToken(token);
+		
 		accountService.save(preRegisterInformation.getInformationAccount());
 		roleService.save(preRegisterInformation.getUserRole());
 		informationDao.createCapture(preRegisterInformation);
