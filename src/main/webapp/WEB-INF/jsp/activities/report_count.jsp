@@ -90,7 +90,7 @@
 					</span>
 				</td>
 				<td>					
-					<a href="http://localhost:8080/congreso/resolver/activitie/list/assistence?id-activitie=${activitieCount.activitie.id}" target="_blank">
+					<a href="${pageContext.request.contextPath}/resolver/activitie/list/assistence?id-activitie=${activitieCount.activitie.id}" target="_blank">
 						<i class="icon-file">
 						</i>
 					</a>
