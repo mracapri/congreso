@@ -2,6 +2,7 @@ package edu.mx.utvm.congreso.dao.impl;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
 
 import javax.sql.DataSource;
@@ -299,6 +300,29 @@ public class PreRegisterInformationDaoImpl extends JdbcTemplate implements IPreR
 				preRegisterInformation.getSecondName(),
 				preRegisterInformation.getThirdName(),
 				email
+			}
+		);
+	}
+
+	@Override
+	public boolean getAssitence(String token) {
+		try {
+			this.queryForObject("select pi.email from preregister_information pi, information_account ia where pi.assistence is not null and pi.email = ia.email and ia.token = '" + token + "'", String.class);
+			return true;
+		} catch (EmptyResultDataAccessException accessException) {
+			return false;
+		}
+	}
+
+	@Override
+	public void setAssitence(String token) {
+		this.update(
+			"update " +
+			"preregister_information SET" +
+			" assistence = ? where email = (select email from information_account where token = ?)",
+			new Object[] {
+				new Date(),
+				token
 			}
 		);
 	}

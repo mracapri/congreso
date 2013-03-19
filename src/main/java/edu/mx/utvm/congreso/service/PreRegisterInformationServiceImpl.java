@@ -167,4 +167,14 @@ public class PreRegisterInformationServiceImpl implements PreRegisterInformation
 			String email) {
 		informationDao.updateName(preRegisterInformation, email);
 	}
+
+	@Override
+	public int setAssistence(String token) {
+		if(informationDao.getAssitence(token)){
+			return 1; // registered assistence
+		}else{
+			informationDao.setAssitence(token);
+			return 2; // success 
+		}
+	}
 }

@@ -29,7 +29,7 @@
 	</c:if>
 	<fieldset>		
 		<div class="row">
-			<div class="span9">			
+			<div class="span6">			
 			
 				<label>Instituci&oacuten de procedencia</label>
 				<span class="obligatorio">*</span>
@@ -91,15 +91,38 @@
 						<form:errors path="correoElectronico" />
 					</span>
 				</spring:hasBindErrors>
-				
+				<div class="span9">
+					<button class="btn btn-info" type="submit">Registrar</button>
+				</div>
 			</div>
-			
-			<div class="span9">
-				<button class="btn btn-info" type="submit">Registrar</button>
+			<div class="span6">
+				<input id="search-param" type="text" class="input-medium search-query" placeholder="nombre, correo"/>
+				<button type="button" class="btn btn-inverse" id="search-assistent">Buscar asistente</button>
+				<div id="list-assistence"></div>
 			</div>
+
 		</div>
 	</fieldset>				
 </form:form>
-
-<%@ include file="/WEB-INF/jsp/contenido_despues.jsp" %>
 <script type='text/javascript' src='${pageContext.request.contextPath}/recursos/js/register.js'></script>
+<script>
+	$(document).ready(function(){
+		$("#search-assistent").live('click',function(){
+			if(!$("#search-param").val() == ''){
+				$.ajax({
+					url: "${pageContext.request.contextPath}/resolver/register/list_assistence",
+					type: "GET",
+					data: {'search-param' : $("#search-param").val()},
+					dataType: "html",
+					success:function(result){
+						$("#list-assistence").empty();
+						$("#list-assistence").html(result);	
+					}
+				});
+			}else{
+				$("#list-assistence").empty();	
+			}
+		});
+	});
+</script>
+<%@ include file="/WEB-INF/jsp/contenido_despues.jsp" %>
