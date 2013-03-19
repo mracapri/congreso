@@ -115,4 +115,13 @@ public class ActivitieController {
     	return modelAndView;
     }
 
+	@RequestMapping(value="/list/assistence")
+	public ModelAndView generateListAssistence(
+			HttpServletRequest request, HttpServletResponse response, @RequestParam("id-activitie") int idActivitie)
+            throws ServletException, IOException {
+		
+    	ModelAndView modelAndView = new ModelAndView("activities/list_assistence");
+    	modelAndView.addObject("list", activitieService.assitenceNamesListForActivitie(idActivitie));
+    	return modelAndView;
+    }
 }

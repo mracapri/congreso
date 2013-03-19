@@ -33,6 +33,8 @@
     	<intercept-url pattern='/resolver/payment/save' access="hasRole('ROLE_ADMIN')" />
     	<intercept-url pattern='/resolver/activitie/report/count' access="hasRole('ROLE_ADMIN')" />
     	<intercept-url pattern='/resolver/activitie/report/count/for/university' access="hasRole('ROLE_ADMIN')" />
+    	<intercept-url pattern='/resolver/activitie/list/assistence' access="hasRole('ROLE_ADMIN')" />
+    	
     	
     	<intercept-url pattern='/resolver/chart/chart_participants_academics' access="hasRole('ROLE_ADMIN_PARTICIPATION')" />
     	<intercept-url pattern='/resolver/register_participation/list_user_participation' access="hasRole('ROLE_ADMIN_PARTICIPATION')" />
@@ -41,6 +43,9 @@
     	
     	<intercept-url pattern='/resolver/register/form_capture' access="hasRole('ROLE_CAPTURA')" />
     	<intercept-url pattern='/resolver/register/save_capture' access="hasRole('ROLE_CAPTURA')" />
+    	<intercept-url pattern='/resolver/register/list_assistence' access="hasRole('ROLE_CAPTURA')" />
+    	<intercept-url pattern='/resolver/register/confirm-assistence' access="hasRole('ROLE_CAPTURA')" />
+    	
 	    
 	    
         <form-login login-page="/resolver/login.htm" 

@@ -48,6 +48,7 @@
 			<th>Min</th>
 			<th>Max</th>
 			<th>Ocupados</th>
+			<th>Lista</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -87,6 +88,12 @@
 					<span class="label-wrap-hour" style="color:red;">
 						${activitieCount.countActivitie}
 					</span>
+				</td>
+				<td>					
+					<a href="http://localhost:8080/congreso/resolver/activitie/list/assistence?id-activitie=${activitieCount.activitie.id}" target="_blank">
+						<i class="icon-file">
+						</i>
+					</a>
 				</td>
 			</tr>
 		</c:forEach>

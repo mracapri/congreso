@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import edu.mx.utvm.congreso.dao.impl.ActivitieDaoImpl;
 import edu.mx.utvm.congreso.dominio.Activitie;
 import edu.mx.utvm.congreso.dominio.ActivitieCount;
+import edu.mx.utvm.congreso.dominio.ListAssistenceForActivitie;
 @Service
 public class ActivitieServiceImpl implements ActivitieService {
 
@@ -68,5 +69,16 @@ public class ActivitieServiceImpl implements ActivitieService {
 	public List<ActivitieCount> reportStateCountAllActivitiesByUniversity(
 			int idUniversity) {
 		return activitieDao.reportStateCountAllActivitiesByUniversity(idUniversity);
+	}
+
+	@Override
+	public ListAssistenceForActivitie assitenceNamesListForActivitie(
+			int idActivitie) {
+		ListAssistenceForActivitie list = new ListAssistenceForActivitie();
+		if(idActivitie > 0){
+			list.setNameActivitie(activitieDao.getActivitieName(idActivitie));
+			list.setNames(activitieDao.getAssitenceNamesListForActivitie(idActivitie));
+		}
+		return list;
 	}
 }

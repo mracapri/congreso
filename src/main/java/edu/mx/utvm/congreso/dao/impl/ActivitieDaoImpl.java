@@ -408,4 +408,32 @@ public class ActivitieDaoImpl extends JdbcTemplate implements IActivitieDao{
 		});
 		return resultados;
 	}
+
+	@Override
+	public List<String> getAssitenceNamesListForActivitie(int idActivitie) {		
+		String sql = "";
+		sql = sql + "select concat(pi.name, ' ', pi.second_name, ' ', pi.third_name) as full_name ";
+		sql = sql + "from activitie_participant ao, preregister_information pi ";
+		sql = sql + "where ao.id_activitie = ? and pi.email = ao.email";
+		
+		List<String> resultados = this.query(sql, new Object[]{idActivitie}, new RowMapper<String>() {
+			@Override
+			public String mapRow(ResultSet rs, int rowNum) throws SQLException {				
+				return rs.getString("full_name").toUpperCase();
+			}
+		});
+		return resultados;
+	}
+
+	@Override
+	public String getActivitieName(int idActivitie) {
+		String result = "";
+		String sql = "select a.activitie from activities a where a.id = ?";
+		try {			
+			result = this.queryForObject(sql,new Object[] {idActivitie}, String.class);			
+		} catch (EmptyResultDataAccessException accessException) {
+			result = null;
+		}
+		return result;
+	}
 }

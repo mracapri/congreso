@@ -4,6 +4,7 @@ import java.util.List;
 
 import edu.mx.utvm.congreso.dominio.Activitie;
 import edu.mx.utvm.congreso.dominio.ActivitieCount;
+import edu.mx.utvm.congreso.dominio.ListAssistenceForActivitie;
 
 public interface ActivitieService {
 	List<Activitie> findAllByEmail(String email);
@@ -12,4 +13,5 @@ public interface ActivitieService {
 	List<Activitie> findActivitiesSelectedByEmail(String email);
 	List<ActivitieCount> reportStateCountAllActivities();
 	List<ActivitieCount> reportStateCountAllActivitiesByUniversity(int idUniversity);
+	ListAssistenceForActivitie assitenceNamesListForActivitie(int idActivitie);
 }
